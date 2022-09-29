@@ -7,7 +7,7 @@ import sys
 
 class TwythonConnector:
     def __init__(self):
-        tokens = json.load(open("tokens.json"))
+        tokens = json.load(open("../../tokens.json"))
         self.app_key = tokens["app_key"]
         self.app_secret = tokens["app_secret"]
         self.access_token = None
@@ -24,6 +24,7 @@ if __name__ == "__main__":
     print("Starting connection")
     twitter_app = TwythonConnector()
     twitter_app.make_connection()
+    
     print("Established connection")
     twitter_app.get_user_info(272065025)
     twitter_app.get_user_follower_ids(272065025)
