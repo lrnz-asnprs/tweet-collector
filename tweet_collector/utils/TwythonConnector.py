@@ -4,7 +4,6 @@ import time
 import requests
 from twython import Twython
 import sys
-sys.path.append("/Users/laurenzaisenpreis/Uni/Thesis/TweetCollections")
 
 class TwythonConnector:
     def __init__(self):

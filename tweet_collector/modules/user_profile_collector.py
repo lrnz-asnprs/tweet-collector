@@ -1,4 +1,4 @@
-from utils.TwythonConnector import TwythonConnector
+from tweet_collector.utils.TwythonConnector import TwythonConnector
 import json
 import logging
 
