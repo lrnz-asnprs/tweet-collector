@@ -126,7 +126,7 @@ def get_tweets(query:str, start_time:str, end_time:str, fileout:str):
 
     Args:
         query (str): The twitter query for further info look at documentation here: https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
-        start_time (datetime): This Should be given as a string with the datetime format. Example "2022-08-01T00:00:00Z".
+        start_time (datetime): This Should be given as a string with the ISO-datetime format ending with a Z. Example "2022-08-01T00:00:00Z".
         end_time (datetime): Same as above. Example "2022-08-01T00:00:00Z"
         fileout (str): Title of the files that come out. A filecount will be added in front of the title given in case results are larger than what can fit in one .json.
     """
