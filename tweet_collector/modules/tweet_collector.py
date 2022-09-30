@@ -10,8 +10,9 @@ import requests
 import json
 import time
 import bz2
+import os
 
-#ACADEMIC keys
+#ACADEMIC API BEARER_TOKENS
 bearer_token_academic = json.load(open("tokens.json"))['bearer_token']
 
 class CrawlError(Exception):
@@ -39,7 +40,7 @@ class TwitterCrawlerV2:
 
     def get_tweets(self, query, fileout, max_results=10, start_time=None, end_time=None, 
                    tweet_fields=None, user_fields=None, expansions=None,
-                   verbose=True, numlines_per_file=300, start_filecount=None):
+                   verbose=True, numlines_per_file=300, start_filecount=None, path=""):
         if not tweet_fields:
             #'context_annotations', 'entities', 'reply_settings' 'source', 'possibly_sensitive', 'attachments', 
             tweet_fields = ['author_id', 'created_at', 'geo', 'id', 
@@ -74,7 +75,7 @@ class TwitterCrawlerV2:
             filecount = start_filecount
         else:
             filecount = 0
-        fout = open(f'{filecount:05d}_{fileout}', 'wt', encoding='utf-8')
+        fout = open(f'{path}{filecount:05d}_{fileout}', 'wt', encoding='utf-8')
         while True:
             time.sleep(1.5)
             response = requests.request('GET', self.endpoint_url, headers=self.headers, params=query_params)
@@ -120,7 +121,7 @@ class TwitterCrawlerV2:
                 break
 
 
-def get_tweets(query:str, start_time:str, end_time:str, fileout:str): 
+def collect_tweets(query:str, start_time:str, end_time:str, fileout:str, path:str): 
     """_summary_:
     Following method uses the twitter API and pagenates over the results from the query specified.
 
@@ -134,5 +135,4 @@ def get_tweets(query:str, start_time:str, end_time:str, fileout:str):
     crawler = TwitterCrawlerV2(bearer_token)
     print('Crawler successfully initialized')
     crawler.get_tweets(query, fileout, max_results=500, start_time=start_time, 
-                       end_time=end_time, numlines_per_file=1000, start_filecount=1)
-
+                       end_time=end_time, numlines_per_file=1000, start_filecount=1, path=path)

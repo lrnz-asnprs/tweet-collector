@@ -1,16 +1,19 @@
-import os, re, pandas as pd
+import sys, os
+import re, pandas as pd
 from datetime import datetime
-from modules.tweet_collector import *
+from tweet_collector import *
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+sys.path.append("../tweet-collector")
+from definitions import ROOT_DIR
 
-main_path = os.getcwd()
+politifact = pd.read_csv(ROOT_DIR+"/data/fakenews_sources/politifact_scape_2609.csv")
 
-politifact = pd.read_csv(main_path+"/data/fakenews_sources/politifact_scape_2609.csv")
+print(os.getcwd())
 
-sample = politifact.sample(10, random_state=40).reset_index()
+sample = politifact.sample(1, random_state=40).reset_index()
 
-print(sample.head(5))
+print(sample.head(1))
 
 
 def remove_stopwords(sample):
@@ -61,6 +64,8 @@ print(sample.head(5))
 
 #twitter queries are not case sensitive - https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
 
+path = ROOT_DIR+"/data/fakenews_tw_output/"
+
 for index, row in sample.T.iteritems():
     query, start_time, end_time, topic, truth_value = row.claim, row.date, str(datetime.today().isoformat()).split("T")[0]+"T00:00:00Z", row.topic, row.truth_value,
     
@@ -70,5 +75,5 @@ for index, row in sample.T.iteritems():
     
     file_name = "_".join([str(index), topic, truth_value, start_time.split("T")[0]]) + ".json"
     query += " -politifact"
-    get_tweets(query, start_time, end_time, file_name)
+    collect_tweets(query, start_time, end_time, file_name, path)
     
