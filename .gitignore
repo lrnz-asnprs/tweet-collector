@@ -1,3 +1,4 @@
 data
 tokens.json
-tweet_collector/notebooks
+fake_collector/notebooks
+*.pyc
