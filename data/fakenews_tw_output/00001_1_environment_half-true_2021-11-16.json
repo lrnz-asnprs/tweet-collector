@@ -1,1 +1,1 @@
-{"errors": [{"parameters": {"query": ["The United States 589 coalfired plants 10 years ago 're 504 We nation reduced reliance coal energy -politifact"]}, "message": "There were errors processing your request: no viable alternative at character ''' (at position 53)"}], "title": "Invalid Request", "detail": "One or more parameters to your request was invalid.", "type": "https://api.twitter.com/2/problems/invalid-request"}
+{"meta": {"result_count": 0}}

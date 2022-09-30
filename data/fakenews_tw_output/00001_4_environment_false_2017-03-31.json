@@ -1,1 +1,1 @@
-{"errors": [{"parameters": {"query": ["The EPA director Obama said Clean Power Initiative would effect manmade CO2 emissions That 's said Go look -politifact"]}, "message": "There were errors processing your request: no viable alternative at character ''' (at position 92)"}], "title": "Invalid Request", "detail": "One or more parameters to your request was invalid.", "type": "https://api.twitter.com/2/problems/invalid-request"}
+{"meta": {"result_count": 0}}
