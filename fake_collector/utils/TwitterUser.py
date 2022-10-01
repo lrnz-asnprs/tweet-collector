@@ -45,4 +45,7 @@ class TwitterUser:
 
     def add_fake_news_tweet(self, tweet_id: int):
         self.fake_news_tweets.append(tweet_id)
+
+    def get_user_as_dict(self):
+        return self.__dict__
     
