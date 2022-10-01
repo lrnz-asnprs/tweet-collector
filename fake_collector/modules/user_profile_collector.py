@@ -5,6 +5,7 @@ import pickle
 from fake_collector.configs.directory_config import Directories
 from fake_collector.utils.TwitterUser import TwitterUser
 from typing import List
+import pandas as pd
 
 class UserProfileCollector:
     def __init__(self) -> None:
@@ -76,4 +77,19 @@ class UserProfileCollector:
         with open(path / filename, "rb") as f:
             users_loaded = pickle.load(f)
         return users_loaded
+
+    def load_users_profiles_as_df(self) -> pd.DataFrame:
+        # Open pickle file
+        directories = Directories()
+        path = directories.USERS_PATH
+        filename = "users.pickle"
+        with open(path / filename, "rb") as f:
+            users_loaded = pickle.load(f)
+
+        # Turn into dict
+        users_dict = {user.user_id:user.get_user_as_dict() for user in users_loaded}
+
+        users_df = pd.DataFrame.from_dict(users_dict.values())
+    
+        return users_df
 
