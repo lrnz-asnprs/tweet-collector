@@ -28,9 +28,10 @@ class UserProfileCollector:
         print("Reading tweets from files")
         tweets = []
         for filename in os.listdir(path):
-            file = open(path / filename, 'r')
-            for line in open(path / filename, 'r'):
-                tweets.append(json.loads(line))
+            if filename.startswith("0"):
+                file = open(path / filename, 'r')
+                for line in open(path / filename, 'r'):
+                    tweets.append(json.loads(line))
 
         # get user information
         print("Creating user objects from tweets")
