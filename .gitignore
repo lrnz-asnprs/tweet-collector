@@ -2,3 +2,4 @@ data
 tokens.json
 fake_collector/notebooks
 *.pyc
+*.ipynb
