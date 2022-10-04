@@ -11,8 +11,6 @@ Reasoning and considerations for data preprocessing steps
 5) We might want to avoid removing commas or punctuation when between digits
 
 """
-
-from faulthandler import disable
 import sys, os
 import re, pandas as pd
 from datetime import datetime
@@ -144,25 +142,31 @@ class FakeNewsTweetCollector():
                 print("Could not drop column", col)
     
     
-    def preprocess_data(self):
+    def preprocess_data(self, character_limit=None):
         
         """ This function runs all the necessary cleaning steps to make the data ready for the TweetCollector to query 
             the fakenews that appeared on twitter.
         """
-        
-        #reshape dateformat
-        self.reshape_date_format()
-        
-        #clean the fake news claim / title line
-        self.clean_claims()
-        
-        #drop unnecessary columns of old indexes.
-        self.drop_unused_indexes()
-        
+        try:
+            #reshape dateformat
+            self.reshape_date_format()
+            
+            #clean the fake news claim / title line
+            self.clean_claims()
+            
+            #drop unnecessary columns of old indexes.
+            self.drop_unused_indexes()
+            
+            #set character limit to the size of retweets (140 characters) before text is truncated for example if specified.
+            if character_limit != None:
+                self.set_character_limit(character_limit=character_limit)
+        except:
+            print("Something went wrong. Might be that the preprocessing already has been applied.")
+            
 
     def get_fakenews_tweets(self, output_path=str(dir.DATA_PATH)+"/fakenews_tw_output/", disable_fetch=False):
-        """ This function uses the input sample dataframe to make requests to the twitter api applying the collect_tweet method from
-            the module tweet_collecter with class TweetCollector.
+        """ This function uses the input sample dataframe to make requests to the twitter API 
+            applying the collect_tweet method from the module tweet_collecter with class TweetCollector.
 
         Args:
             sample (dataframe): dataframe with the fakenews content
@@ -180,3 +184,5 @@ class FakeNewsTweetCollector():
             
             if not disable_fetch:
                 collect_tweets(query, start_time, end_time, file_name, output_path)
+                
+
