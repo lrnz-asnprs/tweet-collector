@@ -105,3 +105,4 @@ for index, row in sample.T.iteritems():
     file_name = "_".join([str(index), topic, truth_value, start_time.split("T")[0]]) + ".json"
     query += " -politifact"
     collect_tweets(query, start_time, end_time, file_name, path)
+
