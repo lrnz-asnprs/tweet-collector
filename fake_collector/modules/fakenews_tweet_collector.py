@@ -2,7 +2,6 @@
 @Gyrst 
 Created on 30-09-2022
 
-
 Reasoning and considerations for data preprocessing steps
 1) Stops words need to be removed as "and", "or" words become ambigious for the API. See error text here {"errors": [{"parameters": {"query": ["Hillary Clinton and millennials have the same positions on climate change abortion rights immigration reform gay rights and college affordability Donald Trump doesn't -politifact"]}, "message": "There were errors processing your request: Ambiguous use of and as a keyword. Use a space to logically join two clauses, or \"and\" to find occurrences of and in text (at position 121), Ambiguous use of and as a keyword. Use a space to logically join two clauses, or \"and\" to find occurrences of and in text (at position 17)"}], "title": "Invalid Request", "detail": "One or more parameters to your request was invalid.", "type": "https://api.twitter.com/2/problems/invalid-request"}
 2) Twitter queries are not case sensitive - https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
@@ -11,7 +10,6 @@ Reasoning and considerations for data preprocessing steps
 5) We might want to avoid removing commas or punctuation when between digits
 
 """
-import sys, os
 import re, pandas as pd
 from datetime import datetime
 from fake_collector.modules.tweet_collector import collect_tweets
