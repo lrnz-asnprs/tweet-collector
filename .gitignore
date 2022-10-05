@@ -3,4 +3,5 @@ tokens.json
 fake_collector/notebooks
 *.pyc
 *.ipynb
-move_files.sh
+*move_files.sh
+*fetch_fakenews.py
