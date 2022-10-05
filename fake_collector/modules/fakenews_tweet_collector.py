@@ -66,6 +66,9 @@ class FakeNewsTweetCollector():
         self.sample['claim'] = self.sample.claim.apply(lambda x: self.set_text_character_limit(character_limit, x))
     
     
+    def create_claim_wordcount(self):
+        self.sample['words_in_claim'] = self.sample.claim.apply(lambda x: len(x.split(" ")))
+    
     @staticmethod
     def remove_excluded_words(text):
         """ Word tokenization of the text using the TweetTokenizer that allows to get ride of special characters
@@ -101,7 +104,6 @@ class FakeNewsTweetCollector():
             sample (dataframe): The dataframe being modified.
         """
         
-        
         # #Cleaning step 1 - getting rid of \n appearances and weird spaces
         self.sample['claim'] = self.sample.claim.apply(lambda x: x.strip())
 
@@ -113,6 +115,8 @@ class FakeNewsTweetCollector():
         # "There were errors processing your request: Ambiguous use of and as a keyword. Use a space to logically join two clauses, or \"and\" to find occurrences of and in text
         self.sample['claim'] = self.sample.claim.apply(lambda x: self.remove_excluded_words(x))
         
+        # Handling issue with U.S. being filtered out. Appears in 133 times in the 5000 sample.
+        self.sample['claim'] = self.sample.claim.apply(lambda x: re.sub(" U ", " U.S. ", x))
 
     def reshape_date_format(self):
         """ Takes in a dataframe and reshapes the the date into the datetime format needed for the TweetCollector
@@ -142,10 +146,12 @@ class FakeNewsTweetCollector():
     
     def preprocess_data(self, character_limit=None):
         
-        """ This function runs all the necessary cleaning steps to make the data ready for the TweetCollector to query 
+        """ 
+            This function runs all the necessary cleaning steps to make the data ready for the TweetCollector to query 
             the fakenews that appeared on twitter.
         """
         try:
+            
             #reshape dateformat
             self.reshape_date_format()
             
@@ -155,14 +161,17 @@ class FakeNewsTweetCollector():
             #drop unnecessary columns of old indexes.
             self.drop_unused_indexes()
             
+            self.create_claim_wordcount()
+            
             #set character limit to the size of retweets (140 characters) before text is truncated for example if specified.
             if character_limit != None:
                 self.set_character_limit(character_limit=character_limit)
+                
         except:
             print("Something went wrong. Might be that the preprocessing already has been applied.")
             
 
-    def get_fakenews_tweets(self, output_path=str(dir.DATA_PATH)+"/fakenews_tw_output/", disable_fetch=False):
+    def get_fakenews_tweets(self, output_path=str(dir.DATA_PATH)+"/fakenews_tw_output/", disable_fetch=False, index=None):
         """ This function uses the input sample dataframe to make requests to the twitter API 
             applying the collect_tweet method from the module tweet_collecter with class TweetCollector.
 
@@ -170,17 +179,30 @@ class FakeNewsTweetCollector():
             sample (dataframe): dataframe with the fakenews content
             output_path (str, optional): Defaults to str(dir.DATA_PATH)+"/fakenews_tw_output/" if nothing else specified.
         """
-        for index, row in self.sample.T.iteritems():
-            query, start_time, end_time, topic, truth_value = row.claim, row.stated_on, str(datetime.today().isoformat()).split("T")[0]+"T00:00:00Z", row.topic, row.truth_value,
+        
+        
+        #Clause to divide the work into bulks
+        if index!=None:
+            local_sample = self.sample.iloc[index[0]: index[1]]
+        else:
+            local_sample = self.sample
+        
+        
+        for index, row in local_sample.T.iteritems():
             
-            print(start_time)
-            print(end_time)
-            print(query)
-            
-            file_name = "_".join([str(index), topic, truth_value, start_time.split("T")[0]]) + ".json"
-            query += " -politifact"
-            
-            if not disable_fetch:
-                collect_tweets(query, start_time, end_time, file_name, output_path)
+            # In a few cases e.g., "CO2 Pollutant" the filtered quotes where just two words. This will not give us an accurate representation of the false claim but add noise with unrelated tweets. Thus setting a lower bound of at least 4 words
+            if row.words_in_claim>3:
                 
+                query, start_time, end_time, topic, truth_value = row.claim, row.stated_on, str(datetime.today().isoformat()).split("T")[0]+"T00:00:00Z", row.topic, row.truth_value,
+                
+                print(start_time)
+                print(end_time)
+                print(query)
+                
+                file_name = "_".join([str(index), topic, truth_value, start_time.split("T")[0]]) + ".json"
+                query += " -politifact"
+                
+                if not disable_fetch:
+                    collect_tweets(query, start_time, end_time, file_name, output_path)
+                    
 
