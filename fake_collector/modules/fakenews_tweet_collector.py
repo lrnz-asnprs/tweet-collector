@@ -191,7 +191,7 @@ class FakeNewsTweetCollector():
         for index, row in local_sample.T.iteritems():
             
             # In a few cases e.g., "CO2 Pollutant" the filtered quotes where just two words. This will not give us an accurate representation of the false claim but add noise with unrelated tweets. Thus setting a lower bound of at least 4 words
-            if row.words_in_claim>3:
+            if row.words_in_claim>4:
                 
                 query, start_time, end_time, topic, truth_value = row.claim, row.stated_on, str(datetime.today().isoformat()).split("T")[0]+"T00:00:00Z", row.topic, row.truth_value,
                 
