@@ -19,6 +19,7 @@ class TwitterUser:
         tweets: Dict[str, Dict[str,List]] = None,
         retweets: Dict[str, Dict[str,List]] = None,
         replies: Dict[str, Dict[str,List]] = None,
+        following_ids: List[str] = None,
         ):
         """
         Twitter user object holding all relevant attributes.
@@ -57,6 +58,7 @@ class TwitterUser:
         } 
         self.aggregate_falsity_score = -1 # initialized at -1 
         self.average_falsity_score = -1 # initialized at -1 
+        self.following_ids = []
     
     def get_user_id(self):
         return self.user_id

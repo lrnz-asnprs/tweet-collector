@@ -11,6 +11,7 @@ class Directories:
     FAKE_NEWS_SOURCES = DATA_PATH / "fakenews_sources"
     FAKE_NEWS_TWEETS = DATA_PATH / "fakenews_tw_output"
     USERS_PATH = DATA_PATH / "users"
+    TOKENS_PATH = REPO_PATH / "tokens.json"
 
 
 if __name__ == "__main__":

@@ -4,14 +4,20 @@ import time
 import requests
 from twython import Twython
 import sys
+from fake_collector.configs.directory_config import Directories
+
+dir = Directories()
 
 class TwythonConnector:
-    def __init__(self):
-        tokens = json.load(open("../../tokens.json"))
-        self.app_key = tokens["app_key"]
-        self.app_secret = tokens["app_secret"]
+    def __init__(self, app_type: str):
+        """
+        Param: app_type: normal or academic
+        """
+        tokens = json.load(open(dir.TOKENS_PATH))
+        self.app_key = tokens[f"{app_type}_app_key"]
+        self.app_secret = tokens[f"{app_type}_app_secret"]
         self.access_token = tokens["access_token"] # might need to change it back
-        self.access_token_secret = tokens["access_token_secret"]
+        # self.access_token_secret = tokens[f"{app_type}_access_token_secret"]
         self.twitter_connection = None
 
     def make_connection(self):
