@@ -70,19 +70,25 @@ difference is only ~100 tweets.
 ### 3) take_off_0510 (The Iberian take off 05-01-22)
 
 Running on all titles (with more than 5 words in the query) from file:
-data/fakenews_sources/politifact_scrape_7t_03102022.csv
+Part 1) data/fakenews_sources/politifact_scrape_7t_03102022.csv 
+Part 2) data/fakenews_sources/all_politifact_0710nodub.csv
 
-##### topics:
-    - abortion, ukraine, Covid-19, elections, environment, climate-change, terrorism
 
+In the Part 1 file there has been done no filtering for duplicate texts. There seem to be quite a few overlapping within some topics (i.e., Environment and Climate Change).
+In part 2, some filtering was executed to avoid overlaps/duplicates. A remove duplicates was applied allowing duplicate texts. bu deleting the ones with identical aspects for ['claim', 'stated_on', 'origin']. Thus further filtering of duplicates still needs to be done to avoid duplicate data. The reason for the more including approach is to have the full data and see if the difference in stated_on (start_date for the twitter_crawler input) might yield different and better results.
+
+##### topics and indexes fetched
+    - abortion, ukraine, Covid-19, elections, environment, climate-change, terrorism (first section with indexes 0-5000)
+    - then remaining topics untill index 20,000
+    - still missing indexes 20,000-43,000 to have the complete fetch of all
 
 #### Parameters: 
     - No character limit
-    - U.S. substitution made.
-    - lower limit of 5 words for a query.
-    - Runtime (about 15h --> but only because it stalled many times and had to be reset / reinitialized)
-    - all query had an added "-politfact" in the end.   
-
+    - " U " replaces " U.S. " substitution made (the tweet token)
+    - lower limit of 5 words for a query (To avoid "CO2 Pollutants" and very short fake news claims that would get results not related to the fake news.)
+    - Runtimes (about 15h for part 1 --> but only because it stalled many times and had to be reset / reinitialized, 25 hours for part 2 (15,000 claims)).
+    - All query had an added "-politfact" in the end. This was tested in the initial test-phase and was found to be efficient to avoid the tweets that where referencing the 
+    - All 
 
 
 
@@ -92,3 +98,5 @@ data/fakenews_sources/politifact_scrape_7t_03102022.csv
 - Error with 1595, 1596 - "Microsoft Bill Gates created 1999 video game called Omikron" Stuck with an error 400 (error in the query) but possibly because of overloading or bad wifi (in Madrid Airbnb when it was run)
 - We still might have to do some filtering for in queries. The query below might not do  (query "video shows russian war ukraine" for example)
 - 2,586,743 Tweets pulled of 10,000,000 in the end of the run.
+
+
