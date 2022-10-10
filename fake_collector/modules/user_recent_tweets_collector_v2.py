@@ -1,50 +1,38 @@
 import sys
 sys.path.append("/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector")
-import requests
-import json
 import time
-import bz2
-import os
-from fake_collector.configs.directory_config import Directories
+import datetime
+from fake_collector.utils.TwythonConnector import TwythonConnector
+from twython import TwythonRateLimitError
 from fake_collector.utils.TwitterUser import TwitterUser
+from fake_collector.configs.directory_config import Directories
 from typing import List
-# from fake_collector.modules.user_profile_collector import UserProfileCollector
+import json
+import requests
 
 
 #ACADEMIC API BEARER_TOKENS
 dir = Directories()
 
-class CrawlError(Exception):
-    all_error_codes = {-1: 'Unknown error', 0: 'User not existent', 1: 'Error during crawling'}
-
-    def __init__(self, message, error_code):
-        super().__init__(message)
-        if error_code in self.all_error_codes:
-            self.error_code = error_code
-        else:
-            self.error_code = -1
-
-
-class UserFollowingCollectorV2:
-    def __init__(self, app_type):   
+class UserLatestTweetsCollectorV2:
+    def __init__(self, app_type):
         self.app_type = app_type 
         self.bearer_token = json.load(open(dir.TOKENS_PATH))[f'{app_type}_bearer_token']
         self.endpoint_url = 'https://api.twitter.com/2/users/'
         self.headers = {'Authorization': f'Bearer {self.bearer_token}'}
 
-    def get_friends(self, user: TwitterUser):
-    
+    def get_user_timeline(self, user: str):
+        
         next_token = None
         query_params = {
-                'max_results': 1000,
+                'max_results': 100,
                 'pagination_token': next_token
                }
-               
-        print(f"{self.app_type} app: trying user ", user.user_name)
 
         while True:
             time.sleep(1.5)
-            url = f"{self.endpoint_url}{user.user_id}/following"
+            url = f"{self.endpoint_url}{user}/tweets"
+
             print(f"{self.app_type} app getting response")
 
             response = requests.request('GET', url, headers=self.headers, params=query_params)
@@ -64,11 +52,10 @@ class UserFollowingCollectorV2:
                 time.sleep(15)
 
             response_json = response.json()
-            friends = [user['id'] for user in response_json['data']]
 
-            print(f"{self.app_type} app got friends {len(friends)} for user {user.user_name}")
+            tweets = [{"id": tweet['id'], "text": tweet['text']} for tweet in response_json['data']]
 
-            user.add_following_ids(friends)
+            print(f"{self.app_type} app got {len(tweets)} tweets for user {user}")
 
             try:
                 next_token = response_json['meta']['next_token']
@@ -77,5 +64,11 @@ class UserFollowingCollectorV2:
                 next_token = None
                 query_params['pagination_token'] = next_token
                 break
+        
+        
+        return None
 
-        return
+    
+if __name__ == "__main__":
+    user_tweets = UserLatestTweetsCollectorV2(app_type='academic')
+    tweets = user_tweets.get_user_timeline("20632528")
