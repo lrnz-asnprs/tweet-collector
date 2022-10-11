@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector")
+sys.path.append("~/Documents/tweet-collector/fake_collector")
 import time
 import datetime
 from fake_collector.utils.TwythonConnector import TwythonConnector
@@ -18,7 +18,7 @@ class UserLatestTweetsCollectorV2:
     def __init__(self, app_type):
         self.app_type = app_type 
         self.bearer_token = json.load(open(dir.TOKENS_PATH))[f'{app_type}_bearer_token']
-        self.endpoint_url = 'https://api.twitter.com/2/users/'
+        self.endpoint_url = 'https://api.twitter.com/2/users/'      #https://api.twitter.com/2/users/:id/tweets full endpoint
         self.headers = {'Authorization': f'Bearer {self.bearer_token}'}
 
     def get_user_timeline(self, user: str):
