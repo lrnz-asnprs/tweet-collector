@@ -9,6 +9,7 @@ from fake_collector.configs.directory_config import Directories
 from fake_collector.utils.TwitterUser import TwitterUser
 from typing import Dict, List
 import pandas as pd
+import time
 
 class UserProfileCollector:
     def __init__(self) -> None:
@@ -26,6 +27,8 @@ class UserProfileCollector:
         directory = Directories()
         path = directory.FAKE_NEWS_TWEETS
 
+        start = time.time()
+
         # iterate over fake news tweet files in that directory
         #TODO might remove unnecessary loop and create user profiles immediately when loading/reading
         print("Reading tweets from files")
@@ -33,10 +36,12 @@ class UserProfileCollector:
         tweets = []
         for filename in os.listdir(path):
             if filename.startswith('0'):
-                print("Try file ", filename)
                 items = filename.split("_")
                 for line in open(path / filename, 'r'):
                     tweets.append((items[2],items[3],json.loads(line)))
+
+        t1 = time.time()
+        print(f'Took {t1 - start} seconds')
 
         # get user information
         print("Creating user objects from tweets")
@@ -50,6 +55,9 @@ class UserProfileCollector:
                             users[user_id] = TwitterUser(user_id=user_id, user_name=user["name"], description=user['description'], followers_count=user["public_metrics"]["followers_count"], friends_count=user["public_metrics"]["following_count"], tweet_count=user["public_metrics"]["tweet_count"], verified=user["verified"], created_at=user["created_at"])
             except:
                 print("Problem with tweet user", user)
+        
+        t2 = time.time()
+        print(f'Took {t2 - t1} seconds')
 
         # add fake tweet ids to the corresponding user profile
         print("Adding ids to user profiles")
@@ -93,11 +101,19 @@ class UserProfileCollector:
                                     user_obj.replies[label][topic].append(tweet_id)
             except:
                 print("issue with tweet ", tweet)
-
+        
+           
+        t3 = time.time()
+        print(f'Took {t3 - t2} seconds')
 
         print("Calculating falsity scores for users")
         for user in users.values():
             user.calculate_falsity_score()
+
+           
+        t4 = time.time()
+        print(f'Took {t4 - t3} seconds')
+
 
         print("Saving TwitterUsers list as pickle file")
         users_list = list(users.values())

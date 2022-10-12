@@ -2,6 +2,7 @@ import sys
 sys.path.append("/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector")
 import time
 import datetime
+from fake_collector.modules.user_profile_collector import UserProfileCollector
 from fake_collector.utils.TwythonConnector import TwythonConnector
 from twython import TwythonRateLimitError
 from fake_collector.utils.TwitterUser import TwitterUser
@@ -15,25 +16,35 @@ import requests
 dir = Directories()
 
 class UserLatestTweetsCollectorV2:
-    def __init__(self, app_type):
+    def __init__(self, app_type: str):
+        """
+        Param app_type: elevated or academic
+        """
         self.app_type = app_type 
         self.bearer_token = json.load(open(dir.TOKENS_PATH))[f'{app_type}_bearer_token']
         self.endpoint_url = 'https://api.twitter.com/2/users/'
         self.headers = {'Authorization': f'Bearer {self.bearer_token}'}
 
-    def get_user_timeline(self, user: str):
+    def get_user_timeline(self, user: TwitterUser):
         
         next_token = None
+        #'context_annotations', 'entities', 'reply_settings' 'source', 'possibly_sensitive', 'attachments', 
+        tweet_fields = ['author_id', 'created_at', 'geo', 'id', 
+                        'lang', 'public_metrics', 'possibly_sensitive', 
+                        'text']
+        tweet_fields = ','.join(tweet_fields)
+
         query_params = {
                 'max_results': 100,
-                'pagination_token': next_token
+                'tweet.fields': tweet_fields,
+                'pagination_token': next_token,
                }
 
-        while True:
-            time.sleep(1.5)
-            url = f"{self.endpoint_url}{user}/tweets"
+        print(f'{self.app_type} app - trying user {user.user_name}')
 
-            print(f"{self.app_type} app getting response")
+        while True:
+            time.sleep(1)
+            url = f"{self.endpoint_url}{user.user_id}/tweets"
 
             response = requests.request('GET', url, headers=self.headers, params=query_params)
 
@@ -52,10 +63,12 @@ class UserLatestTweetsCollectorV2:
                 time.sleep(15)
 
             response_json = response.json()
-
-            tweets = [{"id": tweet['id'], "text": tweet['text']} for tweet in response_json['data']]
-
-            print(f"{self.app_type} app got {len(tweets)} tweets for user {user}")
+            
+            # Create tweet list
+            tweets = [({key : tweet.get(key) for key in tweet}) for tweet in response_json['data']]
+            
+            # Add tweets to users tweet list
+            user.add_recent_tweets(tweets)
 
             try:
                 next_token = response_json['meta']['next_token']
@@ -70,5 +83,15 @@ class UserLatestTweetsCollectorV2:
 
     
 if __name__ == "__main__":
-    user_tweets = UserLatestTweetsCollectorV2(app_type='academic')
-    tweets = user_tweets.get_user_timeline("20632528")
+   
+    tweet_collector = UserLatestTweetsCollectorV2(app_type='academic')
+
+    # Load the user profiles
+    user_profile_collector = UserProfileCollector()
+    user_profiles = user_profile_collector.load_user_profiles_as_list()
+
+    for i in range(100):
+        user = user_profiles[i]
+        tweet_collector.get_user_timeline(user)
+        print(f"Got {len(user.recent_tweets)} tweets for user {user.user_name}")
+

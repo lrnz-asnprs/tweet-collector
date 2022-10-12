@@ -15,32 +15,39 @@ import queue
 import threading
 import time
 
+user_counter = 0
 
 def add_user_friends_ids(user_queue, app_type):
     """
     Takes user queue as input, adds the corresponding following ID's to each user object, and returns the final list
     """
 
-    print("in worker ", app_type)
+    print("In worker ", app_type)
 
     while True:
 
-        if app_type == "normal":
+        if app_type == "elevated":
 
-            user_following_collector_v2 = UserFollowingCollectorV2(app_type=app_type)
             user = user_queue.get()
-            user_following_collector_v2.get_friends(user=user)
+            user_following_collector = UserFollowingCollector(app_type=app_type)
+            user_following_collector.add_user_friends_ids(user=user)
             user_queue.task_done()
+
+            # Change global user counter var
+            global user_counter
+            user_counter += 1
+            print("User count: ", user_counter)
 
         else:
 
-            twitter_app = TwythonConnector(app_type=app_type)
-            twitter_app.make_connection()
-
             user = user_queue.get()
-            user_following_collector = UserFollowingCollector()
-            user_following_collector.add_user_friends_ids(user=user, twitter_app=twitter_app)
+            user_following_collector = UserFollowingCollector(app_type=app_type)
+            user_following_collector.add_user_friends_ids(user=user)
             user_queue.task_done()
+
+            # Change global user counter var
+            user_counter += 1
+            print("User count: ", user_counter)
 
 
 # Load the user profiles
@@ -49,12 +56,12 @@ user_profiles = user_profile_collector.load_user_profiles_as_list()
 
 user_queue = queue.Queue()
 
-for app_type in ['normal', 'academic']:
+for app_type in ['elevated', 'academic']:
     worker = threading.Thread(target=add_user_friends_ids, args=(user_queue, app_type), daemon=True)
     worker.start()
 
 for i in range(32):
-    print("adding user", user_profiles[i].user_name)
+    print("Adding user", user_profiles[i].user_name)
     user_queue.put(user_profiles[i])
 
 # for user in user_profiles:
