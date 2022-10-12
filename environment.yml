@@ -1,9 +1,9 @@
-name: tweet-collection-env
+name: pip3.10vibin
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.9.7
+  - python=3.10.6
   - pip
   - pip:
      - -r requirements.txt

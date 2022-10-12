@@ -12,6 +12,7 @@ import requests
 
 
 #ACADEMIC API BEARER_TOKENS
+#https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-recent
 dir = Directories()
 
 class UserLatestTweetsCollectorV2:
@@ -60,13 +61,14 @@ class UserLatestTweetsCollectorV2:
             try:
                 next_token = response_json['meta']['next_token']
                 query_params['pagination_token'] = next_token
+                print("turned page")
             except:
                 next_token = None
                 query_params['pagination_token'] = next_token
                 break
         
         
-        return None
+        return tweets
 
     
 if __name__ == "__main__":

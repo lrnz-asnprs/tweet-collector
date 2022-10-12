@@ -6,3 +6,4 @@ fake_collector/notebooks
 *.ipynb
 *move_files.sh
 *fetch_fakenews.py
+environment.yml
