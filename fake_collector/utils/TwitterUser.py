@@ -20,6 +20,7 @@ class TwitterUser:
         retweets: Dict[str, Dict[str,List]] = None,
         replies: Dict[str, Dict[str,List]] = None,
         following_ids: List[str] = None,
+        recent_tweets: List[Dict[str,str]] = None,
         ):
         """
         Twitter user object holding all relevant attributes.
@@ -59,6 +60,7 @@ class TwitterUser:
         self.aggregate_falsity_score = -1 # initialized at -1 
         self.average_falsity_score = -1 # initialized at -1 
         self.following_ids = []
+        self.recent_tweets = []
     
     def get_user_id(self):
         return self.user_id
@@ -164,6 +166,16 @@ class TwitterUser:
 
     def add_following_ids(self, following_ids: List[str]):
         self.following_ids = list(set(self.following_ids + following_ids))
+
+
+    def add_recent_tweets(self, recent_tweets: List[Dict[str,str]]):
+        self.recent_tweets = self.recent_tweets + recent_tweets
+
+
+    def remove_duplicates_recent_tweets(self):
+        # Make sure there's no duplicates; uses set comprehension after turning each tweet dict into tuple
+        self.recent_tweets = [dict(tweet_tuple) for tweet_tuple in {tuple(tweet.items()) for tweet in self.recent_tweets}]
+
 
     def get_user_as_dict(self):
         return self.__dict__

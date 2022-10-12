@@ -11,7 +11,7 @@ dir = Directories()
 class TwythonConnector:
     def __init__(self, app_type: str):
         """
-        Param: app_type: normal or academic
+        Param: app_type: elevated or academic
         """
         tokens = json.load(open(dir.TOKENS_PATH))
         self.app_key = tokens[f"{app_type}_app_key"]

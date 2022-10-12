@@ -13,12 +13,18 @@ import queue
 
 
 class UserFollowingCollector:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, app_type: str):
+        self.app_type = app_type
 
-    def add_user_friends_ids(self, user: TwitterUser, twitter_app: TwythonConnector):
+    def add_user_friends_ids(self, user: TwitterUser):
         """
+        Param: app_type: elevated or academic
         """
+        # Make connection
+        twitter_app = TwythonConnector(app_type=self.app_type)
+        twitter_app.make_connection()
+        time.sleep(1)
+
         print("Trying user ", user.user_name)
         cursor = -1
         while cursor != 0:
