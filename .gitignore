@@ -7,3 +7,4 @@ fake_collector/notebooks
 *move_files.sh
 *fetch_fakenews.py
 .DS_Store
+*environment.yml
