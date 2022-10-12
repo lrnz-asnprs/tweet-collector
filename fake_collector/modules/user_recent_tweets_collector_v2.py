@@ -30,8 +30,8 @@ class UserLatestTweetsCollectorV2:
         next_token = None
         #'context_annotations', 'entities', 'reply_settings' 'source', 'possibly_sensitive', 'attachments', 
         tweet_fields = ['author_id', 'created_at', 'geo', 'id', 
-                        'lang', 'public_metrics', 'possibly_sensitive', 
-                        'text']
+                        'in_reply_to_user_id', 'lang', 'public_metrics', 'referenced_tweets', 
+                        'text', 'withheld', 'conversation_id']
         tweet_fields = ','.join(tweet_fields)
 
         query_params = {
