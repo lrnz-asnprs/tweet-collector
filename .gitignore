@@ -1,7 +1,6 @@
 data/fakenews_tw_output
 data/users
 tokens.json
-fake_collector/notebooks
 *.pyc
 *.ipynb
 *move_files.sh
