@@ -1,4 +1,6 @@
-### Notes
+# Notes
+
+The following sections contains notes from the original fetches made. Through out the testing phase and the full runs made we kept the original indexing to be able to go back and filter out in the already fetched data, if necessary. This became necessary later during the full run. Several consideration and steps to ensure high quality data was put in place during the data fetching. The following Notes Section goes over many of these consideration made.
 
 
 #### test_run_27-09
@@ -87,8 +89,7 @@ In part 2, some filtering was executed to avoid overlaps/duplicates. A remove du
     - " U " replaces " U.S. " substitution made (the tweet token)
     - lower limit of 5 words for a query (To avoid "CO2 Pollutants" and very short fake news claims that would get results not related to the fake news.)
     - Runtimes (about 15h for part 1 --> but only because it stalled many times and had to be reset / reinitialized, 25 hours for part 2 (15,000 claims)).
-    - All query had an added "-politfact" in the end. This was tested in the initial test-phase and was found to be efficient to avoid the tweets that where referencing the 
-    - All 
+    - All query had an added "-politfact" in the end. This was tested in the initial test-phase and was found to be efficient to avoid the tweets that where referencing the politifact link. These people know it is fake news presumably.
 
 
 
@@ -99,4 +100,23 @@ In part 2, some filtering was executed to avoid overlaps/duplicates. A remove du
 - We still might have to do some filtering for in queries. The query below might not do  (query "video shows russian war ukraine" for example)
 - 2,586,743 Tweets pulled of 10,000,000 in the end of the run.
 
+
+
+
+### Take-off 12-10 
+
+Running the next batch of claims (claims with the original indexing of 20,000 or higher)
+
+#### general notes and reflections for improvement:
+
+- Discussion Laurenz and Gustav on what topics and how to filter for duplicates.
+- Takes in the politifact_0710notopicdup as input (the file with no topic duplicates used for the 05-10 take off run)
+- First filtering for facebook posts, instagram posts, and viral video. Viral Video we decided to exclude as the titles for these are "video showing tank attacking Ukrainian solder" --> description of the video, and not the textual content from the original fake news. Thus we want to exclude this to make sure that our data has high integrity and quality.
+- New filitering of the files to exclude duplicate claims. In the first run a "lavish" filtering was used. Only filtering for duplicates on the data that had duplicate topic tag. In this new approach for take-off 12-10, we ensure that quotes only are represented once in the data, making sure that we take the oldest date of the quotes, meaning that is a quote has three duplicates in the data two with the different dates, different origin, but refering to the same claim. We would keep the first instance of the claim. The one that happened on the first date. and then the first sender. often more people have spread the fake news. Politifact them both tags "Donald Trump" and "Facebook Posts". In this case we would keep the Donald Trump one as the other has been filtered out.
+
+
+We also apply this filtering on the existing data that already had been fetched. by only keeping the files fetched that match the indexes obtained from our new filtered dataset. This is done using the script dub_filtering.py (available in the modules/utils folder)
+
+#### Params:
+    - same as for earlier run 05-10.
 
