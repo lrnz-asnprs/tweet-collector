@@ -127,7 +127,7 @@ class TwitterUser:
                     pants_retweets = []
                     for topic in self.retweets['pants-fire']:
                         pants_retweets = pants_retweets + self.retweets['pants-fire'][topic]
-                    temp_falsity_score += len(pants_tweets) * 1
+                    temp_falsity_score += len(pants_retweets) * 1
                     tweet_counter += len(pants_retweets)
                 case "false":
                     false_retweets = self.get_false_retweets()

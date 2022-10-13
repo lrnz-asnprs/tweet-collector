@@ -36,6 +36,7 @@ class UserProfileCollector:
         tweets = []
         for filename in os.listdir(path):
             if filename.startswith('0'):
+                print("Read file ", filename)
                 items = filename.split("_")
                 for line in open(path / filename, 'r'):
                     tweets.append((items[2],items[3],json.loads(line)))
