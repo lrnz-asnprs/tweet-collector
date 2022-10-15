@@ -28,7 +28,7 @@ def add_user_friends_ids(user_queue, app_type):
 
     while True:
 
-        if app_type == "elevated":
+        if app_type == "laai_elevated":
 
             user = user_queue.get()
             user_following_collector = UserFollowingCollector(app_type=app_type)
@@ -40,7 +40,18 @@ def add_user_friends_ids(user_queue, app_type):
             user_counter += 1
             print("User count: ", user_counter)
 
-        else:
+        elif app_type == 'laai_academic':
+
+            user = user_queue.get()
+            user_following_collector = UserFollowingCollector(app_type=app_type)
+            user_following_collector.add_user_friends_ids(user=user)
+            user_queue.task_done()
+
+            # Change global user counter var
+            user_counter += 1
+            print("User count: ", user_counter)
+
+        elif app_type == 'gugy_academic':
 
             user = user_queue.get()
             user_following_collector = UserFollowingCollector(app_type=app_type)
@@ -80,9 +91,11 @@ to_process = [users_loaded.get(user_id) for user_id in top_k['user_id']]
 
 user_queue = queue.Queue()
 
-for app_type in ['elevated', 'academic']:
-    worker = threading.Thread(target=add_user_friends_ids, args=(user_queue, app_type), daemon=True)
-    worker.start()
+for user in ['laai', 'gugy']:
+    for app_type in ['elevated', 'academic']:
+        app_type = user + '_' + app_type
+        worker = threading.Thread(target=add_user_friends_ids, args=(user_queue, app_type), daemon=True)
+        worker.start()
 
 for user in to_process:
     print("Adding user", user.user_name)
