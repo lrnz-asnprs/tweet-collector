@@ -2,7 +2,6 @@ data/fakenews_tw_output
 data/users
 tokens.json
 *.pyc
-*.ipynb
 *move_files.sh
 *fetch_fakenews.py
 .DS_Store
