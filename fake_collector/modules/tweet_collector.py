@@ -13,7 +13,7 @@ import bz2
 import os
 
 #ACADEMIC API BEARER_TOKENS
-bearer_token_academic = json.load(open("tokens.json"))['bearer_token']
+bearer_token_academic = json.load(open("tokens.json"))['laurenz_academic_bearer_token']
 
 class CrawlError(Exception):
     all_error_codes = {-1: 'Unknown error', 0: 'User not existent', 1: 'Error during crawling'}

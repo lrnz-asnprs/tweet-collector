@@ -7,7 +7,7 @@ directory = os.getcwd()+"/data/fakenews_tw_output/take_off_0510"
 
 print(directory)
 
-df = pd.read_csv("data/fakenews_sources/all_politifact_1210nodup.csv")
+df = pd.read_csv("data/fakenews_sources/all_politifact_1210nodup_fromnotopdup.csv")
 
 df = df.reset_index()
 lst_of_indexes = list(df['Unnamed: 0'])
@@ -25,4 +25,3 @@ for filename in os.listdir(directory):
         source = directory+"/"+filename
         destination = os.getcwd()+"/data/fakenews_tw_output/nodub_take_off_0510/"+filename
         shutil.copy(source, destination)
-        

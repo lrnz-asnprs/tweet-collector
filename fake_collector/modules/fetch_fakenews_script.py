@@ -5,8 +5,13 @@ import pandas as pd
 
 dir = Directories()
 
-sample = pd.read_csv(str(dir.DATA_PATH)+"/fakenews_sources/all_politifact_0710nodub.csv")
+sample = pd.read_csv(str(dir.DATA_PATH)+"/fakenews_sources/all_politifact_1210nodup_fromnotopdup.csv")
 
+
+#print(sample[(sample['Unnamed: 0']>19990) & (sample['Unnamed: 0']<20001)])
+
+sample = sample[sample['Unnamed: 0']>37376]
+sample = sample.set_index("Unnamed: 0")
 
 fn = FakeNewsTweetCollector(sample)
 
@@ -15,4 +20,8 @@ fn.preprocess_data()
 
 print("sample size:", len(fn.get_data()))
 
-fn.get_fakenews_tweets(index=(19999,20000))
+#print(fn.sample)
+
+fn.get_fakenews_tweets(index=(0,-1))
+
+#fn.get_fakenews_tweets(index=(19999,46750))
