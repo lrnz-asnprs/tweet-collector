@@ -128,7 +128,7 @@ class UserProfileCollector:
     def load_user_profiles_as_list(self) -> List[TwitterUser]:
         # Open pickle file
         directories = Directories()
-        path = directories.USERS_PATH
+        path = directories.USERS_PATH / "all_users"
         filename = "users.pickle"
         with open(path / filename, "rb") as f:
             users_loaded = pickle.load(f)
@@ -137,7 +137,7 @@ class UserProfileCollector:
     def load_users_profiles_as_df(self) -> pd.DataFrame:
         # Open pickle file
         directories = Directories()
-        path = directories.USERS_PATH
+        path = directories.USERS_PATH / "all_users"
         filename = "users.pickle"
         with open(path / filename, "rb") as f:
             users_loaded = pickle.load(f)
@@ -152,7 +152,7 @@ class UserProfileCollector:
     def load_users_profiles_as_dict(self) -> Dict[str, TwitterUser]:
         # Open pickle file
         directories = Directories()
-        path = directories.USERS_PATH
+        path = directories.USERS_PATH / "all_users"
         filename = "users.pickle"
         with open(path / filename, "rb") as f:
             users_loaded = pickle.load(f)
