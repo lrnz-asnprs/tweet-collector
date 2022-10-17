@@ -120,3 +120,9 @@ We also apply this filtering on the existing data that already had been fetched.
 #### Params:
     - same as for earlier run 05-10.
 
+
+
+#### 17-10 running for short sentences (5-8 words)
+
+    - Made check if results vary when one uses doesn't or doesn t -> which seems to have no effect whatsoever
+    - Made new filtering method with function easy=True for FakeNewsCollector preprocessing method. There seems to be a hickup with th U.S. becomes U.S. S - maybe related to the new formatting with only "and", "or" removal
