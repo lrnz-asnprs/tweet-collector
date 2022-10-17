@@ -92,9 +92,28 @@ class FakeNewsTweetCollector():
         
         return " ".join(word_tokens)
 
+    @staticmethod
+    def remove_bare_necessicy(text):
+        """
 
+        Args:
+            text (str): Text being modified.
 
-    def clean_claims(self):
+        Returns:
+            str: The modified text result.
+        """
+        stop_words = set(['or', 'and'])
+        
+        tweet_tokenizer = TweetTokenizer()
+        word_tokens = tweet_tokenizer.tokenize(text)
+        #stopword removal
+        word_tokens = [w for w in word_tokens if not w.lower() in stop_words]
+        #special characters
+        word_tokens = [w for w in word_tokens if not re.match(r"[^A-Za-z0-9]", w)]
+        
+        return " ".join(word_tokens)
+
+    def clean_claims(self, easy=False):
         """ Three step cleaning procedure. 
             1) strips the whitespaces and "\\n" newslines.
             2) It removes the "Says" in the beginning of sentences. 
@@ -113,7 +132,10 @@ class FakeNewsTweetCollector():
         
         # remove stopwords - done in order to avoid query errors such as:
         # "There were errors processing your request: Ambiguous use of and as a keyword. Use a space to logically join two clauses, or \"and\" to find occurrences of and in text
-        self.sample['claim'] = self.sample.claim.apply(lambda x: self.remove_excluded_words(x))
+        if easy:
+            self.sample['claim'] = self.sample.claim.apply(lambda x: self.remove_bare_necessicy(x))
+        else:
+            self.sample['claim'] = self.sample.claim.apply(lambda x: self.remove_excluded_words(x))
         
         # Handling issue with U.S. being filtered out. Appears in 133 times in the 5000 sample.
         self.sample['claim'] = self.sample.claim.apply(lambda x: re.sub(" U ", " U.S. ", x))
@@ -135,7 +157,7 @@ class FakeNewsTweetCollector():
     
     def drop_unused_indexes(self):
         
-        columns_to_drop = ['Unnamed: 0.1', 'index', 'Unnamed: 0']
+        columns_to_drop = ['Unnamed: 0.1', 'index']
         
         for col in columns_to_drop: 
             try:
@@ -144,7 +166,7 @@ class FakeNewsTweetCollector():
                 print("Could not drop column", col)
     
     
-    def preprocess_data(self, character_limit=None):
+    def preprocess_data(self, character_limit=None, easy=False):
         
         """ 
             This function runs all the necessary cleaning steps to make the data ready for the TweetCollector to query 
@@ -156,7 +178,7 @@ class FakeNewsTweetCollector():
             self.reshape_date_format()
             
             #clean the fake news claim / title line
-            self.clean_claims()
+            self.clean_claims(easy=easy)
             
             #drop unnecessary columns of old indexes.
             self.drop_unused_indexes()
