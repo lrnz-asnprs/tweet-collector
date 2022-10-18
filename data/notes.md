@@ -122,7 +122,24 @@ We also apply this filtering on the existing data that already had been fetched.
 
 
 
-#### 17-10 running for short sentences (5-8 words)
+### 17-10 running for short sentences (5-8 words) the 5to8 run (8exclusive) added together with the nodub-1210_plus7
 
-    - Made check if results vary when one uses doesn't or doesn t -> which seems to have no effect whatsoever
-    - Made new filtering method with function easy=True for FakeNewsCollector preprocessing method. There seems to be a hickup with th U.S. becomes U.S. S - maybe related to the new formatting with only "and", "or" removal
+This run comprise 4 < fn.sample.words_in_claim <= 7 
+
+#### params 
+
+- running with the set of indexes that contain 5-8 (8 exclusive) words: This set comprise 4276 claims.
+- same params as earlier runs. but now using the easy function where only stopwords "and" "or" are excluded as well as other special characters.
+- Made check if results vary when one uses doesn't or doesn t -> which seems to have no effect whatsoever
+- Made new filtering method with function easy=True for FakeNewsCollector preprocessing method. There seems to be a hickup with th U.S. becomes U.S. S - maybe related to the new formatting with only "and", "or" removal. Probably of minor influence though.
+
+
+#### The 5to8 descrepancy
+- The run went through succesfully --> however it was revealed that a gap of 76 claims/json-files existed between the the original nodub-1210 run and the new
+- nodub-1210 has 19663 claims
+- nodub-1210-plus7 + 5to8 files has 19587 claims
+- A 76 gap
+- The reason was found and revealed in the 5to8_descrepancy.ipynb notebook. showing that the original nodub-1210 somehow included some files on less than 5 words (fn.sample.words_in_claim<5). Seemingly from the initial fetch of 5000 quotes. Here where 93 quotes with less than 5 words that somehow got in.
+- Thus the new file folder of nodub_take_off_1210_5to8 is the purest and doesn't contain such files.
+
+
