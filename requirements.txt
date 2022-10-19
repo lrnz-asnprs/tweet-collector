@@ -76,3 +76,5 @@ wcwidth==0.2.5
 webencodings==0.5.1
 widgetsnbextension==4.0.3
 nltk==3.6.5
+transformers==4.23.1
+torch==1.12.1
