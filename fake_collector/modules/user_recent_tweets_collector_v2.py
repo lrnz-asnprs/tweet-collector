@@ -31,12 +31,20 @@ class UserLatestTweetsCollectorV2:
         #'context_annotations', 'entities', 'reply_settings' 'source', 'possibly_sensitive', 'attachments', 
         tweet_fields = ['author_id', 'created_at', 'geo', 'id', 
                         'in_reply_to_user_id', 'lang', 'public_metrics', 'referenced_tweets', 
-                        'text', 'withheld', 'conversation_id']
+                        'text', 'withheld', 'conversation_id', 'entities']
         tweet_fields = ','.join(tweet_fields)
+
+        media_fields = ['type','url']
+        media_fields = ','.join(media_fields)
+
+        expansions = ['attachments.media_keys']
+        expansions = ','.join(expansions)
 
         query_params = {
                 'max_results': 100,
+                'expansions': expansions,
                 'tweet.fields': tweet_fields,
+                'media.fields': media_fields,
                 'pagination_token': next_token,
                }
 
@@ -65,7 +73,11 @@ class UserLatestTweetsCollectorV2:
             response_json = response.json()
             
             # Create tweet list
-            tweets = [({key : tweet.get(key) for key in tweet}) for tweet in response_json['data']]
+            if 'data' in response_json.keys():
+                tweets = [({key : tweet.get(key) for key in tweet}) for tweet in response_json['data']]
+            else:
+                print(f"Can't fetch tweets of user {user.user_name}")
+                tweets = []
             
             # Add tweets to users tweet list
             user.add_recent_tweets(tweets)
