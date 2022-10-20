@@ -18,10 +18,11 @@ import threading
 import time
 import pickle
 import pandas as pd
+import time
 
 user_counter = 0
 
-def add_user_recent_tweets(user_queue, app_type):
+def add_user_recent_tweets(user_queue, app_type, recent_tweets):
     """
     Takes user queue as input, adds the corresponding following ID's to each user object, and returns the final list
     """
@@ -34,7 +35,8 @@ def add_user_recent_tweets(user_queue, app_type):
 
             user = user_queue.get()
             user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
-            user_recent_tweets_collector.get_user_timeline(user=user)
+            recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
+            recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
             user_queue.task_done()
 
             # Change global user counter var
@@ -46,7 +48,8 @@ def add_user_recent_tweets(user_queue, app_type):
 
             user = user_queue.get()
             user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
-            user_recent_tweets_collector.get_user_timeline(user=user)
+            recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
+            recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
             user_queue.task_done()
 
             # Change global user counter var
@@ -76,32 +79,56 @@ users_df['labeled_tweet_count'] = users_df.apply(lambda x: len(users_loaded.get(
 users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
 users_df.sort_values(by='rank', ascending=False, inplace=True)
 
-# Select first K profiles
-k = 1000
-top_k = users_df.head(k)
-to_process = [users_loaded.get(user_id) for user_id in top_k['user_id']]
+# Split into batches
+max_users = 10
+batch_size = 4
 
-user_queue = queue.Queue()
+# Method to split into batche
+def _batch_proccess(df, max_users, batch_size):
+    for ndx in range(0, max_users, batch_size):
+        yield users_df[ndx:min(ndx+batch_size,max_users)]
 
-for app_type in ['laai_elevated', 'laai_academic']:
-    worker = threading.Thread(target=add_user_recent_tweets, args=(user_queue, app_type), daemon=True)
-    worker.start()
+# Split df into batches
+batches = _batch_proccess(users_df, max_users, batch_size)
 
-for user in to_process:
-    print("Adding user", user.user_name)
-    user_queue.put(user)
+batch_index_counter = 0
 
-# Finish queue
-user_queue.join()
+# Iterate over batches
+for batch in batches:    
 
-# Done, save
-true_users = {}
-for user in to_process:
-    true_users[user.user_id] = user
+    start = time.time()
 
-print("Save user")
-# Save file in true users directory
-filename = f"k_{k}_true_users_recent_tweets.pickle"
+    batch_user_ids = set(batch['user_id'])
 
-with open(path / filename, "wb") as f:
-    pickle.dump(true_users, f)
+    # Create dict for recent tweets
+    recent_tweets = {user_id : [] for user_id in batch_user_ids}
+
+    # to_process = [users_loaded.get(user_id) for user_id in top_k['user_id']]
+
+    user_queue = queue.Queue()
+
+    for app_type in ['laai_elevated', 'laai_academic', 'gugy_academic', 'gugy_elevated', 'luca_academic', 'luca_elevated']:
+        worker = threading.Thread(target=add_user_recent_tweets, args=(user_queue, app_type, recent_tweets), daemon=True)
+        worker.start()
+
+    for user_id in recent_tweets:
+        print("Adding user", user_id)
+        user_queue.put(user_id)
+
+    # Finish queue
+    user_queue.join()
+
+    print("Save user")
+    # Save file in recent tweets directory
+
+    filename = f"true_users_recent_tweets/true_users_recent_tweets_{batch_index_counter}_to_{batch_index_counter+len(batch)}.pickle"
+
+    with open(path / filename, "wb") as f:
+        pickle.dump(recent_tweets, f)
+    
+    # Increment batch counter
+    batch_index_counter = batch_index_counter + len(batch)
+
+    # DOne
+    end = time.time()
+    print(f"############ Took {(end-start)/60} minutes #################")
