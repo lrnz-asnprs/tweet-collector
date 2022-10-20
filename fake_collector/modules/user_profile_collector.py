@@ -72,14 +72,18 @@ class UserProfileCollector:
             try:
                 if "data" in entry[2].keys():
                     for tweet in entry[2]["data"]:
-                        # get corresponding user
+                        # get corresponding user                    
                         author_id = tweet["author_id"]
                         tweet_id = tweet["id"]
                         # get type if present
                         if 'referenced_tweets' in tweet.keys():
                             tweet_type = tweet['referenced_tweets'][0]['type']
                         else:
-                            tweet_type = 'tweet'
+                            if 'in_reply_to_user_id' in tweet.keys():
+                                tweet_type = 'replied_to'
+                            else:
+                                tweet_type = 'tweet'
+
                         # add tweet info to user
 
                         user_obj = users.get(author_id)
@@ -118,7 +122,7 @@ class UserProfileCollector:
 
         print("Saving TwitterUsers list as pickle file")
         users_list = list(users.values())
-        path = directory.USERS_PATH
+        path = directory.USERS_PATH / "all_users"
         filename = "users.pickle"
 
         with open(path / filename, "wb") as f:
