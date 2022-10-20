@@ -32,7 +32,7 @@ class UserFollowingCollectorV2:
         self.endpoint_url = 'https://api.twitter.com/2/users/'
         self.headers = {'Authorization': f'Bearer {self.bearer_token}'}
 
-    def get_friends(self, user: TwitterUser):
+    def add_user_friend_ids(self, user: TwitterUser):
     
         next_token = None
         query_params = {
@@ -45,7 +45,7 @@ class UserFollowingCollectorV2:
         while True:
             time.sleep(1.5)
             url = f"{self.endpoint_url}{user.user_id}/following"
-            print(f"{self.app_type} app getting response")
+            print(f"{self.app_type} app getting response for {user.user_name}")
 
             response = requests.request('GET', url, headers=self.headers, params=query_params)
 
@@ -58,15 +58,21 @@ class UserFollowingCollectorV2:
                 time.sleep(900)
                 print(f"{self.app_type} app resume connection")
                 continue
+            
+            if response.status_code == 401:
+                print(f"Unauthorized error in app {self.app_type}")
+
             if response.status_code != 200:
                 print('Error', response.status_code)
                 #raise Exception(response.status_code, response.text)
                 time.sleep(15)
 
             response_json = response.json()
-            friends = [user['id'] for user in response_json['data']]
 
-            print(f"{self.app_type} app got friends {len(friends)} for user {user.user_name}")
+            if "data" in response_json.keys():
+                friends = [user['id'] for user in response_json['data']]
+            else:
+                friends = []
 
             user.add_following_ids(friends)
 

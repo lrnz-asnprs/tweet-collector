@@ -25,7 +25,7 @@ class UserLatestTweetsCollectorV2:
         self.endpoint_url = 'https://api.twitter.com/2/users/'
         self.headers = {'Authorization': f'Bearer {self.bearer_token}'}
 
-    def get_user_timeline(self, user: TwitterUser):
+    def get_user_timeline(self, user_id: str):
         
         next_token = None
         #'context_annotations', 'entities', 'reply_settings' 'source', 'possibly_sensitive', 'attachments', 
@@ -48,11 +48,13 @@ class UserLatestTweetsCollectorV2:
                 'pagination_token': next_token,
                }
 
-        print(f'{self.app_type} app - trying user {user.user_name}')
+        print(f'{self.app_type} app - trying user {user_id}')
+
+        recent_tweets = []
 
         while True:
             time.sleep(1)
-            url = f"{self.endpoint_url}{user.user_id}/tweets"
+            url = f"{self.endpoint_url}{user_id}/tweets"
 
             response = requests.request('GET', url, headers=self.headers, params=query_params)
 
@@ -76,11 +78,12 @@ class UserLatestTweetsCollectorV2:
             if 'data' in response_json.keys():
                 tweets = [({key : tweet.get(key) for key in tweet}) for tweet in response_json['data']]
             else:
-                print(f"Can't fetch tweets of user {user.user_name}")
+                print(f"Can't fetch tweets of user {user_id}")
                 tweets = []
             
             # Add tweets to users tweet list
-            user.add_recent_tweets(tweets)
+            # user.add_recent_tweets(tweets)
+            recent_tweets = recent_tweets + tweets
 
             try:
                 next_token = response_json['meta']['next_token']
@@ -91,7 +94,7 @@ class UserLatestTweetsCollectorV2:
                 break
         
         
-        return None
+        return recent_tweets
 
     
 if __name__ == "__main__":
