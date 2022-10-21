@@ -30,72 +30,15 @@ def add_user_friends_ids(user_queue, app_type):
 
     while True:
 
-        if app_type == "laai_elevated":
+        user = user_queue.get()
+        user_following_collector = UserFollowingCollectorV2(app_type=app_type)
+        user_following_collector.add_user_friend_ids(user=user)
+        user_queue.task_done()
 
-            user = user_queue.get()
-            user_following_collector = UserFollowingCollectorV2(app_type=app_type)
-            user_following_collector.add_user_friend_ids(user=user)
-            user_queue.task_done()
-
-            # Change global user counter var
-            global user_counter
-            user_counter += 1
-            print("User count: ", user_counter)
-
-        elif app_type == 'laai_academic':
-
-            user = user_queue.get()
-            user_following_collector = UserFollowingCollectorV2(app_type=app_type)
-            user_following_collector.add_user_friend_ids(user=user)
-            user_queue.task_done()
-
-            # Change global user counter var
-            user_counter += 1
-            print("User count: ", user_counter)
-
-        elif app_type == 'gugy_academic':
-
-            user = user_queue.get()
-            user_following_collector = UserFollowingCollectorV2(app_type=app_type)
-            user_following_collector.add_user_friend_ids(user=user)
-            user_queue.task_done()
-
-            # Change global user counter var
-            user_counter += 1
-            print("User count: ", user_counter)
-
-        elif app_type == 'gugy_elevated':
-
-            user = user_queue.get()
-            user_following_collector = UserFollowingCollectorV2(app_type=app_type)
-            user_following_collector.add_user_friend_ids(user=user)
-            user_queue.task_done()
-
-            # Change global user counter var
-            user_counter += 1
-            print("User count: ", user_counter)
-
-        elif app_type == 'luca_academic':
-
-            user = user_queue.get()
-            user_following_collector = UserFollowingCollectorV2(app_type=app_type)
-            user_following_collector.add_user_friend_ids(user=user)
-            user_queue.task_done()
-
-            # Change global user counter var
-            user_counter += 1
-            print("User count: ", user_counter)
-
-        elif app_type == 'luca_elevated':
-
-            user = user_queue.get()
-            user_following_collector = UserFollowingCollectorV2(app_type=app_type)
-            user_following_collector.add_user_friend_ids(user=user)
-            user_queue.task_done()
-
-            # Change global user counter var
-            user_counter += 1
-            print("User count: ", user_counter)
+        # Change global user counter var
+        global user_counter
+        user_counter += 1
+        print("User count: ", user_counter)
 
 # Directories add path name!
 directories = Directories()
