@@ -52,6 +52,8 @@ class UserLatestTweetsCollectorV2:
 
         recent_tweets = []
 
+        sleeping_counter = 0
+
         while True:
             time.sleep(1)
             url = f"{self.endpoint_url}{user_id}/tweets"
@@ -63,6 +65,11 @@ class UserLatestTweetsCollectorV2:
             # rate_limit_json = rate_limit_status.json()
 
             if response.status_code == 429:
+
+                if 'UsageCapExceeded' in response.text:
+                    print("Usage cap exceeded in ", self.app_type)
+                    return -1
+
                 print(f'{self.app_type} app {int(time.time())} - Hitting request limit, waiting.')
                 time.sleep(900)
                 print(f"{self.app_type} app resume connection")

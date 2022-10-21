@@ -32,30 +32,23 @@ def add_user_recent_tweets(user_queue, app_type, recent_tweets):
 
     while True:
 
-        if app_type == "laai_elevated":
-
-            user = user_queue.get()
-            user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
-            recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
-            recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
+        user = user_queue.get()
+        user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
+        recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
+        if recent_tweets_user == -1:
+            print(f"Close worker {app_type} due to rate limit")
+            # put failed user back on the queue
+            user_queue.put(user)
             user_queue.task_done()
+            return
+        recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
+        user_queue.task_done()
 
-            # Change global user counter var
-            global user_counter
-            user_counter += 1
-            print("User count: ", user_counter)
-
-        elif app_type == 'laai_academic':
-
-            user = user_queue.get()
-            user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
-            recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
-            recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
-            user_queue.task_done()
-
-            # Change global user counter var
-            user_counter += 1
-            print("User count: ", user_counter)
+        # Change global user counter var
+        global user_counter
+        user_counter += 1
+        print("User done ", user)
+        print("User count: ", user_counter)
 
 
 # Directories add path name!
@@ -81,10 +74,9 @@ users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
 users_df.sort_values(by='rank', ascending=False, inplace=True)
 
 # Split into batches
-max_users = 2000 #2000
-batch_size = 500 #500
+max_users = 100 #2000
+batch_size = 100 #500
 
-# Method to split into batche
 def _batch_proccess(df, max_users, batch_size):
     for ndx in range(0, max_users, batch_size):
         yield users_df[ndx:min(ndx+batch_size,max_users)]
@@ -104,11 +96,10 @@ for batch in batches:
     # Create dict for recent tweets
     recent_tweets = {user_id : [] for user_id in batch_user_ids}
 
-    # to_process = [users_loaded.get(user_id) for user_id in top_k['user_id']]
-
     user_queue = queue.Queue()
 
-    for app_type in ['laai_elevated', 'laai_academic', 'gugy_academic', 'gugy_elevated', 'luca_academic', 'luca_elevated']:
+    # for app_type in ['laai_elevated', 'laai_academic', 'gugy_academic', 'gugy_elevated', 'luca_academic', 'luca_elevated']:
+    for app_type in ['laai_academic']:
         worker = threading.Thread(target=add_user_recent_tweets, args=(user_queue, app_type, recent_tweets), daemon=True)
         worker.start()
 
