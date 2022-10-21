@@ -74,6 +74,9 @@ users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
 users_df.sort_values(by='rank', ascending=False, inplace=True)
 
 # Split into batches
+start_from_index = 0
+users_df = users_df.iloc[start_from_index:]
+
 max_users = 100 #2000
 batch_size = 100 #500
 
@@ -83,8 +86,6 @@ def _batch_proccess(df, max_users, batch_size):
 
 # Split df into batches
 batches = _batch_proccess(users_df, max_users, batch_size)
-
-batch_index_counter = 0
 
 # Iterate over batches
 for batch in batches:    
@@ -113,13 +114,13 @@ for batch in batches:
     print("Save user")
     # Save file in recent tweets directory
 
-    filename = f"true_users_recent_tweets/true_users_recent_tweets_{batch_index_counter}_to_{batch_index_counter+len(batch)}.pickle"
+    filename = f"true_users_recent_tweets/true_users_recent_tweets_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
 
     with open(path / filename, "wb") as f:
         pickle.dump(recent_tweets, f)
     
     # Increment batch counter
-    batch_index_counter = batch_index_counter + len(batch)
+    start_from_index = start_from_index + len(batch)
 
     # DOne
     end = time.time()

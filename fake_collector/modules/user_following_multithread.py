@@ -121,6 +121,9 @@ users_df.sort_values(by='rank', ascending=False, inplace=True)
 
 
 ############################# ADJUST HERE #########################
+start_from_index = 2000
+users_df = users_df.iloc[start_from_index:]
+
 # Split into batches 
 max_users = 2000 #2000
 batch_size = 500 #500
@@ -132,8 +135,6 @@ def _batch_proccess(df, max_users, batch_size):
 
 # Split df into batches
 batches = _batch_proccess(users_df, max_users, batch_size)
-
-batch_index_counter = 0
 
 # Iterate over batches
 for batch in batches:    
@@ -163,13 +164,13 @@ for batch in batches:
 
     print("Save user")
     # Save file in true users directory
-    filename = f"true_users_following_ids_{batch_index_counter}_to_{batch_index_counter+len(batch)}.pickle"
+    filename = f"true_users_following_ids_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
 
     with open(path / filename, "wb") as f:
         pickle.dump(true_users, f)
 
     # Increment
-    batch_index_counter = batch_index_counter + len(batch)
+    start_from_index = start_from_index + len(batch)
 
     # Done
     end = time.time()
