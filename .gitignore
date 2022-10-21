@@ -2,9 +2,6 @@ data/fakenews_tw_output
 data/users/*
 tokens.json
 *.pyc
-*move_files.sh
-*fetch_fakenews.py
 .DS_Store
 *environment.yml
 *ipynb
-sbatch_outputs/*
