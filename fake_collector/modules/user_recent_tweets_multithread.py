@@ -1,6 +1,7 @@
 from concurrent.futures import thread
 import sys
-sys.path.append("/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector")
+import os
+sys.path.append(os.getcwd())
 import time
 import datetime
 from fake_collector.utils.TwythonConnector import TwythonConnector
@@ -80,8 +81,8 @@ users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
 users_df.sort_values(by='rank', ascending=False, inplace=True)
 
 # Split into batches
-max_users = 10
-batch_size = 4
+max_users = 2000 #2000
+batch_size = 500 #500
 
 # Method to split into batche
 def _batch_proccess(df, max_users, batch_size):

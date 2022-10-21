@@ -1,5 +1,6 @@
 import sys
-sys.path.append("/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector")
+import os
+sys.path.append(os.getcwd())
 import time
 import datetime
 from fake_collector.utils.TwythonConnector import TwythonConnector
@@ -121,8 +122,8 @@ users_df.sort_values(by='rank', ascending=False, inplace=True)
 
 ############################# ADJUST HERE #########################
 # Split into batches 
-max_users = 10 
-batch_size = 2
+max_users = 2000 #2000
+batch_size = 500 #500
 
 # Method to split into batche
 def _batch_proccess(df, max_users, batch_size):
