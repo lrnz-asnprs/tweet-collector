@@ -14,6 +14,7 @@ from fake_collector.modules.user_following_collector_v2 import UserFollowingColl
 from fake_collector.modules.user_following_collector import UserFollowingCollector
 from fake_collector.modules.user_recent_tweets_collector_v2 import UserLatestTweetsCollectorV2
 from fake_collector.configs.directory_config import Directories
+from fake_collector.utils.load_fake_true_users import load_all_fake_users,load_all_true_users, load_fake_users_by_goup
 import queue
 import threading
 import time
@@ -61,33 +62,15 @@ def add_user_recent_tweets(user_queue, app_type, recent_tweets):
             error_users.append(user)
 
 
-# Directories add path name!
-directories = Directories()
-path = directories.USERS_PATH / "true_users"
-
-# Load the user profiles
-filename = "true_users.pickle"
-with open(path / filename, "rb") as f:
-    users_loaded = pickle.load(f)
-
-# Just transform for saving as df
-users_dict = {id : users_loaded.get(id).get_user_as_dict() for id in users_loaded.keys()}
-
-# Load users as df
-users_df = pd.DataFrame.from_dict(users_dict.values())
-users_df.head()
-
-# Add the labeled tweet count to the user df
-users_df['labeled_tweet_count'] = users_df.apply(lambda x: len(users_loaded.get(x['user_id']).get_all_true_tweets_retweets()) + len(users_loaded.get(x['user_id']).get_all_false_tweets_retweets()), axis=1)
-# Rank users
-users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
-users_df.sort_values(by='rank', ascending=False, inplace=True)
+# Load true or fake users
+users_df = load_all_fake_users()
+# users_df = load_all_true_users()
 
 # Split into batches
 start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
-max_users = 100 #2000
+max_users = 2000 #2000
 batch_size = 100 #500
 
 def _batch_proccess(df, max_users, batch_size):
