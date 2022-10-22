@@ -12,6 +12,7 @@ from multiprocessing import Process
 from fake_collector.modules.user_profile_collector import UserProfileCollector
 from fake_collector.modules.user_following_collector_v2 import UserFollowingCollectorV2
 from fake_collector.modules.user_following_collector import UserFollowingCollector
+from fake_collector.utils.load_fake_true_users import load_all_true_users, load_all_fake_users, load_fake_users_by_goup
 import queue
 import threading
 import time
@@ -40,31 +41,14 @@ def add_user_friends_ids(user_queue, app_type):
         user_counter += 1
         print("User count: ", user_counter)
 
-# Directories add path name!
-directories = Directories()
-path = directories.USERS_PATH / "true_users"
 
-# Load the user profiles
-filename = "true_users.pickle"
-with open(path / filename, "rb") as f:
-    users_loaded = pickle.load(f)
-
-# Just transform for saving as df
-users_dict = {id : users_loaded.get(id).get_user_as_dict() for id in users_loaded.keys()}
-
-# Load users as df
-users_df = pd.DataFrame.from_dict(users_dict.values())
-users_df.head()
-
-# Add the labeled tweet count to the user df
-users_df['labeled_tweet_count'] = users_df.apply(lambda x: len(users_loaded.get(x['user_id']).get_all_true_tweets_retweets()) + len(users_loaded.get(x['user_id']).get_all_false_tweets_retweets()), axis=1)
-# Rank users
-users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
-users_df.sort_values(by='rank', ascending=False, inplace=True)
+# Load true or fake users
+# users_df = load_all_true_users()
+users_df = load_all_fake_users()
 
 
 ############################# ADJUST HERE #########################
-start_from_index = 2000
+start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
 # Split into batches 
