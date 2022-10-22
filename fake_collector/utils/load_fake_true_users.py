@@ -9,8 +9,11 @@ directory = Directories()
 
 
 def load_true_or_fake_df(users: str):
-    """
+    """Get either fake users or true users as a dataframe 
+
     :param users: true or fake as string
+
+    Returns: fake or true users dataframes
     """
     if users == 'true':
         return load_all_true_users_df()
@@ -18,16 +21,19 @@ def load_true_or_fake_df(users: str):
         return load_all_fake_users_df()
 
 def load_true_or_fake_dict(users: str):
-    """
+    """Loads the true or fake users as a dictionary
+    True users: {"user_id" : twitter user object}
+    Fake users: {'user_id" : {'user_object' : twitter user object, 'fake_group' : whether this user is in low,med,high fake group}}
+
     :param users: true or fake as string
     """
     if users == 'true':
-        return load_all_true_users_dict()
+        return load_all_true_users()
     elif users == 'fake':
         return load_all_fake_users_dict()
 
 
-def load_all_true_users_dict():
+def load_all_true_users():
     # Directories add path name!
     path = directory.USERS_PATH / "true_users"
 
@@ -53,14 +59,16 @@ def load_all_fake_users_dict():
         # Loop through those fake users
         for user_id in fake_users_loaded.get(fake_group).keys():
             # Add them to dict
-            users_dict[user_id] = fake_users_loaded.get(fake_group).get(user_id).get_user_as_dict()
+            users_dict[user_id] = {"user_object" : fake_users_loaded.get(fake_group).get(user_id)}
             users_dict.get(user_id)['fake_group'] = fake_group
 
     return users_dict
 
 
 def load_all_fake_users_df():
-
+    """Loads the fake users as a dataframe including the info about which fake group they belong to
+    
+    """
     fake_users_path = directory.USERS_PATH / "fake_users"
 
     with open(fake_users_path / "fake_users.pickle", "rb") as f:
@@ -86,7 +94,8 @@ def load_all_fake_users_df():
 
 
 def load_fake_users_by_goup_df(fake_group: str):
-    """
+    """Loads the users as dataframe belonging to the respective fake group
+
     :param group: very_low, low, medium, high, very_high
     """
     fake_users_path = directory.USERS_PATH / "fake_users"
@@ -110,7 +119,9 @@ def load_fake_users_by_goup_df(fake_group: str):
 
 
 def load_all_true_users_df():
-
+    """
+    Loads all true users as a dataframe
+    """
     # Directories add path name!
     path = directory.USERS_PATH / "true_users"
 

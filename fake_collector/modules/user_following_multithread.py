@@ -53,7 +53,7 @@ start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
 # Split into batches 
-max_users = 6 #2000
+max_users = 4 #2000
 batch_size = 2 #500
 
 # Method to split into batche
@@ -74,11 +74,8 @@ for batch in batches:
     if true_or_fake == 'true':
         to_process = [users_loaded.get(user_id) for user_id in batch['user_id']]
     elif true_or_fake == 'fake':
-        for key in batch['user_id']:
-            for group in users_loaded.keys():
-                if key in users_loaded.get(group).keys():
-                    # Add twitter user to list
-                    to_process.append(users_loaded.get(group).get(key))
+        to_process = [users_loaded.get(user_id)['user_object'] for user_id in batch['user_id']]
+
 
     user_queue = queue.Queue()
 
