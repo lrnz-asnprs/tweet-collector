@@ -24,10 +24,6 @@
 # outputs some specifics about host etc.
 echo "User: $(whoami)"
 echo "Ran on $(hostname):" # showing which node it is running on
-
-today=$(date+'%d-%m')
-#SBATCH --output=sbatch_outputs/recent_tweets.%J.$(today).out            # Name of output file (%j expands to jobId)
-
 echo "start_time: $(date)"
 
 # -----------------------------------------------------------------------------------------------------------------
