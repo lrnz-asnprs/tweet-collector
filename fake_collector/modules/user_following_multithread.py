@@ -43,7 +43,7 @@ def add_user_friends_ids(user_queue, app_type):
 
 
 # Load true or fake users
-true_or_fake = "true"
+true_or_fake = "fake"
 
 users_df = load_true_or_fake_df(users=true_or_fake)
 users_loaded = load_true_or_fake_dict(users=true_or_fake)
@@ -53,8 +53,8 @@ start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
 # Split into batches 
-max_users = 2 #2000
-batch_size = 1 #500
+max_users = 2000 #2000
+batch_size = 500 #500
 
 # Method to split into batche
 def _batch_proccess(df, max_users, batch_size):
