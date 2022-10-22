@@ -53,8 +53,8 @@ start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
 # Split into batches 
-max_users = 2000 #2000
-batch_size = 500 #500
+max_users = 6 #2000
+batch_size = 2 #500
 
 # Method to split into batche
 def _batch_proccess(df, max_users, batch_size):
@@ -103,7 +103,7 @@ for batch in batches:
     directories = Directories()
     path = directories.USERS_PATH / f"{true_or_fake}_users"
 
-    filename = f"{true_or_fake}_users_following_ids_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
+    filename = f"{true_or_fake}_users_following/{true_or_fake}_users_following_ids_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
 
     with open(path / filename, "wb") as f:
         pickle.dump(fetched_users, f)

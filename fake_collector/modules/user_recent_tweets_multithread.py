@@ -72,8 +72,8 @@ users_df = load_true_or_fake_df(users=true_or_fake)
 start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
-max_users = 2000 #2000
-batch_size = 100 #500
+max_users = 1000 
+batch_size = 100 
 
 def _batch_proccess(df, max_users, batch_size):
     for ndx in range(0, max_users, batch_size):
@@ -131,5 +131,4 @@ for batch in batches:
                     f.write("%s\n" % item)
     except:
         print("Coulndt write file")
-
 

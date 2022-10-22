@@ -58,11 +58,11 @@ sbatch your_file.job
 ```
 
 
-### Notes on Jobs Run
+### Stopping a Job that is currently running
 
-#### Recent Tweets
-- No files yet - failed run
+```bash
+scancel insert_job_number
+```
 
-#### Users followings
-- Slurm Job_id=85401 Name=users_following Ended, Run time 07:31:50, COMPLETED, ExitCode 0
+This is used to cancel a pending or running job or job step. It can also be used to send an arbitrary signal to all processes associated with a running job or job step.
 
