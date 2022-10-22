@@ -52,7 +52,7 @@ class UserLatestTweetsCollectorV2:
 
         recent_tweets = []
 
-        sleeping_counter = 0
+        request_counter = 0
 
         while True:
             time.sleep(1)
@@ -89,8 +89,12 @@ class UserLatestTweetsCollectorV2:
                 tweets = []
             
             # Add tweets to users tweet list
-            # user.add_recent_tweets(tweets)
             recent_tweets = recent_tweets + tweets
+
+            request_counter += 1
+            # If we have 1000 tweets, then stop
+            if request_counter == 10:
+                break
 
             try:
                 next_token = response_json['meta']['next_token']
@@ -99,7 +103,6 @@ class UserLatestTweetsCollectorV2:
                 next_token = None
                 query_params['pagination_token'] = next_token
                 break
-        
         
         return recent_tweets
 
