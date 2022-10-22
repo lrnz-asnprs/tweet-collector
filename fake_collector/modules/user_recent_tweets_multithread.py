@@ -22,6 +22,7 @@ import pandas as pd
 import time
 
 user_counter = 0
+error_users = []
 
 def add_user_recent_tweets(user_queue, app_type, recent_tweets):
     """
@@ -31,24 +32,33 @@ def add_user_recent_tweets(user_queue, app_type, recent_tweets):
     print("In worker ", app_type)
 
     while True:
+        
+        try:
 
-        user = user_queue.get()
-        user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
-        recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
-        if recent_tweets_user == -1:
-            print(f"Close worker {app_type} due to rate limit")
-            # put failed user back on the queue
-            user_queue.put(user)
+            user = user_queue.get()
+            user_recent_tweets_collector = UserLatestTweetsCollectorV2(app_type=app_type)
+            recent_tweets_user = user_recent_tweets_collector.get_user_timeline(user_id=user)
+            if recent_tweets_user == -1:
+                print(f"Close worker {app_type} due to rate limit")
+                # put failed user back on the queue
+                user_queue.put(user)
+                user_queue.task_done()
+                return
+            recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
             user_queue.task_done()
-            return
-        recent_tweets[user] = recent_tweets.get(user) + recent_tweets_user
-        user_queue.task_done()
 
-        # Change global user counter var
-        global user_counter
-        user_counter += 1
-        print("User done ", user)
-        print("User count: ", user_counter)
+            # Change global user counter var
+            global user_counter
+            user_counter += 1
+            print("User done ", user)
+            print("User count: ", user_counter)
+        
+        except:
+
+            print("ERROR with user: ", user)
+            user_queue.task_done()
+            global error_users
+            error_users.append(user)
 
 
 # Directories add path name!
@@ -94,13 +104,13 @@ for batch in batches:
 
     batch_user_ids = set(batch['user_id'])
 
+
     # Create dict for recent tweets
     recent_tweets = {user_id : [] for user_id in batch_user_ids}
-
+    
     user_queue = queue.Queue()
 
-    # for app_type in ['laai_elevated', 'laai_academic', 'gugy_academic', 'gugy_elevated', 'luca_academic', 'luca_elevated']:
-    for app_type in ['laai_academic']:
+    for app_type in ['laai_elevated', 'laai_academic', 'gugy_academic', 'gugy_elevated', 'luca_academic', 'luca_elevated']:
         worker = threading.Thread(target=add_user_recent_tweets, args=(user_queue, app_type, recent_tweets), daemon=True)
         worker.start()
 
@@ -125,3 +135,13 @@ for batch in batches:
     # DOne
     end = time.time()
     print(f"############ Took {(end-start)/60} minutes #################")
+
+    try:
+        with open(path / f"error_users_{start_from_index-len(batch)}_to_{start_from_index}", "w") as f:
+            for item in error_users:
+                # write each item on a new line
+                f.write("%s\n" % item)
+    except:
+        print("Coulndt write file")
+
+
