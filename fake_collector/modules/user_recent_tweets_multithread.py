@@ -14,7 +14,7 @@ from fake_collector.modules.user_following_collector_v2 import UserFollowingColl
 from fake_collector.modules.user_following_collector import UserFollowingCollector
 from fake_collector.modules.user_recent_tweets_collector_v2 import UserLatestTweetsCollectorV2
 from fake_collector.configs.directory_config import Directories
-from fake_collector.utils.load_fake_true_users import load_all_fake_users,load_all_true_users, load_fake_users_by_goup
+from fake_collector.utils.load_fake_true_users import load_all_true_users_df,load_all_fake_users_df, load_fake_users_by_goup_df, load_true_or_fake_df
 import queue
 import threading
 import time
@@ -63,15 +63,17 @@ def add_user_recent_tweets(user_queue, app_type, recent_tweets):
 
 
 # Load true or fake users
-users_df = load_all_fake_users()
+true_or_fake = "fake"
+
+users_df = load_true_or_fake_df(users=true_or_fake)
 # users_df = load_all_true_users()
 
 # Split into batches
 start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
-max_users = 2000 #2000
-batch_size = 100 #500
+max_users = 2 #2000
+batch_size = 1 #500
 
 def _batch_proccess(df, max_users, batch_size):
     for ndx in range(0, max_users, batch_size):
@@ -86,7 +88,6 @@ for batch in batches:
     start = time.time()
 
     batch_user_ids = set(batch['user_id'])
-
 
     # Create dict for recent tweets
     recent_tweets = {user_id : [] for user_id in batch_user_ids}
@@ -105,9 +106,12 @@ for batch in batches:
     user_queue.join()
 
     print("Save user")
-    # Save file in recent tweets directory
 
-    filename = f"true_users_recent_tweets/true_users_recent_tweets_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
+    # Save file in recent tweets directory
+    directories = Directories()
+    path = directories.USERS_PATH / f"{true_or_fake}_users"
+
+    filename = f"{true_or_fake}_users_recent_tweets/{true_or_fake}_users_recent_tweets_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
 
     with open(path / filename, "wb") as f:
         pickle.dump(recent_tweets, f)
@@ -120,10 +124,11 @@ for batch in batches:
     print(f"############ Took {(end-start)/60} minutes #################")
 
     try:
-        with open(path / f"error_users_{start_from_index-len(batch)}_to_{start_from_index}", "w") as f:
-            for item in error_users:
-                # write each item on a new line
-                f.write("%s\n" % item)
+        if len(error_users) > 0:
+            with open(path / f"error_users_{start_from_index-len(batch)}_to_{start_from_index}", "w") as f:
+                for item in error_users:
+                    # write each item on a new line
+                    f.write("%s\n" % item)
     except:
         print("Coulndt write file")
 

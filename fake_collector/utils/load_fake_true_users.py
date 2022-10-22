@@ -8,7 +8,58 @@ from fake_collector.configs.directory_config import Directories
 directory = Directories()
 
 
-def load_all_fake_users():
+def load_true_or_fake_df(users: str):
+    """
+    :param users: true or fake as string
+    """
+    if users == 'true':
+        return load_all_true_users_df()
+    elif users == 'fake':
+        return load_all_fake_users_df()
+
+def load_true_or_fake_dict(users: str):
+    """
+    :param users: true or fake as string
+    """
+    if users == 'true':
+        return load_all_true_users_dict()
+    elif users == 'fake':
+        return load_all_fake_users_dict()
+
+
+def load_all_true_users_dict():
+    # Directories add path name!
+    path = directory.USERS_PATH / "true_users"
+
+    # Load the user profiles
+    filename = "true_users.pickle"
+    with open(path / filename, "rb") as f:
+        users_loaded = pickle.load(f)
+
+    return users_loaded
+
+
+def load_all_fake_users_dict():
+
+    fake_users_path = directory.USERS_PATH / "fake_users"
+
+    with open(fake_users_path / "fake_users.pickle", "rb") as f:
+        fake_users_loaded = pickle.load(f)
+
+    # Put fake users into dict
+    users_dict = {}
+
+    for fake_group in fake_users_loaded.keys():
+        # Loop through those fake users
+        for user_id in fake_users_loaded.get(fake_group).keys():
+            # Add them to dict
+            users_dict[user_id] = fake_users_loaded.get(fake_group).get(user_id).get_user_as_dict()
+            users_dict.get(user_id)['fake_group'] = fake_group
+
+    return users_dict
+
+
+def load_all_fake_users_df():
 
     fake_users_path = directory.USERS_PATH / "fake_users"
 
@@ -34,7 +85,7 @@ def load_all_fake_users():
     return users_dict_df
 
 
-def load_fake_users_by_goup(fake_group: str):
+def load_fake_users_by_goup_df(fake_group: str):
     """
     :param group: very_low, low, medium, high, very_high
     """
@@ -58,7 +109,7 @@ def load_fake_users_by_goup(fake_group: str):
     return users_df
 
 
-def load_all_true_users():
+def load_all_true_users_df():
 
     # Directories add path name!
     path = directory.USERS_PATH / "true_users"

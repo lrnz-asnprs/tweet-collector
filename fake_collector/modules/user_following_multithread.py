@@ -12,7 +12,7 @@ from multiprocessing import Process
 from fake_collector.modules.user_profile_collector import UserProfileCollector
 from fake_collector.modules.user_following_collector_v2 import UserFollowingCollectorV2
 from fake_collector.modules.user_following_collector import UserFollowingCollector
-from fake_collector.utils.load_fake_true_users import load_all_true_users, load_all_fake_users, load_fake_users_by_goup
+from fake_collector.utils.load_fake_true_users import load_true_or_fake_df,load_fake_users_by_goup_df, load_all_fake_users_df,load_all_true_users_df,load_true_or_fake_dict
 import queue
 import threading
 import time
@@ -43,17 +43,18 @@ def add_user_friends_ids(user_queue, app_type):
 
 
 # Load true or fake users
-# users_df = load_all_true_users()
-users_df = load_all_fake_users()
+true_or_fake = "true"
 
+users_df = load_true_or_fake_df(users=true_or_fake)
+users_loaded = load_true_or_fake_dict(users=true_or_fake)
 
 ############################# ADJUST HERE #########################
 start_from_index = 0
 users_df = users_df.iloc[start_from_index:]
 
 # Split into batches 
-max_users = 2000 #2000
-batch_size = 500 #500
+max_users = 2 #2000
+batch_size = 1 #500
 
 # Method to split into batche
 def _batch_proccess(df, max_users, batch_size):
@@ -68,8 +69,16 @@ for batch in batches:
 
     start = time.time()
 
+    to_process = []
     # Select users from batch
-    to_process = [users_loaded.get(user_id) for user_id in batch['user_id']]
+    if true_or_fake == 'true':
+        to_process = [users_loaded.get(user_id) for user_id in batch['user_id']]
+    elif true_or_fake == 'fake':
+        for key in batch['user_id']:
+            for group in users_loaded.keys():
+                if key in users_loaded.get(group).keys():
+                    # Add twitter user to list
+                    to_process.append(users_loaded.get(group).get(key))
 
     user_queue = queue.Queue()
 
@@ -85,16 +94,19 @@ for batch in batches:
     user_queue.join()
 
     # Done, save
-    true_users = {}
+    fetched_users = {}
     for user in to_process:
-        true_users[user.user_id] = user
+        fetched_users[user.user_id] = user
 
     print("Save user")
     # Save file in true users directory
-    filename = f"true_users_following_ids_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
+    directories = Directories()
+    path = directories.USERS_PATH / f"{true_or_fake}_users"
+
+    filename = f"{true_or_fake}_users_following_ids_{start_from_index}_to_{start_from_index+len(batch)}.pickle"
 
     with open(path / filename, "wb") as f:
-        pickle.dump(true_users, f)
+        pickle.dump(fetched_users, f)
 
     # Increment
     start_from_index = start_from_index + len(batch)
