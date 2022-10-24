@@ -69,10 +69,10 @@ users_df = load_true_or_fake_df(users=true_or_fake)
 # users_df = load_all_true_users()
 
 # Split into batches
-start_from_index = 0
+start_from_index = 5000
 users_df = users_df.iloc[start_from_index:]
 
-max_users = 1000 
+max_users = 5000 
 batch_size = 100 
 
 def _batch_proccess(df, max_users, batch_size):
