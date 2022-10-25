@@ -1,0 +1,312 @@
+User: gugy
+Ran on desktop18:
+start_time: Tue Oct 25 10:01:42 CEST 2022
+stdin: is not a tty
+In worker In worker   laai_academicgugy_academicIn worker 
+
+In worker   Adding userluca_academic 580392600
+Adding user 551189419
+luca_elevatedAdding user
+
+ 42640272
+Adding user 865569868141264897
+Adding user 959662031077978112
+Adding user 298272742
+Adding user 736183905276071936
+Adding user 369246223
+Adding user 858173876
+Adding user 129008358
+Adding user 870670477
+Adding user 39406312
+Adding user 69608224
+Adding user 84791510
+Adding user 517961389
+Adding user 1024142564
+Adding user 557083854
+Adding user 979068289
+Adding user 3317452003
+Adding user 22645697
+Adding user 61203833
+Adding user 424485775
+Adding user 1031416974
+Adding user 90657526
+Adding user 712693887991566338
+Adding user 35936864
+Adding user 16102059
+Adding user 78815813
+Adding user 121490412
+Adding user 14682750
+Adding user 351649757
+Adding user 27908774
+Adding user 820050311247253504
+Adding user 1043552384
+Adding user 58594493
+Adding user 949039423471210498
+Adding user 2239556028
+Adding user 81866750
+Adding user 2784889818
+Adding user 623134502
+Adding user 7208242
+Adding user 83175752
+Adding user 432230944
+Adding user 314468797
+Adding user 335743589
+Adding user 147475725
+Adding user 860834695
+Adding user 796782812032417792
+Adding user 622461640
+Adding user 1209994700
+Adding user 219913524
+Adding user 433295583
+Adding user 3195689265
+Adding user 950835234
+Adding user 85080615
+Adding user 543972287
+Adding user 4078092935
+Adding user 304749377
+Adding user 111661883
+Adding user 2364367428
+Adding user 1245661108238569473
+Adding user 1147170085863378944
+Adding user 826515134281572352
+Adding user 63964199
+Adding user 830122476
+Adding user 394231278
+Adding user 18884389
+Adding user 73502819
+Adding user 897797426
+Adding user 1304239963463012353
+Adding user 360110392
+Adding user 1205791842
+Adding user 17503811
+Adding user 32352896
+Adding user 2794836329
+Adding user 2691378734
+Adding user 13708922
+Adding user 20754187
+Adding user 929536924074893312
+Adding user 889874658857766912
+Adding user 1404757597
+Adding user 399837603
+Adding user 262645727
+Adding user 100999703
+Adding user 14084825
+Adding user 58422071
+Adding user 623013028
+Adding user 825149401467346944
+Adding user 17622465
+Adding user 789638194727837696
+Adding user 27397174
+Adding user 44551516
+Adding user 47818452
+Adding user 32984890
+Adding user 1653895447
+Adding user 191906831
+Adding user 34980279
+Adding user 26116426
+Adding user 533270802
+Adding user 720852348
+laai_academic app - trying user 551189419gugy_academic app - trying user 42640272
+
+luca_academic app - trying user 580392600
+luca_elevated app - trying user 865569868141264897
+Usage cap exceeded in  luca_elevated
+Close worker luca_elevated due to rate limit
+User done  551189419
+User count:  1
+laai_academic app - trying user 959662031077978112
+User done  42640272
+User count:  2
+gugy_academic app - trying user 298272742
+User done  580392600
+User count:  3
+luca_academic app - trying user 736183905276071936
+User done  736183905276071936
+User count:  4
+luca_academic app - trying user 369246223
+User done  959662031077978112
+User count:  5
+laai_academic app - trying user 858173876
+User done  298272742
+User count:  6
+gugy_academic app - trying user 129008358
+User done  369246223
+User count:  7
+luca_academic app - trying user 870670477
+User done  858173876
+User count:  8
+laai_academic app - trying user 39406312
+User done  129008358
+User count:  9
+gugy_academic app - trying user 69608224
+User done  870670477
+User count:  10
+luca_academic app - trying user 84791510
+User done  39406312
+User count:  11
+laai_academic app - trying user 517961389
+User done  69608224
+User count:  12
+gugy_academic app - trying user 1024142564
+User done  84791510
+User count:  13
+luca_academic app - trying user 557083854
+User done  517961389
+User count:  14
+laai_academic app - trying user 979068289
+User done  1024142564
+User count:  15
+gugy_academic app - trying user 3317452003
+User done  557083854
+User count:  16
+luca_academic app - trying user 22645697
+User done  979068289
+User count:  17
+laai_academic app - trying user 61203833
+User done  3317452003
+User count:  18
+gugy_academic app - trying user 424485775
+User done  61203833
+User count:  19
+laai_academic app - trying user 1031416974
+User done  424485775
+User count:  20
+gugy_academic app - trying user 90657526
+User done  22645697
+User count:  21
+luca_academic app - trying user 712693887991566338
+User done  1031416974
+User count:  22
+laai_academic app - trying user 35936864
+User done  90657526
+User count:  23
+gugy_academic app - trying user 16102059
+User done  712693887991566338
+User count:  24
+luca_academic app - trying user 78815813
+User done  16102059
+User count:  25
+gugy_academic app - trying user 121490412
+User done  35936864
+User count:  26
+laai_academic app - trying user 14682750
+User done  78815813
+User count:  27
+luca_academic app - trying user 351649757
+User done  121490412
+User count:  28
+gugy_academic app - trying user 27908774
+User done  14682750
+User count:  29
+laai_academic app - trying user 820050311247253504
+User done  351649757
+User count:  30
+luca_academic app - trying user 1043552384
+User done  27908774
+User count:  31
+gugy_academic app - trying user 58594493
+User done  820050311247253504
+User count:  32
+laai_academic app - trying user 949039423471210498
+User done  1043552384
+User count:  33
+luca_academic app - trying user 2239556028
+User done  58594493
+User count:  34
+gugy_academic app - trying user 81866750
+User done  949039423471210498
+User count:  35
+laai_academic app - trying user 2784889818
+User done  2239556028
+User count:  36
+luca_academic app - trying user 623134502
+User done  2784889818
+User count:  37
+laai_academic app - trying user 7208242
+User done  81866750
+User count:  38
+gugy_academic app - trying user 83175752
+User done  623134502
+User count:  39
+luca_academic app - trying user 432230944
+User done  83175752
+User count:  40
+gugy_academic app - trying user 314468797
+User done  7208242
+User count:  41
+laai_academic app - trying user 335743589
+User done  432230944
+User count:  42
+luca_academic app - trying user 147475725
+User done  314468797
+User count:  43
+gugy_academic app - trying user 860834695
+User done  335743589
+User count:  44
+laai_academic app - trying user 796782812032417792
+User done  147475725
+User count:  45
+luca_academic app - trying user 622461640
+User done  860834695
+User count:  46
+gugy_academic app - trying user 1209994700
+User done  622461640
+User count:  47
+luca_academic app - trying user 219913524
+User done  796782812032417792
+User count:  48
+laai_academic app - trying user 433295583
+User done  1209994700
+User count:  49
+gugy_academic app - trying user 3195689265
+User done  219913524
+User count:  50
+luca_academic app - trying user 950835234
+User done  433295583
+User count:  51
+laai_academic app - trying user 85080615
+User done  3195689265
+User count:  52
+gugy_academic app - trying user 543972287
+User done  950835234
+User count:  53
+luca_academic app - trying user 4078092935
+User done  85080615
+User count:  54
+laai_academic app - trying user 304749377
+User done  543972287
+User count:  55
+gugy_academic app - trying user 111661883
+User done  4078092935
+User count:  56
+luca_academic app - trying user 2364367428
+User done  304749377
+User count:  57
+laai_academic app - trying user 1245661108238569473
+User done  111661883
+User count:  58
+gugy_academic app - trying user 1147170085863378944
+User done  2364367428
+User count:  59
+luca_academic app - trying user 826515134281572352
+User done  1245661108238569473
+User count:  60
+laai_academic app - trying user 63964199
+User done  1147170085863378944
+User count:  61
+gugy_academic app - trying user 830122476
+User done  826515134281572352
+User count:  62
+luca_academic app - trying user 394231278
+User done  63964199
+User count:  63
+laai_academic app - trying user 18884389
+User done  830122476
+User count:  64
+gugy_academic app - trying user 73502819
+User done  394231278
+User count:  65
+luca_academic app - trying user 897797426
+User done  18884389
+User count:  66
+laai_academic app - trying user 1304239963463012353
