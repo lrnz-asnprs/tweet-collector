@@ -69,10 +69,10 @@ users_df = load_true_or_fake_df(users=true_or_fake)
 # users_df = load_all_true_users()
 
 # Split into batches
-start_from_index = 5000
+start_from_index = 7900
 users_df = users_df.iloc[start_from_index:]
 
-max_users = 5000 
+max_users = 2000 
 batch_size = 100 
 
 def _batch_proccess(df, max_users, batch_size):
@@ -94,7 +94,7 @@ for batch in batches:
     
     user_queue = queue.Queue()
 
-    for app_type in ['laai_elevated', 'laai_academic', 'gugy_academic', 'gugy_elevated', 'luca_academic', 'luca_elevated']:
+    for app_type in ['laai_academic', 'gugy_academic', 'luca_academic', 'luca_elevated']:
         worker = threading.Thread(target=add_user_recent_tweets, args=(user_queue, app_type, recent_tweets), daemon=True)
         worker.start()
 

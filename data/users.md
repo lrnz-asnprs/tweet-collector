@@ -27,6 +27,8 @@ TRUE USERS
 FAKE USERS
 - Slurm Job_id=85601 Name=recent_tweets Ended, Run time 01:10:02, COMPLETED, ExitCode 0 (indexes 0-1000 - Fake Users - 22-10-22)
 - Slurm Job_id=85681 Name=recent_tweets Ended, Run time 06:07:00, COMPLETED, ExitCode 0 (indexes 1000-5000 Fake Users - 23-10-22)
+- Slurm Job_id=85802 Name=recent_tweets Ended, Run time 22:47:16, CANCELLED, ExitCode 0 (indexes 5000-7900 - got stuck at user 2998 Thus fetching forward to index 7900 not getting the last 100 in that batch)
+
 
 
 #### Notes

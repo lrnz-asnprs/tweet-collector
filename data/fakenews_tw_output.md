@@ -142,4 +142,3 @@ This run comprise 4 < fn.sample.words_in_claim <= 7
 - The reason was found and revealed in the 5to8_descrepancy.ipynb notebook. showing that the original nodub-1210 somehow included some files on less than 5 words (fn.sample.words_in_claim<5). Seemingly from the initial fetch of 5000 quotes. Here where 93 quotes with less than 5 words that somehow got in.
 - Thus the new file folder of nodub_take_off_1210_5to8 is the purest and doesn't contain such files.
 
-
