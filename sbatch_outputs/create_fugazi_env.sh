@@ -10,12 +10,8 @@ module load Anaconda3/2021.05
 # init conda in the bash
 conda init bash
 
-
 # Go to the tweet_collector directory where files environment.yml and requirement.txt are located
-cd tweet-collector/
 
 # Create the fugazi environment
 conda create -n fugazi environment.yml
 
-
-echo "let's go motherfuckers! - did it work? - otherwise give me a call - Gustav"
