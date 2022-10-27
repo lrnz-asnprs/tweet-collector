@@ -1,5 +1,6 @@
 data/fakenews_tw_output
 data/users/*
+data/tweets/*
 tokens.json
 *.pyc
 .DS_Store
