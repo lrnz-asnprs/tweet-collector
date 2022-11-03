@@ -1,0 +1,7 @@
+{
+    "meta":{
+        "govtrack": "GovTrack.us tracks the United States Congress and helps Americans participate in their national legislature. We publish the status of federal legislation, information about your representative and senators in Congress including voting records, and original research on legislation. We’re one of the oldest government transparency websites in the world.",
+        "ideology_measure":"The ideology analysis assigns a left–right score to each Member of Congress based on their pattern of cosponsorship. The left–right score reflects the dominant ideological difference or differences among Members of Congress, which changes over time. In a nutshell, Members of Congress who cosponsor similar sets of bills will get scores close together, while Members of Congress who sponsor different sets of bills will have scores far apart. Members of Congress with similar political views will tend to cosponsor the same set of bills, or bills by the same set of authors, and inversely Members of Congress with different political views will tend to cosponsor different bills. You can find this analysis on the pages for current Members of Congress and in the charts to the right which plot the ideology score on the horizontal axis and the leadership score on the vertical axis.",
+        "urls":["https://www.govtrack.us/about", "https://www.govtrack.us/about/analysis#ideology", "https://www.govtrack.us/data/analysis/by-congress/117/"]
+        }
+}
