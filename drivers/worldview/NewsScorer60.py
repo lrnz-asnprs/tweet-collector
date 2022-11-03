@@ -3,7 +3,7 @@ import pickle, os, re
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
-class NewsScorer():
+class NewsScorer60():
     
     def __init__(self):
         """ 
