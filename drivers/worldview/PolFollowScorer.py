@@ -16,7 +16,7 @@ class PolFollowScorer():
             self.directory = self.dir.TRUE_USERS_FOLLOWING_PATH
         
         
-        self.politicians = self.__read_politicians(dir.DATA_PATH / "legislators", "legislators-current-twIDs.csv")
+        self.politicians = self.__read_politicians(dir.DATA_PATH / "legislators", "legislators527_twitterid_ideology.csv")
         self.politicians_twitter_ids = self.__read_politicians_ids(dir.DATA_PATH / "legislators", "legislators-current-twIDs.csv")
         self.users_politicians_followed = {}
     
@@ -33,7 +33,7 @@ class PolFollowScorer():
         self.politicians = {}
         for row in pd.read_csv(path / filename).iterrows():
             row = row[-1]
-            self.politicians[row['twitter_ids']] = [row.full_name, row.last_name, row.party, row.gender, row.state, row.type]
+            self.politicians[row['twitter_id']] = [row.full_name, row.ideology, row.leadership, row.description, row.party, row.gender, row.state, row.type]
         
         return self.politicians
         

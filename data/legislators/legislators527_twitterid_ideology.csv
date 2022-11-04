@@ -1,0 +1,528 @@
+1,twitter_id,full_name,political_party,gender,state,type,ideology,leadership,name,party,description,introduced_bills_117,cosponsored_bills_117,unique_cosponsors_117,total_cosponsors_117
+400050,43910797,Sherrod Brown,Democrat,M,OH,sen,0.1349708912284275,0.7782556635536014,Brown,Democrat,progressive Democratic leader,85,554,92,825
+300018,117501995,Maria Cantwell,Democrat,F,WA,sen,0.2837643797536284,0.4452119400702726,Cantwell,Democrat,rank-and-file Democrat,30,225,79,206
+400064,109071031,Benjamin L. Cardin,Democrat,M,MD,sen,0.2416531315545072,0.871564895633995,Cardin,Democrat,moderate Democratic leader,77,459,91,657
+300019,249787913,Thomas R. Carper,Democrat,M,DE,sen,0.3259581882955914,0.4106950724485618,Carper,Democrat,moderate Democratic follower,28,244,71,160
+412246,171598736,"Robert P. Casey, Jr.",Democrat,M,PA,sen,0.259964107923627,0.714778266738424,Casey,Democrat,rank-and-file Democrat,118,503,85,799
+300043,476256944,Dianne Feinstein,Democrat,F,CA,sen,0.2034943905341122,0.7161930134827684,Feinstein,Democrat,moderate Democratic leader,79,626,86,586
+412242,22044727,Amy Klobuchar,Democrat,F,MN,sen,0.2007414977226105,0.8544943529271346,Klobuchar,Democrat,moderate Democratic leader,166,680,99,1038
+400272,18695134',Robert Menendez,Democrat,M,NJ,sen,0.2686266003783777,1.0,Menendez,Democrat,moderate Democratic leader,152,362,92,1291
+400357,29442313,Bernard Sanders,Independent,M,VT,sen,0.0,0.2991873202237566,Sanders,Independent,lonely left-leaning Independent,36,428,46,238
+300093,76456274,Debbie Stabenow,Democrat,F,MI,sen,0.2664396269429837,0.5937662246494273,Stabenow,Democrat,rank-and-file Democrat,50,395,99,527
+412244,515822213,Jon Tester,Democrat,M,MT,sen,0.4981731755799786,0.7041232615127575,Tester,Democrat,centrist Democrat,72,284,91,596
+412247,242555999,Sheldon Whitehouse,Democrat,M,RI,sen,0.1885307528958819,0.5513739777055824,Whitehouse,Democrat,rank-and-file Democrat,58,475,74,418
+412251,202206694,John Barrasso,Republican,M,WY,sen,0.9083208623054626,0.5439249248244454,Barrasso,Republican,conservative Republican,47,276,99,376
+400432,264219447,Roger F. Wicker,Republican,M,MS,sen,0.8560821068205344,0.6365836100173613,Wicker,Republican,moderate Republican leader,62,403,95,300
+300025,19726613,Susan M. Collins,Republican,F,ME,sen,0.5505805181312736,0.7150643908149541,Collins,Republican,centrist Republican leader,48,495,83,365
+300027,13218102,John Cornyn,Republican,M,TX,sen,0.8936231083841834,0.8768693612023644,Cornyn,Republican,moderate Republican leader,102,365,95,619
+300038,247334603,Richard J. Durbin,Democrat,M,IL,sen,0.1446293736338642,0.7653069895625025,Durbin,Democrat,progressive Democratic leader,111,578,92,733
+300047,14845376,Lindsey Graham,Republican,M,SC,sen,0.693981552647093,0.6632588112993013,Graham,Republican,centrist Republican leader,29,188,76,248
+300055,7270292,James M. Inhofe,Republican,M,OK,sen,0.973631227493872,0.4646052243435354,Inhofe,Republican,conservative Republican,31,291,69,209
+300072,339822881,Mitch McConnell,Republican,M,KY,sen,0.694979880627228,0.5077002733968118,McConnell,Republican,centrist Republican,14,92,100,208
+412325,29201047,Jeff Merkley,Democrat,M,OR,sen,0.0389387141217207,0.6342673271717908,Merkley,Democrat,progressive Democrat,83,567,76,523
+300081,486694111,Jack Reed,Democrat,M,RI,sen,0.1645218833785866,0.4879858186686773,Reed,Democrat,rank-and-file Democrat,52,317,77,297
+412322,1096059529,James E. Risch,Republican,M,ID,sen,0.8925132038549123,0.4838905572944293,Risch,Republican,rank-and-file Republican,45,320,73,286
+412323,109287731,Jeanne Shaheen,Democrat,F,NH,sen,0.3373934507528482,0.7158606364081047,Shaheen,Democrat,moderate Democratic leader,75,431,94,673
+412321,7429102,Mark R. Warner,Democrat,M,VA,sen,0.3947837263216863,0.5646608992709085,Warner,Democrat,rank-and-file Democrat,47,263,99,289
+412223,899978622416695297,Kirsten E. Gillibrand,Democrat,F,NY,sen,0.0740834258765107,0.649181000264879,Gillibrand,Democrat,progressive Democrat,77,487,92,588
+412390,15324851,Christopher A. Coons,Democrat,M,DE,sen,0.4045768422313381,0.7166837178755522,Coons,Democrat,centrist Democratic leader,70,458,92,521
+412391,234374703,"Joe Manchin, III",Democrat,M,WV,sen,0.5798140378314646,0.4687279714200719,Manchin,Democrat,centrist Democrat,48,201,78,211
+400004,76452765,Robert B. Aderholt,Republican,M,AL,rep,0.6243720559424073,0.1980243488850509,Aderholt,Republican,moderate Republican follower,1,167,5,5
+400013,1074518754,Tammy Baldwin,Democrat,F,WI,sen,0.2150371262485411,0.6418347911435022,Baldwin,Democrat,rank-and-file Democrat,56,532,79,331
+412404,239949176,Karen Bass,Democrat,F,CA,rep,0.1268994803070015,0.8364118870228585,Bass,Democrat,progressive Democratic leader,39,668,251,933
+412330,224285242,Michael F. Bennet,Democrat,M,CO,sen,0.3135355427680081,0.4030154863692922,Bennet,Democrat,moderate Democratic follower,48,357,66,137
+412250,26051676,Gus M. Bilirakis,Republican,M,FL,rep,0.700559179095495,0.6947977465761158,Bilirakis,Republican,moderate Republican leader,29,383,350,566
+400030,249410485,"Sanford D. Bishop, Jr.",Democrat,M,GA,rep,0.3284511088699861,0.2985720384773911,Bishop [GA2],Democrat,centrist Democratic follower,9,464,80,103
+400032,278145569,Marsha Blackburn,Republican,F,TN,sen,0.975011460805509,0.4210605523721223,Blackburn,Republican,conservative Republican,67,482,67,334
+400033,137823987,Earl Blumenauer,Democrat,M,OR,rep,0.0911596963793659,0.913675969542288,Blumenauer,Democrat,progressive Democratic leader,57,947,313,1365
+412490,278124059,Richard Blumenthal,Democrat,M,CT,sen,0.1009954810173347,0.6426829261804324,Blumenthal,Democrat,progressive Democrat,91,873,75,675
+400034,21269970,Roy Blunt,Republican,M,MO,sen,0.7725200951147327,0.5260504338070843,Blunt,Republican,rank-and-file Republican,26,243,60,98
+400040,5558312,John Boozman,Republican,M,AR,sen,0.8670691629468826,0.4975659536510654,Boozman,Republican,rank-and-file Republican,20,395,99,304
+400046,19926675,Kevin Brady,Republican,M,TX,rep,0.5462384066054704,0.4722646263574607,Brady,Republican,centrist Republican,12,98,122,322
+412395,237299871,Mo Brooks,Republican,M,AL,rep,0.7224694032810643,0.298682003506252,Brooks,Republican,conservative Republican,14,262,70,151
+412196,20467163,Vern Buchanan,Republican,M,FL,rep,0.5339784669674089,0.6189246147547764,Buchanan,Republican,centrist Republican leader,28,200,227,407
+412427,234812598,Larry Bucshon,Republican,M,IN,rep,0.6611066007053629,0.2696233739087122,Bucshon,Republican,rank-and-file Republican,10,228,33,34
+400052,15751083,Michael C. Burgess,Republican,M,TX,rep,0.6749653490476787,0.434972949999226,Burgess,Republican,rank-and-file Republican,43,283,115,175
+400054,21157904,Richard Burr,Republican,M,NC,sen,0.6822737243589667,0.4568959746215023,Burr,Republican,centrist Republican,22,174,87,154
+400616,432676344,G. K. Butterfield,Democrat,M,NC,rep,0.2405960015341826,0.4035844743777819,Butterfield,Democrat,moderate Democratic follower,17,352,152,231
+400057,22545491,Ken Calvert,Republican,M,CA,rep,0.6439689434105675,0.4193010172414202,Calvert,Republican,rank-and-file Republican,22,262,120,186
+400061,193794406,Shelley Moore Capito,Republican,F,WV,sen,0.7399599590479484,0.401843528775807,Capito,Republican,rank-and-file Republican,22,415,85,228
+412258,199325935,André Carson,Democrat,M,IN,rep,0.0964300342457662,0.4907066645077564,Carson,Democrat,progressive Democrat,17,1036,151,271
+400068,18030431,John R. Carter,Republican,M,TX,rep,0.5669232099442191,0.1706874279720533,Carter [TX31],Republican,moderate Republican follower,6,141,18,19
+412269,1017500185356853248,Bill Cassidy,Republican,M,LA,sen,0.794486891798029,0.5239310868130821,Cassidy,Republican,rank-and-file Republican,59,335,81,205
+412195,1880674038,Kathy Castor,Democrat,F,FL,rep,0.1688724177750247,0.8067653936319094,Castor,Democrat,moderate Democratic leader,25,476,394,758
+400071,237750442,Steve Chabot,Republican,M,OH,rep,0.6971471650381627,0.5562738811310955,Chabot,Republican,moderate Republican leader,14,260,98,125
+412379,193732179,Judy Chu,Democrat,F,CA,rep,0.1084659795055598,0.8610954522175615,Chu,Democrat,progressive Democratic leader,38,784,258,1408
+412470,462143773,David N. Cicilline,Democrat,M,RI,rep,0.1617575371495625,0.951286275196233,Cicilline,Democrat,moderate Democratic leader,42,765,281,1797
+412221,240812994,Yvette D. Clarke,Democrat,F,NY,rep,0.0921057098431057,0.7413294528529963,Clarke,Democrat,progressive Democrat,34,627,272,1047
+400639,163570705,Emanuel Cleaver,Democrat,M,MO,rep,0.1888614211078316,0.5843078097179685,Cleaver,Democrat,rank-and-file Democrat,24,529,150,245
+400075,188019606,James E. Clyburn,Democrat,M,SC,rep,0.2535764484221429,0.6337103012750281,Clyburn,Democrat,rank-and-file Democrat,17,69,200,364
+412236,162069635,Steve Cohen,Democrat,M,TN,rep,0.1445563365020191,0.8075915338667045,Cohen,Democrat,progressive Democratic leader,71,1071,293,975
+400077,23124635,Tom Cole,Republican,M,OK,rep,0.6690994268999944,0.3327434864581821,Cole,Republican,rank-and-file Republican,12,341,105,142
+412272,78445977,Gerald E. Connolly,Democrat,M,VA,rep,0.1887318910473931,0.8348725445951979,Connolly,Democrat,moderate Democratic leader,56,611,319,1050
+400081,22523087,Jim Cooper,Democrat,M,TN,rep,0.2343589276360434,0.231080203117458,Cooper,Democrat,moderate Democratic follower,10,475,61,66
+400618,245451804,Jim Costa,Democrat,M,CA,rep,0.3412576197960315,0.3406460763493464,Costa,Democrat,centrist Democratic follower,23,562,116,181
+412193,85396297,Joe Courtney,Democrat,M,CT,rep,0.2771668667680326,0.7818034603694167,Courtney,Democrat,moderate Democratic leader,23,325,218,408
+300030,600463589,Mike Crapo,Republican,M,ID,sen,0.8770279680822568,0.5443660497999359,Crapo,Republican,rank-and-file Republican,21,273,92,297
+412400,233693291,"Eric A. ""Rick"" Crawford",Republican,M,AR,rep,0.767305084921798,0.3174689382645282,Crawford,Republican,conservative Republican,16,333,70,108
+400657,210926192,Henry Cuellar,Democrat,M,TX,rep,0.4894114460254156,0.3542283491525909,Cuellar,Democrat,centrist Democratic follower,11,284,139,164
+400093,789244177,Danny K. Davis,Democrat,M,IL,rep,0.136540088374463,0.7023291755917362,Davis [IL7],Democrat,progressive Democrat,41,667,302,618
+400100,252249233,Peter A. DeFazio,Democrat,M,OR,rep,0.2270758595548537,0.9120008589225024,DeFazio,Democrat,moderate Democratic leader,36,415,322,1249
+400101,28599820,Diana DeGette,Democrat,F,CO,rep,0.2001024831394248,0.7412554900401068,DeGette,Democrat,rank-and-file Democrat,15,490,251,627
+400103,140519774,Rosa L. DeLauro,Democrat,F,CT,rep,0.1909721956677326,0.9188920476380292,DeLauro,Democrat,moderate Democratic leader,53,234,259,1653
+412477,235312723,Scott DesJarlais,Republican,M,TN,rep,0.7202957218176084,0.2177717324036528,DesJarlais,Republican,lonley conservative Republican follower,13,207,77,112
+400108,37094727,Mario Diaz-Balart,Republican,M,FL,rep,0.5819389561142192,0.3315368510550132,Diaz-Balart,Republican,rank-and-file Republican,18,222,97,181
+400111,153944899,Lloyd Doggett,Democrat,M,TX,rep,0.2033820747953483,0.8205458417687161,Doggett,Democrat,moderate Democratic leader,31,292,249,1129
+400114,39249305,Michael F. Doyle,Democrat,M,PA,rep,0.2586006555858637,0.5986166937253886,Doyle,Democrat,rank-and-file Democrat,14,374,157,227
+412472,240393970,Jeff Duncan,Republican,M,SC,rep,0.8759547583470508,0.5965916302612001,Duncan,Republican,conservative Republican leader,27,440,195,688
+400124,249348006,Anna G. Eshoo,Democrat,F,CA,rep,0.2024828891941986,0.751415480204349,Eshoo,Democrat,rank-and-file Democrat,31,513,338,790
+412476,235190657,"Charles J. ""Chuck"" Fleischmann",Republican,M,TN,rep,0.6228269396993619,0.0120536519453035,Fleischmann,Republican,moderate Republican follower,4,193,5,5
+400643,16256269,Virginia Foxx,Republican,F,NC,rep,0.5751383508200565,0.5204475066681589,Foxx,Republican,rank-and-file Republican,18,155,177,298
+412382,88806753,John Garamendi,Democrat,M,CA,rep,0.2430818264747304,0.7667112773976946,Garamendi,Democrat,rank-and-file Democrat,48,493,269,678
+412463,234822928,Bob Gibbs,Republican,M,OH,rep,0.8227084486894457,0.3368190706844487,Gibbs,Republican,conservative Republican,16,316,64,89
+400651,22055226,Louie Gohmert,Republican,M,TX,rep,0.8319599309142403,0.2722804633923394,Gohmert,Republican,conservative Republican,33,431,53,139
+412397,240760644,Paul A. Gosar,Republican,M,AZ,rep,0.8575620765633379,0.5135113330194614,Gosar,Republican,conservative Republican,48,373,104,231
+400157,161743731,Kay Granger,Republican,F,TX,rep,0.4924996993461777,0.229136612310472,Granger,Republican,centrist Republican,0,103,0,0
+300048,10615232,Chuck Grassley,Republican,M,IA,sen,0.7547372608676488,0.8369111903176022,Grassley,Republican,moderate Republican leader,87,362,97,669
+400158,29766367,Sam Graves,Republican,M,MO,rep,0.5285205554892655,0.5653273307812126,Graves [MO6],Republican,centrist Republican leader,11,100,129,186
+400653,156333623,Al Green,Democrat,M,TX,rep,0.1577774927661439,0.8140753359458253,Green [TX9],Democrat,moderate Democratic leader,49,342,276,1384
+412485,234057152,H. Morgan Griffith,Republican,M,VA,rep,0.6027251901255722,0.5366595897430626,Griffith,Republican,rank-and-file Republican,22,177,112,139
+400162,28602948,Raúl M. Grijalva,Democrat,M,AZ,rep,0.0677880072132108,0.8211843356068846,Grijalva,Democrat,progressive Democratic leader,42,957,219,1087
+412278,1908143071,Brett Guthrie,Republican,M,KY,rep,0.6178907665362885,0.5760280597859938,Guthrie,Republican,moderate Republican leader,15,175,59,64
+412434,960962340,Andy Harris,Republican,M,MD,rep,0.7478248155964086,0.3259536930425801,Harris,Republican,conservative Republican,1,255,105,105
+412444,237763317,Vicky Hartzler,Republican,F,MO,rep,0.8235431213369172,0.6481281369633483,Hartzler,Republican,conservative Republican leader,30,346,222,536
+412281,1099199839,Martin Heinrich,Democrat,M,NM,sen,0.2770719428869539,0.4225307126640359,Heinrich,Democrat,rank-and-file Democrat,56,326,84,316
+412486,242926427,Jaime Herrera Beutler,Republican,F,WA,rep,0.5137947033406015,0.4652416537147227,Herrera Beutler,Republican,centrist Republican,12,239,100,137
+400641,33576489,Brian Higgins,Democrat,M,NY,rep,0.2305986890688478,0.6486026041298116,Higgins [NY26],Democrat,rank-and-file Democrat,20,422,281,531
+412282,31611298,James A. Himes,Democrat,M,CT,rep,0.260831740781175,0.2799012823673842,Himes,Democrat,moderate Democratic follower,9,276,24,24
+412200,92186819,Mazie K. Hirono,Democrat,F,HI,sen,0.1144431760264955,0.5360300189837345,Hirono,Democrat,progressive Democrat,52,464,61,465
+412494,382791093,John Hoeven,Republican,M,ND,sen,0.8543857534436938,0.4260443212378799,Hoeven,Republican,rank-and-file Republican,22,291,48,128
+400189,22012091,Steny H. Hoyer,Democrat,M,MD,rep,0.257953406674436,0.2810083791740295,Hoyer,Democrat,moderate Democratic follower,11,48,23,28
+412437,233949261,Bill Huizenga,Republican,M,MI,rep,0.6813157209936594,0.2569200686935498,Huizenga,Republican,rank-and-file Republican,14,212,57,66
+400199,80612021,Sheila Jackson Lee,Democrat,F,TX,rep,0.1055943981111804,0.8420945895828457,Jackson Lee,Democrat,progressive Democratic leader,58,734,248,1154
+412460,211530910,Bill Johnson,Republican,M,OH,rep,0.7358254469488802,0.3464979359227284,Johnson [OH6],Republican,conservative Republican,16,308,43,65
+400204,168502762,Eddie Bernice Johnson,Democrat,F,TX,rep,0.1607871667843937,0.7848099083634947,Johnson [TX30],Democrat,moderate Democratic leader,28,335,209,514
+412199,24745957,"Henry C. ""Hank"" Johnson, Jr.",Democrat,M,GA,rep,0.1301707464276719,0.8083697229007368,Johnson [GA4],Democrat,progressive Democratic leader,35,689,248,1341
+412496,233737858,Ron Johnson,Republican,M,WI,sen,0.7953719611885226,0.4356884545494416,Johnson,Republican,rank-and-file Republican,16,151,47,133
+412226,18166778,Jim Jordan,Republican,M,OH,rep,0.5897612782917684,0.2081370432278472,Jordan,Republican,moderate Republican follower,1,108,14,14
+400211,581141508,Marcy Kaptur,Democrat,F,OH,rep,0.2599337415729894,0.7113436484213763,Kaptur,Democrat,rank-and-file Democrat,17,396,335,511
+412435,232992031,William R. Keating,Democrat,M,MA,rep,0.2522271720319811,0.5400647453813786,Keating,Democrat,rank-and-file Democrat,29,390,167,426
+412465,935368364,Mike Kelly,Republican,M,PA,rep,0.716099654670922,0.6571361515801176,Kelly [PA16],Republican,conservative Republican leader,13,344,147,178
+400218,112740986,Ron Kind,Democrat,M,WI,rep,0.4252869401858309,0.8499508854061046,Kind,Democrat,centrist Democratic leader,32,301,313,777
+412421,219429281,Adam Kinzinger,Republican,M,IL,rep,0.5342943904783132,0.4880592224956639,Kinzinger,Republican,centrist Republican,25,194,101,127
+412191,584012853,Doug Lamborn,Republican,M,CO,rep,0.8010520418988153,0.456960295260223,Lamborn,Republican,conservative Republican,12,344,133,265
+400230,18909919,James R. Langevin,Democrat,M,RI,rep,0.2353823745436818,0.6059968082140496,Langevin,Democrat,rank-and-file Democrat,23,398,164,248
+412464,225921757,James Lankford,Republican,M,OK,sen,0.95210966714042,0.3828554099582867,Lankford,Republican,conservative Republican,52,340,66,218
+400232,404132211,Rick Larsen,Democrat,M,WA,rep,0.2268276909798015,0.481685314183139,Larsen,Democrat,rank-and-file Democrat,16,361,115,186
+400233,50452197,John B. Larson,Democrat,M,CT,rep,0.2202884188907132,0.7934702975379867,Larson,Democrat,moderate Democratic leader,15,433,291,581
+412256,15394954,Robert E. Latta,Republican,M,OH,rep,0.7124753087399308,0.5592408011282195,Latta,Republican,conservative Republican leader,25,186,192,352
+300065,242836537,Patrick J. Leahy,Democrat,M,VT,sen,0.2181989899353626,0.38543210556217,Leahy,Democrat,moderate Democratic follower,24,327,58,113
+400237,248735463,Barbara Lee,Democrat,F,CA,rep,0.0,0.9271857979113916,Lee [CA13],Democrat,progressive Democratic leader,59,995,239,2261
+412495,88784440,Mike Lee,Republican,M,UT,sen,0.796284147563868,0.6019627109150202,Lee,Republican,moderate Republican leader,131,148,99,545
+400245,267938462,Zoe Lofgren,Democrat,F,CA,rep,0.2297861509467951,0.7894572716405016,Lofgren,Democrat,moderate Democratic leader,34,444,209,525
+412445,1444015610,Billy Long,Republican,M,MO,rep,0.6550155665546131,0.2867803076934163,Long,Republican,rank-and-file Republican,9,170,8,10
+400247,242772524,Frank D. Lucas,Republican,M,OK,rep,0.5598723086465998,0.3626324300155566,Lucas,Republican,rank-and-file Republican,10,170,147,206
+412292,1849261916,Blaine Luetkemeyer,Republican,M,MO,rep,0.6742498507884475,0.5065057797616115,Luetkemeyer,Republican,rank-and-file Republican,33,191,167,357
+412293,19318314,Ben Ray Luján,Democrat,M,NM,sen,0.312051719564425,0.23157705002645,LujÃ¡n,Democrat,moderate Democratic follower,58,384,73,227
+400249,310310133,Stephen F. Lynch,Democrat,M,MA,rep,0.1801572759229635,0.8262009779634677,Lynch,Democrat,moderate Democratic leader,29,541,376,655
+400251,258900199,Carolyn B. Maloney,Democrat,F,NY,rep,0.1157545495876839,1.0,Maloney [NY12],Democrat,progressive Democratic leader,98,840,289,2347
+400253,21406834,Edward J. Markey,Democrat,M,MA,sen,0.0711096144891592,0.8019484666220417,Markey,Democrat,progressive Democratic leader,124,589,93,936
+400663,38254095,Doris O. Matsui,Democrat,F,CA,rep,0.1917678786187591,0.7058019162856289,Matsui,Democrat,rank-and-file Democrat,31,507,267,714
+412190,19739126,Kevin McCarthy,Republican,M,CA,rep,0.4244059091105753,0.6297633496116829,McCarthy,Republican,centrist Republican leader,11,73,145,177
+400654,26424123,Michael T. McCaul,Republican,M,TX,rep,0.5944165927149481,0.7804641763504873,McCaul,Republican,moderate Republican leader,31,252,285,732
+412295,50152441,Tom McClintock,Republican,M,CA,rep,0.6875973411207676,0.6536962287371465,McClintock,Republican,moderate Republican leader,15,258,302,534
+400259,516880804,Betty McCollum,Democrat,F,MN,rep,0.1789949607859551,0.5849823008245362,McCollum,Democrat,rank-and-file Democrat,19,575,161,275
+400263,242426145,James P. McGovern,Democrat,M,MA,rep,0.1163144269549752,0.7023292750788966,McGovern,Democrat,progressive Democrat,55,854,255,537
+400644,27676828,Patrick T. McHenry,Republican,M,NC,rep,0.4936547002021747,0.577823933563401,McHenry,Republican,centrist Republican leader,21,80,229,379
+412487,240427862,David B. McKinley,Republican,M,WV,rep,0.7652490399885257,0.78945504655963,McKinley,Republican,conservative Republican leader,41,591,305,563
+400659,17976923,Cathy McMorris Rodgers,Republican,F,WA,rep,0.6372802715053405,0.7144554519165692,McMorris Rodgers,Republican,moderate Republican leader,28,244,242,649
+412189,385429543,Jerry McNerney,Democrat,M,CA,rep,0.1853368464390125,0.3280207263884637,McNerney,Democrat,moderate Democratic follower,21,409,84,146
+400271,22812754,Gregory W. Meeks,Democrat,M,NY,rep,0.1605158782916833,0.6937779054769708,Meeks,Democrat,rank-and-file Democrat,28,427,310,706
+400661,22669526,Gwen Moore,Democrat,F,WI,rep,0.1133807468606545,0.6932114409798984,Moore [WI4],Democrat,progressive Democrat,31,662,310,550
+400284,18632666,Jerry Moran,Republican,M,KS,sen,0.8056005030535578,0.5329253429393663,Moran,Republican,rank-and-file Republican,49,319,99,360
+300075,18061669,Lisa Murkowski,Republican,F,AK,sen,0.5679231692297169,0.6034955685436667,Murkowski,Republican,centrist Republican leader,47,293,99,399
+412194,2853793517,Christopher Murphy,Democrat,M,CT,sen,0.2007334565273412,0.4333238439237536,Murphy,Democrat,rank-and-file Democrat,49,384,67,234
+300076,293131808,Patty Murray,Democrat,F,WA,sen,0.1787302629762792,0.6702315435902321,Murray,Democrat,rank-and-file Democrat,56,335,66,732
+400289,40302336,Jerrold Nadler,Democrat,M,NY,rep,0.0867672971877431,0.8728298259204339,Nadler,Democrat,progressive Democratic leader,26,615,307,1177
+400290,161411080,Grace F. Napolitano,Democrat,F,CA,rep,0.1346510263418465,0.6018633538387325,Napolitano,Democrat,progressive Democrat,14,681,146,317
+400291,442824717,Richard E. Neal,Democrat,M,MA,rep,0.2684167960378355,0.7342700847889659,Neal,Democrat,rank-and-file Democrat,10,129,249,345
+400295,23600262,Eleanor Holmes Norton,Democrat,F,DC,rep,0.0119767735898175,0.6539297601474006,Norton,Democrat,progressive Democrat,129,1855,229,405
+412443,299883942,Steven M. Palazzo,Republican,M,MS,rep,0.7052061815612853,0.3524974492713107,Palazzo,Republican,conservative Republican,5,261,112,116
+400308,31801993,"Frank Pallone, Jr.",Democrat,M,NJ,rep,0.1995750518356931,0.7146374519340984,Pallone,Democrat,rank-and-file Democrat,20,320,157,264
+400309,74508260,"Bill Pascrell, Jr.",Democrat,M,NJ,rep,0.2434203888272312,0.7205110915204949,Pascrell,Democrat,rank-and-file Democrat,33,309,259,529
+412492,1298624375692894210,Rand Paul,Republican,M,KY,sen,0.7308095944985634,0.3532208103843582,Paul,Republican,centrist Republican,64,140,59,172
+400314,15764644,Nancy Pelosi,Democrat,F,CA,rep,0.2895196954647118,0.5139355759543818,Pelosi,Democrat,centrist Democrat,5,28,335,335
+412192,20552026,Ed Perlmutter,Democrat,M,CO,rep,0.2797759692741051,0.5177846525137719,Perlmutter,Democrat,rank-and-file Democrat,15,343,189,209
+412305,236511574,Gary C. Peters,Democrat,M,MI,sen,0.4447661031996913,0.5271373284697723,Peters,Democrat,centrist Democrat,110,415,76,280
+412307,14984637,Chellie Pingree,Democrat,F,ME,rep,0.2154183746626831,0.4627908646948915,Pingree,Democrat,rank-and-file Democrat,25,614,117,199
+400325,18915145,Rob Portman,Republican,M,OH,sen,0.6498754102227259,0.6294715134954544,Portman,Republican,centrist Republican leader,82,299,92,338
+412309,25086658,Bill Posey,Republican,M,FL,rep,0.8407359939755917,0.3783401765954215,Posey,Republican,conservative Republican,40,495,69,91
+400326,155669457,David E. Price,Democrat,M,NC,rep,0.2235668855263039,0.4660574475224384,Price,Democrat,rank-and-file Democrat,13,280,131,168
+412331,56864092,Mike Quigley,Democrat,M,IL,rep,0.1782040764256481,0.8752642609614649,Quigley,Democrat,moderate Democratic leader,24,502,393,1406
+400340,550401754,Harold Rogers,Republican,M,KY,rep,0.4967302404281311,0.0579982310546468,Rogers [KY5],Republican,centrist Republican follower ,1,99,2,2
+400341,33977070,Mike Rogers,Republican,M,AL,rep,0.6020841879100844,0.2038828135915299,Rogers [AL3],Republican,moderate Republican follower,2,155,5,5
+400347,479872233,Lucille Roybal-Allard,Democrat,F,CA,rep,0.1355058447313741,0.7056486819234816,Roybal-Allard,Democrat,progressive Democrat,17,583,219,390
+412491,229966028,Marco Rubio,Republican,M,FL,sen,0.8983252367906939,0.9347757961578174,Rubio,Republican,moderate Republican leader,209,491,96,922
+400349,305620929,C. A. Dutch Ruppersberger,Democrat,M,MD,rep,0.3106542337007851,0.1738118745117538,Ruppersberger,Democrat,centrist Democratic follower,3,389,34,35
+400350,305216911,Bobby L. Rush,Democrat,M,IL,rep,0.170172568180462,0.7531832896070234,Rush,Democrat,rank-and-file Democrat,52,584,301,974
+400352,13491312,Tim Ryan,Democrat,M,OH,rep,0.3107890788175541,0.607700738841057,Ryan [OH13],Democrat,centrist Democrat,33,508,128,238
+412312,926446070812602371,Gregorio Kilili Camacho Sablan,Democrat,M,MP,rep,0.2023479231053855,0.6060492636928432,Sablan,Democrat,rank-and-file Democrat,17,220,265,437
+412212,364415553,John P. Sarbanes,Democrat,M,MD,rep,0.1820907262871288,0.6374595509593367,Sarbanes,Democrat,rank-and-file Democrat,8,288,227,290
+412261,1209417007,Steve Scalise,Republican,M,LA,rep,0.5438186501568207,0.5007102711443601,Scalise,Republican,centrist Republican,9,81,94,114
+400360,24195214,Janice D. Schakowsky,Democrat,F,IL,rep,0.0483670467030733,0.9445988818194836,Schakowsky,Democrat,progressive Democratic leader,55,961,381,1705
+400361,29501253,Adam B. Schiff,Democrat,M,CA,rep,0.1858128462483524,0.748429688216952,Schiff,Democrat,rank-and-file Democrat,30,427,245,1023
+412315,20545793,Kurt Schrader,Democrat,M,OR,rep,0.3757775871021305,0.5768438691667521,Schrader,Democrat,centrist Democrat,18,191,97,121
+300087,17494010,Charles E. Schumer,Democrat,M,NY,sen,0.2730793991642295,0.4938547996155502,Schumer,Democrat,rank-and-file Democrat,56,161,99,168
+412399,229197216,David Schweikert,Republican,M,AZ,rep,0.6416636123084939,0.2234337378094712,Schweikert,Republican,moderate Republican follower,25,202,61,82
+412417,234797704,Austin Scott,Republican,M,GA,rep,0.6754896978547116,0.3322241150992637,Scott [GA8],Republican,rank-and-file Republican,6,201,59,69
+400363,168673083,David Scott,Democrat,M,GA,rep,0.24940502050846,0.6321612318869231,Scott [GA13],Democrat,rank-and-file Democrat,22,309,222,548
+400364,161791703,"Robert C. ""Bobby"" Scott",Democrat,M,VA,rep,0.1811693919294333,0.901247174583464,Scott [VA3],Democrat,moderate Democratic leader,28,198,264,1597
+412471,217543151,Tim Scott,Republican,M,SC,sen,0.8508846082010207,0.6019319441301288,Scott [SC],Republican,moderate Republican leader,49,332,91,517
+412396,381152398,Terri Sewell,Democrat,F,AL,rep,0.248827246794749,0.9031039829709688,Sewell,Democrat,moderate Democratic leader,29,502,384,1339
+300089,21111098,Richard C. Shelby,Republican,M,AL,sen,0.6655459661551948,0.0,Shelby,Republican,centrist Republican follower ,8,54,3,5
+400371,30216513,Brad Sherman,Democrat,M,CA,rep,0.2614383952551278,0.532708841437496,Sherman,Democrat,rank-and-file Democrat,25,490,184,314
+400376,76132891,Michael K. Simpson,Republican,M,ID,rep,0.4998165517330629,0.1697772963371684,Simpson,Republican,centrist Republican follower ,2,126,1,2
+412186,18696134,Albio Sires,Democrat,M,NJ,rep,0.1972560858243737,0.3488102894492753,Sires,Democrat,moderate Democratic follower,11,599,74,116
+400379,58928690,Adam Smith,Democrat,M,WA,rep,0.1258795251042253,0.5563075447844655,Smith [WA9],Democrat,progressive Democrat,28,466,150,223
+412217,296245061,Adrian Smith,Republican,M,NE,rep,0.6847921752273848,0.3590147851962804,Smith [NE3],Republican,rank-and-file Republican,11,306,63,82
+456872,,Joseph Sempolinski,Republican,M,NY,rep,0.3283231030463584,0.0113425542403836,Sempolinski,Republican,centrist Republican follower ,0,10,0,0
+412259,24913074,Jackie Speier,Democrat,F,CA,rep,0.1911988862208034,0.9615176673929904,Speier,Democrat,moderate Democratic leader,52,419,269,2036
+400355,312134473,Linda T. Sánchez,Democrat,F,CA,rep,0.1675835843129869,0.8160589935051448,SÃ¡nchez,Democrat,moderate Democratic leader,30,466,290,1062
+400402,82453460,Bennie G. Thompson,Democrat,M,MS,rep,0.1604373705675267,0.6567705521513258,Thompson [MS2],Democrat,rank-and-file Democrat,14,383,239,322
+400403,303861808,Mike Thompson,Democrat,M,CA,rep,0.2645463128449674,0.9468536818130304,Thompson [CA5],Democrat,moderate Democratic leader,48,417,345,1346
+412317,18967498,Glenn Thompson,Republican,M,PA,rep,0.677870819133156,0.5269420309596375,Thompson [PA15],Republican,rank-and-file Republican,14,272,174,332
+400546,296361085,John Thune,Republican,M,SD,sen,0.8545843664213411,0.573518926662884,Thune,Republican,rank-and-file Republican,61,221,84,360
+412319,84119348,Paul Tonko,Democrat,M,NY,rep,0.2090179635249118,0.8381422290100556,Tonko,Democrat,moderate Democratic leader,33,635,290,864
+400408,221162525,Patrick J. Toomey,Republican,M,PA,sen,0.721055117832038,0.5436159612321277,Toomey,Republican,centrist Republican,28,108,61,160
+400411,51228911,Michael R. Turner,Republican,M,OH,rep,0.5734947897995908,0.2083692063036152,Turner,Republican,moderate Republican follower,10,201,16,17
+400414,124224165,Fred Upton,Republican,M,MI,rep,0.495772340590474,0.4794676661221428,Upton,Republican,centrist Republican,7,215,24,26
+400415,18137749,Chris Van Hollen,Democrat,M,MD,sen,0.1566348577278095,0.453681794427422,Van Hollen,Democrat,rank-and-file Democrat,59,684,80,299
+400416,164369297,Nydia M. Velázquez,Democrat,F,NY,rep,0.1108973906604968,0.8192649418178117,VelÃ¡zquez,Democrat,progressive Democratic leader,53,611,219,573
+412213,237862972,Tim Walberg,Republican,M,MI,rep,0.6489881760703322,0.568534639484363,Walberg,Republican,moderate Republican leader,20,207,176,232
+400623,1140648348,Debbie Wasserman Schultz,Democrat,F,FL,rep,0.2044481167210798,0.6277264066368722,Wasserman Schultz,Democrat,rank-and-file Democrat,27,382,225,550
+400422,36686040,Maxine Waters,Democrat,F,CA,rep,0.156184394295256,0.76774830987289,Waters,Democrat,rank-and-file Democrat,37,263,230,725
+412410,281540744,Daniel Webster,Republican,M,FL,rep,0.6466193587320425,0.1753909501276054,Webster,Republican,moderate Republican follower,4,177,23,26
+412239,1410590874,Peter Welch,Democrat,M,VT,rep,0.2066587226143879,0.6845148735081485,Welch,Democrat,rank-and-file Democrat,30,645,226,409
+400433,254082173,Joe Wilson,Republican,M,SC,rep,0.7062640717547072,0.730597166022268,Wilson [SC2],Republican,conservative Republican leader,25,326,183,278
+412412,234014087,Frederica S. Wilson,Democrat,F,FL,rep,0.1249831980558544,0.5814829752152064,Wilson [FL24],Democrat,progressive Democrat,19,456,124,231
+412255,15356407,Robert J. Wittman,Republican,M,VA,rep,0.6781121754618101,0.3428587217505828,Wittman,Republican,rank-and-file Republican,32,262,96,134
+412402,234469322,Steve Womack,Republican,M,AR,rep,0.617900123449412,0.3680406503951358,Womack,Republican,rank-and-file Republican,6,173,176,255
+300100,250188760,Ron Wyden,Democrat,M,OR,sen,0.1450634144963053,0.6650489736660395,Wyden,Democrat,progressive Democrat,84,539,76,427
+412211,384913290,John A. Yarmuth,Democrat,M,KY,rep,0.2000262552479695,0.3012810914787016,Yarmuth,Democrat,moderate Democratic follower,18,370,31,33
+412428,234128524,Todd Young,Republican,M,IN,sen,0.7631916866460299,0.5426395321814855,Young,Republican,rank-and-file Republican,38,287,99,324
+412500,402719755,Mark E. Amodei,Republican,M,NV,rep,0.5469730559747726,0.2671922493980648,Amodei,Republican,rank-and-file Republican,8,178,57,63
+412501,558769636,Suzanne Bonamici,Democrat,F,OR,rep,0.1505398621667261,0.6504072440562675,Bonamici,Democrat,progressive Democrat,40,751,222,688
+412505,995193054,Suzan K. DelBene,Democrat,F,WA,rep,0.2431535962194452,0.8210424602126645,DelBene,Democrat,moderate Democratic leader,22,537,359,808
+412503,975200486,Thomas Massie,Republican,M,KY,rep,0.5157979470112265,0.4757245775935347,Massie,Republican,centrist Republican,11,123,139,316
+412506,1155335864,"Donald M. Payne, Jr.",Democrat,M,NJ,rep,0.1422984587071206,0.6780801253504741,Payne,Democrat,progressive Democrat,27,600,168,406
+412507,1262099252,Brian Schatz,Democrat,M,HI,sen,0.2484378933304166,0.6581301459081259,Schatz,Democrat,rank-and-file Democrat,74,258,86,522
+412257,1080509366,Bill Foster,Democrat,M,IL,rep,0.2547881357505501,0.5798784775331103,Foster,Democrat,rank-and-file Democrat,40,359,144,253
+412318,122174004,Dina Titus,Democrat,F,NV,rep,0.2011336744293076,0.6729298101789577,Titus,Democrat,rank-and-file Democrat,33,954,229,413
+412508,968650362,Tom Cotton,Republican,M,AR,sen,0.958009226442368,0.4095249910942896,Cotton,Republican,conservative Republican,68,253,58,266
+412509,1080844782,Kyrsten Sinema,Democrat,F,AZ,sen,0.6292333868320839,0.3314467384832016,Sinema,Democrat,centrist Democratic follower,35,360,77,184
+412510,1069124515,Doug LaMalfa,Republican,M,CA,rep,0.8400424632956409,0.4433232083163596,LaMalfa,Republican,conservative Republican,15,474,96,137
+412511,1071102246,Jared Huffman,Democrat,M,CA,rep,0.1690569740013325,0.7895002379399098,Huffman,Democrat,moderate Democratic leader,36,669,237,812
+412512,950783972,Ami Bera,Democrat,M,CA,rep,0.2965936576586483,0.5761684894959899,Bera,Democrat,centrist Democrat,24,304,169,289
+412514,942156122,Eric Swalwell,Democrat,M,CA,rep,0.2374406694890226,0.5448642081057251,Swalwell,Democrat,rank-and-file Democrat,26,566,101,156
+412516,1243902714,Julia Brownley,Democrat,F,CA,rep,0.2282877481967102,0.8046095208985838,Brownley,Democrat,moderate Democratic leader,57,617,244,900
+412517,1222257180,Tony Cárdenas,Democrat,M,CA,rep,0.1722781487053002,0.7751478971278513,CÃ¡rdenas,Democrat,moderate Democratic leader,41,624,250,795
+412519,1089859058,Raul Ruiz,Democrat,M,CA,rep,0.2869277965133194,0.7311172999945753,Ruiz,Democrat,centrist Democrat,60,283,258,575
+412520,1037321378,Mark Takano,Democrat,M,CA,rep,0.1231781459310806,0.781616087752508,Takano,Democrat,progressive Democratic leader,38,631,254,817
+412521,1055730738,Alan S. Lowenthal,Democrat,M,CA,rep,0.1050589493541113,0.7649456496443926,Lowenthal,Democrat,progressive Democrat,17,767,203,674
+412522,1260172386,Juan Vargas,Democrat,M,CA,rep,0.1887420849187306,0.3788695861198735,Vargas,Democrat,moderate Democratic follower,12,579,150,188
+412523,1135486501,Scott H. Peters,Democrat,M,CA,rep,0.3266278025779618,0.6893543218758964,Peters,Democrat,centrist Democrat,34,511,173,271
+412529,1077121945,Lois Frankel,Democrat,F,FL,rep,0.2350963313743557,0.7727414176986062,Frankel,Democrat,moderate Democratic leader,13,367,320,909
+412533,1058520120,Tammy Duckworth,Democrat,F,IL,sen,0.1969618350760661,0.5617748446264724,Duckworth,Democrat,rank-and-file Democrat,82,485,81,532
+412536,993153006,Rodney Davis,Republican,M,IL,rep,0.7016507422071648,0.8144880936977688,Davis [IL13],Republican,moderate Republican leader,33,471,395,760
+412537,1092979962,Cheri Bustos,Democrat,F,IL,rep,0.3156322036303183,0.5552957077442552,Bustos,Democrat,centrist Democrat,21,312,168,272
+412541,1089334250,Andy Barr,Republican,M,KY,rep,0.6729031771362306,0.652342660033186,Barr,Republican,moderate Republican leader,21,206,255,519
+412542,970207298,Elizabeth Warren,Democrat,F,MA,sen,0.1529197918045746,0.7154414954508503,Warren,Democrat,rank-and-file Democrat,93,611,76,710
+412545,1068481578,"Angus S. King, Jr.",Independent,M,ME,sen,0.4755804102060421,0.3312928360932557,King,Independent,lonely centrist Independent,45,457,79,229
+412546,1045110018,Daniel T. Kildee,Democrat,M,MI,rep,0.2585039457183576,0.7190493207770541,Kildee,Democrat,rank-and-file Democrat,25,493,313,610
+412548,1051446626,Ann Wagner,Republican,F,MO,rep,0.7100602749176872,0.6567565601107023,Wagner,Republican,conservative Republican leader,17,285,229,342
+412549,11651202,Steve Daines,Republican,M,MT,sen,0.9202355708757666,0.5678338258272705,Daines,Republican,conservative Republican,65,400,88,417
+412550,935033864,Richard Hudson,Republican,M,NC,rep,0.7351487306282399,0.5874489861088481,Hudson,Republican,conservative Republican leader,27,325,225,393
+412555,1048784496,Kevin Cramer,Republican,M,ND,sen,0.9526053363189868,0.2668033427174015,Cramer,Republican,lonley conservative Republican follower,19,470,57,96
+412556,1071402577,Deb Fischer,Republican,F,NE,sen,0.8158289030679801,0.3223077952167488,Fischer,Republican,rank-and-file Republican,24,197,61,138
+412557,1058717720,Ann Kuster,Democrat,F,NH,rep,0.3286550109053232,0.7167857875956585,Kuster,Democrat,centrist Democrat,34,663,336,644
+412560,1051127714,Grace Meng,Democrat,F,NY,rep,0.1399052408162684,0.8800899408771273,Meng,Democrat,progressive Democratic leader,46,761,254,1742
+412561,467823431,Hakeem S. Jeffries,Democrat,M,NY,rep,0.1993369386059045,0.6761398175568086,Jeffries,Democrat,rank-and-file Democrat,30,238,169,275
+412562,1072467470,Sean Patrick Maloney,Democrat,M,NY,rep,0.2382597665426747,0.6837822866895259,Maloney [NY18],Democrat,rank-and-file Democrat,31,276,198,394
+412564,518644221,Brad R. Wenstrup,Republican,M,OH,rep,0.6879790497358796,0.5028260031864803,Wenstrup,Republican,rank-and-file Republican,24,273,136,212
+412565,1531521632,Joyce Beatty,Democrat,F,OH,rep,0.2140532480086348,0.5812034108017153,Beatty,Democrat,rank-and-file Democrat,23,414,128,334
+412566,976969338,David P. Joyce,Republican,M,OH,rep,0.6135842365745063,0.5414890390518324,Joyce [OH14],Republican,rank-and-file Republican,33,324,128,236
+412568,1060370282,Markwayne Mullin,Republican,M,OK,rep,0.6837167590920753,0.3799650642670561,Mullin,Republican,rank-and-file Republican,21,335,112,156
+412569,18773159,Scott Perry,Republican,M,PA,rep,0.8209074770572349,0.4272981766081667,Perry,Republican,conservative Republican,70,373,133,345
+412571,776664410,Matt Cartwright,Democrat,M,PA,rep,0.2830522506991881,0.828693678464902,Cartwright,Democrat,moderate Democratic leader,56,306,301,1130
+412572,1058345042,Tom Rice,Republican,M,SC,rep,0.6438796712003662,0.4816495491388748,Rice [SC7],Republican,rank-and-file Republican,32,270,168,236
+412573,1074480192,Ted Cruz,Republican,M,TX,sen,1.0,0.596763953979027,Cruz,Republican,conservative Republican,101,325,71,438
+412574,1058051748,"Randy K. Weber, Sr.",Republican,M,TX,rep,0.9602302974660594,0.2754877594273807,Weber,Republican,conservative Republican,14,616,83,135
+412576,231510077,Joaquin Castro,Democrat,M,TX,rep,0.2097892413704367,0.6446747013396131,Castro,Democrat,rank-and-file Democrat,32,307,157,422
+412578,1077446982,Roger Williams,Republican,M,TX,rep,0.7398513004546106,0.4201358965175494,Williams [TX25],Republican,conservative Republican,14,269,63,76
+412579,1074129612,Marc A. Veasey,Democrat,M,TX,rep,0.2522561882630519,0.5162974175843894,Veasey,Democrat,rank-and-file Democrat,10,353,110,138
+412581,1072008757,Chris Stewart,Republican,M,UT,rep,0.6635893149506601,0.5511630980512157,Stewart,Republican,rank-and-file Republican,21,213,64,89
+412583,1058917562,Derek Kilmer,Democrat,M,WA,rep,0.3228150603487508,0.6420874095444038,Kilmer,Democrat,centrist Democrat,35,732,220,378
+412585,1206227149,Mark Pocan,Democrat,M,WI,rep,0.1270250374716892,0.7625310428812262,Pocan,Democrat,progressive Democrat,27,746,227,876
+412595,1339931490,Robin L. Kelly,Democrat,F,IL,rep,0.2020186686770302,0.6761774798350987,Kelly [IL2],Democrat,rank-and-file Democrat,27,398,190,487
+412596,1623308912,Jason Smith,Republican,M,MO,rep,0.683904853497849,0.6952044251735732,Smith [MO8],Republican,moderate Republican leader,24,209,206,591
+412598,2167097881,Cory A. Booker,Democrat,M,NJ,sen,0.0914923694778499,0.7246602540792696,Booker,Democrat,progressive Democratic leader,111,695,83,849
+412600,2293131060,Katherine M. Clark,Democrat,F,MA,rep,0.1680897161309726,0.6986619801055917,Clark,Democrat,rank-and-file Democrat,14,276,223,529
+412606,3122099613,Donald Norcross,Democrat,M,NJ,rep,0.27336533747441,0.5340354232124576,Norcross,Democrat,rank-and-file Democrat,22,224,211,380
+412607,2916086925,Alma S. Adams,Democrat,F,NC,rep,0.1799612252040656,0.7789327608839465,Adams,Democrat,moderate Democratic leader,45,499,270,1090
+412608,2861616083,Gary J. Palmer,Republican,M,AL,rep,0.6097775318045764,0.4622940440134341,Palmer,Republican,rank-and-file Republican,9,121,113,143
+412609,2953974395,J. Hill,Republican,M,AR,rep,0.6308216876214591,0.5250360614929462,Hill,Republican,rank-and-file Republican,30,238,208,374
+412610,2852998461,Bruce Westerman,Republican,M,AR,rep,0.7013582023255464,0.5927739988017305,Westerman,Republican,moderate Republican leader,19,236,236,491
+412612,2966570782,Ruben Gallego,Democrat,M,AZ,rep,0.2017779643480642,0.5552146742739166,Gallego,Democrat,rank-and-file Democrat,26,593,156,275
+412613,2968007206,Mark DeSaulnier,Democrat,M,CA,rep,0.0953794892618954,0.5325864106970791,DeSaulnier,Democrat,progressive Democrat,42,800,137,275
+412615,3018670151,Pete Aguilar,Democrat,M,CA,rep,0.2195635085490884,0.3538056503829424,Aguilar,Democrat,moderate Democratic follower,16,569,105,251
+412616,3044993235,Ted Lieu,Democrat,M,CA,rep,0.1879503186432577,0.7676112200879498,Lieu,Democrat,rank-and-file Democrat,56,768,237,631
+412617,236279233,Norma J. Torres,Democrat,F,CA,rep,0.2176774367729117,0.6317943427686842,Torres [CA35],Democrat,rank-and-file Democrat,34,307,218,530
+412619,2862577383,Ken Buck,Republican,M,CO,rep,0.6799936191131959,0.3652463941410924,Buck,Republican,rank-and-file Republican,25,243,95,174
+412622,2973870195,"Earl L. ""Buddy"" Carter",Republican,M,GA,rep,0.7418934177529406,0.5986027326513751,Carter [GA1],Republican,conservative Republican leader,39,368,225,376
+412623,2975091705,Jody B. Hice,Republican,M,GA,rep,0.8312514118252166,0.4357558108434257,Hice,Republican,conservative Republican,14,345,92,163
+412624,2914163523,Barry Loudermilk,Republican,M,GA,rep,0.6731080274892117,0.3109255018519617,Loudermilk,Republican,rank-and-file Republican,10,172,60,77
+412625,2964287128,Rick W. Allen,Republican,M,GA,rep,0.7805643031383543,0.1261233489458987,Allen,Republican,lonley conservative Republican follower,9,283,45,54
+412629,2964877294,Mike Bost,Republican,M,IL,rep,0.711191963824969,0.5131025869241485,Bost,Republican,conservative Republican,28,325,188,337
+412631,2951574214,Garret Graves,Republican,M,LA,rep,0.5868305676087708,0.4073197769318717,Graves [LA6],Republican,rank-and-file Republican,17,191,97,157
+412632,3091316093,Seth Moulton,Democrat,M,MA,rep,0.2816651340996557,0.6579102255592651,Moulton,Democrat,rank-and-file Democrat,20,553,159,299
+412634,2696643955,John R. Moolenaar,Republican,M,MI,rep,0.699817658336167,0.2532462236592329,Moolenaar,Republican,rank-and-file Republican,15,273,84,123
+412637,2970279814,Debbie Dingell,Democrat,F,MI,rep,0.213914065100431,0.7977013825229988,Dingell,Democrat,moderate Democratic leader,53,445,327,1120
+412638,2863006655,Brenda L. Lawrence,Democrat,F,MI,rep,0.1693535331884185,0.6206161935957881,Lawrence,Democrat,rank-and-file Democrat,13,427,147,219
+412639,2914515430,Tom Emmer,Republican,M,MN,rep,0.7439296169312771,0.3785252863343238,Emmer,Republican,conservative Republican,35,333,155,230
+412641,834069080,David Rouzer,Republican,M,NC,rep,0.7674488923456275,0.1455892425558551,Rouzer,Republican,lonley conservative Republican follower,15,260,27,29
+412644,2968451607,Bonnie Watson Coleman,Democrat,F,NJ,rep,0.0793047574641413,0.7008668946207551,Watson Coleman,Democrat,progressive Democrat,39,751,235,916
+412646,2750127259,Lee M. Zeldin,Republican,M,NY,rep,0.5784299156665748,0.593028960105384,Zeldin,Republican,moderate Republican leader,13,189,140,216
+412647,2970462034,Kathleen M. Rice,Democrat,F,NY,rep,0.3266262920457591,0.6332570041889781,Rice [NY4],Democrat,centrist Democrat,26,325,189,280
+412648,2962813893,Elise M. Stefanik,Republican,F,NY,rep,0.7652261923351776,0.8088969349171032,Stefanik,Republican,conservative Republican leader,48,498,222,671
+412649,2966765501,John Katko,Republican,M,NY,rep,0.5124894389977853,0.652990783516277,Katko,Republican,centrist Republican leader,31,432,170,348
+412652,4304448314,Brendan F. Boyle,Democrat,M,PA,rep,0.236780877256463,0.5619799559068793,Boyle,Democrat,rank-and-file Democrat,22,384,174,270
+412655,2929491549,Brian Babin,Republican,M,TX,rep,0.9412836497752958,0.6093884278853737,Babin,Republican,conservative Republican leader,14,574,172,294
+412657,2962868158,"Donald S. Beyer, Jr.",Democrat,M,VA,rep,0.182503259593689,0.7739523007402467,Beyer,Democrat,moderate Democratic leader,45,430,249,752
+412659,2724095695,Stacey E. Plaskett,Democrat,F,VI,rep,0.2292432051390134,0.3868305431911784,Plaskett,Democrat,moderate Democratic follower,26,162,46,66
+412660,2930635215,Dan Newhouse,Republican,M,WA,rep,0.7219362996844205,0.4891899840088755,Newhouse,Republican,conservative Republican,24,329,137,277
+412661,2976606250,Glenn Grothman,Republican,M,WI,rep,0.8138177839196741,0.5618664127580643,Grothman,Republican,conservative Republican leader,33,401,280,423
+412662,2964526557,Alexander Mooney,Republican,M,WV,rep,0.8156472441326487,0.4707245574599723,Mooney,Republican,conservative Republican,15,377,178,259
+412664,3026622545,Aumua Amata Coleman Radewagen,Republican,F,AS,rep,0.4480193809502736,0.0343753248705716,Radewagen,Republican,centrist Republican follower ,2,141,7,7
+412665,2891210047,Dan Sullivan,Republican,M,AK,sen,0.7471429394344254,0.4750099860532066,Sullivan,Republican,rank-and-file Republican,46,256,88,238
+412667,2856787757,Joni Ernst,Republican,F,IA,sen,0.9175740777284151,0.6039091301397032,Ernst,Republican,conservative Republican leader,74,410,96,593
+412668,2964174789,Thom Tillis,Republican,M,NC,sen,0.9073159140461704,0.3824365382790677,Tillis,Republican,rank-and-file Republican,40,490,60,187
+412669,2955485182,Mike Rounds,Republican,M,SD,sen,0.9043222644716892,0.3611372470626539,Rounds,Republican,rank-and-file Republican,30,297,91,227
+412671,2962923040,Ben Sasse,Republican,M,NE,sen,0.7756222406879829,0.2514632721312909,Sasse,Republican,moderate Republican follower,12,116,47,51
+412673,3317799825,Trent Kelly,Republican,M,MS,rep,0.6966733912536262,0.3920587006650239,Kelly [MS1],Republican,rank-and-file Republican,14,236,125,155
+412674,3686482216,Darin LaHood,Republican,M,IL,rep,0.6043710805996192,0.5992809367609446,LaHood,Republican,moderate Republican leader,23,204,102,170
+412675,742735530287304704,Warren Davidson,Republican,M,OH,rep,0.665517593755823,0.3636590884267018,Davidson,Republican,rank-and-file Republican,22,242,83,145
+412676,1274852794206388225,James Comer,Republican,M,KY,rep,0.609131185891614,0.344285575815294,Comer,Republican,rank-and-file Republican,8,145,124,174
+412677,90639372,Dwight Evans,Democrat,M,PA,rep,0.1589438556697816,0.3555577297070798,Evans,Democrat,moderate Democratic follower,12,744,110,134
+412679,816683274076614656,John Kennedy,Republican,M,LA,sen,0.8761953318431736,0.3619141268556997,Kennedy,Republican,rank-and-file Republican,80,209,60,141
+412680,946549322,Margaret Wood Hassan,Democrat,F,NH,sen,0.4053550971191735,0.3777803403517071,Hassan,Democrat,centrist Democratic follower,79,494,78,273
+412681,811313565760163844,Catherine Cortez Masto,Democrat,F,NV,sen,0.2683512150215624,0.5526757464209398,Cortez Masto,Democrat,rank-and-file Democrat,112,438,99,497
+412534,1071840474,Bradley Scott Schneider,Democrat,M,IL,rep,0.3054439033918812,0.9179140622666196,Schneider,Democrat,centrist Democratic leader,48,345,400,1331
+412682,808416682972770304,Tom O’Halleran,Democrat,M,AZ,rep,0.4124156662220275,0.6429961695734454,Oâ€™Halleran,Democrat,centrist Democrat,53,454,263,416
+412683,816652616625168388,Andy Biggs,Republican,M,AZ,rep,0.7884128777548738,0.6271874665519263,Biggs,Republican,conservative Republican leader,75,324,129,588
+412684,816298918468259841,Ro Khanna,Democrat,M,CA,rep,0.157368325137137,0.6627178415418924,Khanna,Democrat,rank-and-file Democrat,35,824,132,316
+412685,796736612554117120,Jimmy Panetta,Democrat,M,CA,rep,0.3021904901494712,0.7724088963411471,Panetta,Democrat,centrist Democrat,43,692,256,587
+412686,816157667882373120,Salud O. Carbajal,Democrat,M,CA,rep,0.2560439042111227,0.6704614041993675,Carbajal,Democrat,rank-and-file Democrat,29,597,243,527
+412687,816833925456789505,Nanette Diaz Barragán,Democrat,F,CA,rep,0.0943656019176108,0.5398673637673349,BarragÃ¡n,Democrat,progressive Democrat,27,802,170,408
+412688,815985039485837312,J. Luis Correa,Democrat,M,CA,rep,0.2872956923615745,0.700530006475438,Correa,Democrat,centrist Democrat,20,408,227,331
+412689,817050219007328258,Lisa Blunt Rochester,Democrat,F,DE,rep,0.2076138617878104,0.6321037246846736,Blunt Rochester,Democrat,rank-and-file Democrat,38,642,257,876
+412690,818948638890217473,Matt Gaetz,Republican,M,FL,rep,0.7715724278104826,0.2690108596707477,Gaetz,Republican,conservative Republican,14,298,37,67
+412691,815952318487298048,Neal P. Dunn,Republican,M,FL,rep,0.6880398644787948,0.2283560387863109,Dunn,Republican,rank-and-file Republican,12,210,44,59
+412692,828977216595849216,John H. Rutherford,Republican,M,FL,rep,0.7632265218401626,0.4643306084784438,Rutherford,Republican,conservative Republican,9,456,179,269
+412693,818472418620608512,"Al Lawson, Jr.",Democrat,M,FL,rep,0.2426086359324886,0.5561867512176023,Lawson,Democrat,rank-and-file Democrat,20,462,191,428
+412694,796183515998068736,Stephanie N. Murphy,Democrat,F,FL,rep,0.3865844342112314,0.6077344747920077,Murphy [FL7],Democrat,centrist Democrat,20,316,194,223
+412695,818713465653051392,Darren Soto,Democrat,M,FL,rep,0.2336209294358866,0.477723384763864,Soto,Democrat,rank-and-file Democrat,33,774,144,257
+412696,798973032362606600,Val Butler Demings,Democrat,F,FL,rep,0.2361875853622902,0.5212284287360187,Demings,Democrat,rank-and-file Democrat,15,447,147,264
+412698,814103950404239360,Brian J. Mast,Republican,M,FL,rep,0.7134547574489226,0.4712409672753814,Mast,Republican,conservative Republican,31,355,134,243
+412700,806583915012046854,A. Drew Ferguson IV,Republican,M,GA,rep,0.649648433956842,0.3774451129359135,Ferguson,Republican,rank-and-file Republican,8,220,183,204
+412701,814179031956488192,Raja Krishnamoorthi,Democrat,M,IL,rep,0.2699954850914394,0.7023607939286868,Krishnamoorthi,Democrat,rank-and-file Democrat,32,466,263,669
+412702,816131319033950208,Jim Banks,Republican,M,IN,rep,0.8042670017384047,0.6387072640348981,Banks,Republican,conservative Republican leader,50,288,200,1026
+412703,811986281177772032,Trey Hollingsworth,Republican,M,IN,rep,0.4807244948893627,0.3729147135074746,Hollingsworth,Republican,centrist Republican,8,65,137,139
+412704,1336344005588738052,Roger Marshall,Republican,M,KS,sen,0.8088135329656623,0.3103552573669934,Marshall,Republican,rank-and-file Republican,66,364,77,366
+412705,843636970538618880,Clay Higgins,Republican,M,LA,rep,0.6799754434410054,0.4641848808917068,Higgins [LA3],Republican,rank-and-file Republican,24,190,175,361
+412706,827279765287559171,Mike Johnson,Republican,M,LA,rep,0.7365153530336765,0.4730004760527909,Johnson [LA4],Republican,conservative Republican,26,227,152,358
+412707,823552974253342721,Anthony G. Brown,Democrat,M,MD,rep,0.2044134870895932,0.6300869030691408,Brown [MD4],Democrat,rank-and-file Democrat,43,458,151,250
+412708,806906355214852096,Jamie Raskin,Democrat,M,MD,rep,0.090727551037523,0.6046889452016004,Raskin,Democrat,progressive Democrat,27,779,203,442
+412709,815241612154417152,Jack Bergman,Republican,M,MI,rep,0.6251774988764837,0.5500714249800159,Bergman,Republican,rank-and-file Republican,21,188,153,239
+412712,817138492614524928,Ted Budd,Republican,M,NC,rep,0.9229657715876484,0.4809274439175046,Budd,Republican,conservative Republican,47,566,151,383
+412713,818975124460335106,Don Bacon,Republican,M,NE,rep,0.6903146028417936,0.431840686180456,Bacon,Republican,rank-and-file Republican,45,701,122,178
+412714,815310506596691968,Josh Gottheimer,Democrat,M,NJ,rep,0.5270702661152391,0.5037516027491777,Gottheimer,Democrat,centrist Democrat,23,540,189,336
+412715,818554054309715969,Jacky Rosen,Democrat,F,NV,sen,0.3605968195685579,0.4493023450674862,Rosen,Democrat,rank-and-file Democrat,71,513,94,338
+412717,816705409486618624,Thomas R. Suozzi,Democrat,M,NY,rep,0.2516613757105465,0.7196600478317539,Suozzi,Democrat,rank-and-file Democrat,21,794,379,846
+412718,817076257770835968,Adriano Espaillat,Democrat,M,NY,rep,0.0738864593561492,0.656639851698411,Espaillat,Democrat,progressive Democrat,50,705,190,660
+412721,816303263586914304,Brian K. Fitzpatrick,Republican,M,PA,rep,0.5684430399454143,0.7240965795927214,Fitzpatrick,Republican,moderate Republican leader,28,1296,263,416
+412722,41417564,Lloyd Smucker,Republican,M,PA,rep,0.6218803231369792,0.2890145608004756,Smucker,Republican,rank-and-file Republican,16,196,73,95
+412723,819744763020775425,Jenniffer González-Colón,Republican,F,PR,rep,0.4955226377679779,0.3198984858317087,GonzÃ¡lez-ColÃ³n,Republican,centrist Republican,40,323,65,122
+412724,816012124505931780,David Kustoff,Republican,M,TN,rep,0.658344526436293,0.450404049125253,Kustoff,Republican,rank-and-file Republican,22,229,165,300
+412725,818536152588238849,Vicente Gonzalez,Democrat,M,TX,rep,0.3931783145333652,0.2845112068731333,Gonzalez [TX15],Democrat,centrist Democratic follower,11,275,50,56
+412726,816284664658874368,Jodey C. Arrington,Republican,M,TX,rep,0.6671208367104646,0.5001007157993803,Arrington,Republican,rank-and-file Republican,36,192,172,445
+412728,816181091673448448,A. Donald McEachin,Democrat,M,VA,rep,0.1954370619624915,0.646609991140496,McEachin,Democrat,rank-and-file Democrat,21,312,149,287
+412730,815733290955112448,Pramila Jayapal,Democrat,F,WA,rep,0.0570586425532942,0.8145720172373765,Jayapal,Democrat,progressive Democratic leader,37,669,212,1410
+412731,815966620300480514,Mike Gallagher,Republican,M,WI,rep,0.6558719075728625,0.6140306367220855,Gallagher,Republican,moderate Republican leader,50,211,199,440
+412732,816719802328715264,Liz Cheney,Republican,F,WY,rep,0.6397509521858209,0.36049305259454,Cheney,Republican,rank-and-file Republican,18,219,71,105
+412735,854715071116849157,Ron Estes,Republican,M,KS,rep,0.6238987201910263,0.3935875909117661,Estes,Republican,rank-and-file Republican,14,167,91,118
+412738,880480631108644864,Ralph Norman,Republican,M,SC,rep,1.0,0.4926172949291134,Norman,Republican,conservative Republican,30,634,172,481
+412739,2371339658,Jimmy Gomez,Democrat,M,CA,rep,0.1471896189654322,0.5855722783393696,Gomez,Democrat,progressive Democrat,23,406,186,614
+412740,931614483050414080,John R. Curtis,Republican,M,UT,rep,0.5785916007577826,0.4976632455213549,Curtis,Republican,rank-and-file Republican,34,194,140,252
+412742,941000686275387392,Tina Smith,Democrat,F,MN,sen,0.179055447646554,0.48332600241451,Smith,Democrat,rank-and-file Democrat,65,637,83,361
+412743,983348251972816896,Cindy Hyde-Smith,Republican,F,MS,sen,0.902918700348333,0.2474867535225772,Hyde-Smith,Republican,moderate Republican follower,13,367,43,131
+412744,984456621417000960,Conor Lamb,Democrat,M,PA,rep,0.3394935332196663,0.4694801339441379,Lamb,Democrat,centrist Democrat,26,330,201,260
+412745,996094929733652481,Debbie Lesko,Republican,F,AZ,rep,0.8613829236836678,0.5111207472400207,Lesko,Republican,conservative Republican,36,459,171,345
+412746,1039879658400112640,Michael Cloud,Republican,M,TX,rep,0.680584488284332,0.4235362200115066,Cloud,Republican,rank-and-file Republican,21,249,155,418
+412747,1037341536592310272,Troy Balderson,Republican,M,OH,rep,0.6732034766022568,0.2306337070430353,Balderson,Republican,rank-and-file Republican,11,270,48,79
+412748,1067818539179024386,Kevin Hern,Republican,M,OK,rep,0.6616890273534614,0.1978295107763563,Hern,Republican,moderate Republican follower,15,193,27,41
+412749,1064595993222615040,Joseph D. Morelle,Democrat,M,NY,rep,0.2248087725614175,0.4998992628641109,Morelle,Democrat,rank-and-file Democrat,39,519,176,293
+412750,1067541214671577093,Mary Gay Scanlon,Democrat,F,PA,rep,0.1290345472281279,0.383637934436163,Scanlon,Democrat,lonely progressive Democratic ,31,695,130,203
+412751,1069636653353000962,Susan Wild,Democrat,F,PA,rep,0.2599548149162642,0.5559579024151272,Wild,Democrat,rank-and-file Democrat,27,633,213,389
+400069,1081350574589833221,Ed Case,Democrat,M,HI,rep,0.2841226449108147,0.2887453729759406,Case,Democrat,centrist Democratic follower,19,644,88,164
+412559,389840566,Steven Horsford,Democrat,M,NV,rep,0.1869358640507991,0.4880127410726194,Horsford,Democrat,rank-and-file Democrat,22,380,226,385
+412286,1081240074946252801,Ann Kirkpatrick,Democrat,F,AZ,rep,0.2473541958096928,0.3909294677495748,Kirkpatrick,Democrat,moderate Democratic follower,6,279,129,166
+412753,1080885078425784320,Greg Stanton,Democrat,M,AZ,rep,0.3080738197068647,0.3981689469166994,Stanton,Democrat,centrist Democratic follower,17,255,169,289
+412754,1080851152151953410,Josh Harder,Democrat,M,CA,rep,0.334839724439023,0.3887123506867137,Harder,Democrat,centrist Democratic follower,29,361,125,166
+412758,1081222837459996672,Katie Porter,Democrat,F,CA,rep,0.1744024220438422,0.6438223538004697,Porter,Democrat,rank-and-file Democrat,49,592,233,696
+412760,1072134139560620033,Mike Levin,Democrat,M,CA,rep,0.2181619095111033,0.5032232851568295,Levin [CA49],Democrat,rank-and-file Democrat,33,523,189,342
+412761,1078749802765139968,Joe Neguse,Democrat,M,CO,rep,0.2532402014536539,0.6530541705933197,Neguse,Democrat,rank-and-file Democrat,96,722,229,580
+412762,1080191866509901826,Jason Crow,Democrat,M,CO,rep,0.3116262732658484,0.7849133874109543,Crow,Democrat,centrist Democratic leader,51,446,389,1270
+412763,1082086081238102018,Jahana Hayes,Democrat,F,CT,rep,0.0798428331311208,0.5610570698111528,Hayes,Democrat,progressive Democrat,31,899,203,465
+412764,1082416697380913152,Michael Waltz,Republican,M,FL,rep,0.6525732389661182,0.589968404399473,Waltz,Republican,moderate Republican leader,28,317,257,560
+412766,1083125649609506816,W. Gregory Steube,Republican,M,FL,rep,0.8755776210926336,0.489882161850062,Steube,Republican,conservative Republican,50,545,214,429
+412769,1082380458976051202,Lucy McBath,Democrat,F,GA,rep,0.2727235445497216,0.5435388472243495,McBath,Democrat,rank-and-file Democrat,21,418,210,431
+412770,346509049,Michael F. Q. San Nicolas,Democrat,M,GU,rep,0.1836937230194551,0.3058220336443105,San Nicolas,Democrat,moderate Democratic follower,15,441,91,117
+412772,1080865917377097728,Cynthia Axne,Democrat,F,IA,rep,0.3805592954842191,0.5712785740306212,Axne,Democrat,centrist Democrat,39,554,243,601
+412773,1078741899572240384,Russ Fulcher,Republican,M,ID,rep,0.6045771537983928,0.0963221007865681,Fulcher,Republican,moderate Republican follower,7,159,18,20
+412774,1082427779583541248,"Jesús G. ""Chuy"" García",Democrat,M,IL,rep,0.0510593032113896,0.5418501188496103,GarcÃ­a,Democrat,progressive Democrat,23,681,149,370
+412775,1083472286089396224,Sean Casten,Democrat,M,IL,rep,0.1833819370289796,0.375207764630199,Casten,Democrat,moderate Democratic follower,27,517,106,180
+412776,1080539438508400642,Lauren Underwood,Democrat,F,IL,rep,0.2284568053696963,0.58420729942081,Underwood,Democrat,rank-and-file Democrat,27,289,208,520
+412777,1086316494450032640,James R. Baird,Republican,M,IN,rep,0.6746303314288736,0.2995585721021899,Baird,Republican,rank-and-file Republican,8,297,117,143
+412778,1082369392229400576,Greg Pence,Republican,M,IN,rep,0.5465273677062333,0.235258609392479,Pence,Republican,rank-and-file Republican,13,138,60,68
+412780,1080516116395499522,Sharice Davids,Democrat,F,KS,rep,0.2700776914088835,0.4457440205797892,Davids,Democrat,rank-and-file Democrat,16,328,193,375
+412781,1079802482640019456,Lori Trahan,Democrat,F,MA,rep,0.2068566659605198,0.4301619031738737,Trahan,Democrat,rank-and-file Democrat,19,450,92,139
+412782,1080584229510172678,Ayanna Pressley,Democrat,F,MA,rep,0.0610679038614836,0.6665102916195059,Pressley,Democrat,progressive Democrat,35,546,193,740
+412783,1080573351914061825,David J. Trone,Democrat,M,MD,rep,0.2739764661568489,0.5734635859677812,Trone,Democrat,rank-and-file Democrat,42,756,219,598
+412784,1078401427347857408,Elissa Slotkin,Democrat,F,MI,rep,0.3633614294438627,0.5033315309014216,Slotkin,Democrat,centrist Democrat,58,364,133,190
+412785,1080277407867772930,Andy Levin,Democrat,M,MI,rep,0.147705113328004,0.73517404492546,Levin [MI9],Democrat,progressive Democrat,39,480,271,1150
+412786,1076161611033968640,Haley M. Stevens,Democrat,F,MI,rep,0.2475880716522936,0.2815218122068522,Stevens,Democrat,moderate Democratic follower,21,376,91,139
+412787,1079769536730140672,Rashida Tlaib,Democrat,F,MI,rep,0.0791614605849277,0.4264721098868991,Tlaib,Democrat,progressive Democrat,22,708,130,222
+412789,1080222360643485698,Angie Craig,Democrat,F,MN,rep,0.3397863319854461,0.4885936075292917,Craig,Democrat,centrist Democrat,36,498,124,205
+412790,1061310112013434882,Dean Phillips,Democrat,M,MN,rep,0.4094272227536443,0.559012460924227,Phillips,Democrat,centrist Democrat,29,506,215,422
+412791,1082334352711790593,Ilhan Omar,Democrat,F,MN,rep,0.0933870852325236,0.556643205934577,Omar,Democrat,progressive Democrat,35,572,163,670
+412792,1075830599007510535,Pete Stauber,Republican,M,MN,rep,0.6418349146930218,0.5026270561659003,Stauber,Republican,rank-and-file Republican,26,340,204,343
+412793,1081243468327018496,Michael Guest,Republican,M,MS,rep,0.6957650155522381,0.456798859497018,Guest,Republican,rank-and-file Republican,17,324,183,434
+412794,1080515866255593472,Kelly Armstrong,Republican,M,ND,rep,0.5624474489158235,0.3161613684569043,Armstrong,Republican,rank-and-file Republican,8,185,149,151
+412795,1067748650485497862,Chris Pappas,Democrat,M,NH,rep,0.330564859121436,0.7396673408785748,Pappas,Democrat,centrist Democrat,39,569,255,652
+412796,1468677099594698757,Jefferson Van Drew,Republican,M,NJ,rep,0.6466696643446543,0.5948007947891362,Van Drew,Republican,moderate Republican leader,29,603,163,299
+412797,1078771848882593793,Andy Kim,Democrat,M,NJ,rep,0.3149603470409281,0.2741503644694057,Kim [NJ3],Democrat,centrist Democratic follower,33,416,68,92
+412798,1080898026418384897,Tom Malinowski,Democrat,M,NJ,rep,0.2471889668482504,0.5659047939004241,Malinowski,Democrat,rank-and-file Democrat,26,439,149,325
+412799,1080569698536878081,Mikie Sherrill,Democrat,F,NJ,rep,0.2912975769449417,0.5268179933382525,Sherrill,Democrat,centrist Democrat,32,400,219,445
+412802,1079061579973439488,Susie Lee,Democrat,F,NV,rep,0.3322317590360987,0.5775297415649467,Lee [NV3],Democrat,centrist Democrat,19,229,238,404
+412804,1079104563280527364,Alexandria Ocasio-Cortez,Democrat,F,NY,rep,0.1033679528374612,0.4197609520452144,Ocasio-Cortez,Democrat,lonely progressive Democratic ,18,371,119,296
+412807,1054381765224210432,Anthony Gonzalez,Republican,M,OH,rep,0.5207298881959913,0.2992626039879473,Gonzalez [OH16],Republican,centrist Republican,19,246,92,160
+412809,567508925,Madeleine Dean,Democrat,F,PA,rep,0.1891990648750671,0.4512959416309854,Dean,Democrat,rank-and-file Democrat,33,693,192,278
+412810,1052896620797460481,Chrissy Houlahan,Democrat,F,PA,rep,0.3307082965992328,0.5407412231715365,Houlahan,Democrat,centrist Democrat,22,414,183,266
+412811,1080574793630527505,Daniel Meuser,Republican,M,PA,rep,0.6694338776020236,0.2923223120931368,Meuser,Republican,rank-and-file Republican,12,338,138,169
+412812,1082311988926124036,John Joyce,Republican,M,PA,rep,0.685503652883921,0.0670358513604797,Joyce [PA13],Republican,moderate Republican follower,11,253,18,18
+412813,4205133682,Guy Reschenthaler,Republican,M,PA,rep,0.6999046894633619,0.3129962970362545,Reschenthaler,Republican,rank-and-file Republican,10,374,46,52
+412815,1079770852302958592,William R. Timmons IV,Republican,M,SC,rep,0.6565575535794784,0.1140864519331032,Timmons,Republican,moderate Republican follower,8,315,35,45
+412816,1074782372594413569,Dusty Johnson,Republican,M,SD,rep,0.6061954493342405,0.58742023001173,Johnson [SD0],Republican,moderate Republican leader,34,219,281,687
+412817,1028854804087492613,Tim Burchett,Republican,M,TN,rep,0.6091985606057468,0.2436647053578057,Burchett,Republican,rank-and-file Republican,21,200,84,118
+412818,1081312310059253763,John Rose,Republican,M,TN,rep,0.6065333229523625,0.1221147651087858,Rose,Republican,moderate Republican follower,7,199,51,65
+412819,1080477288955826176,Mark E. Green,Republican,M,TN,rep,0.6167352812963681,0.3604256728700948,Green [TN7],Republican,rank-and-file Republican,28,176,74,120
+412820,1080894931311431682,Dan Crenshaw,Republican,M,TX,rep,0.6810222885203938,0.3832679791031091,Crenshaw,Republican,rank-and-file Republican,24,287,91,158
+412821,1075040139351597056,Van Taylor,Republican,M,TX,rep,0.5632454285860725,0.2583715442951977,Taylor,Republican,rank-and-file Republican,8,282,36,44
+412824,1075904377221722113,Lizzie Fletcher,Democrat,F,TX,rep,0.2723829519368327,0.4674843773236506,Fletcher,Democrat,rank-and-file Democrat,17,287,206,287
+412825,1075517806551154689,Veronica Escobar,Democrat,F,TX,rep,0.175387258464016,0.4604711068710351,Escobar,Democrat,rank-and-file Democrat,21,389,167,328
+412826,1082790600292925440,Chip Roy,Republican,M,TX,rep,0.6373685350544851,0.5392116225311854,Roy,Republican,rank-and-file Republican,45,219,167,817
+412827,1080587263132733442,Sylvia R. Garcia,Democrat,F,TX,rep,0.153990284628675,0.4812617100957665,Garcia [TX29],Democrat,progressive Democrat,26,430,166,328
+412828,1078355119920562176,Colin Z. Allred,Democrat,M,TX,rep,0.295221007684662,0.4376228061645085,Allred,Democrat,centrist Democrat,14,366,98,114
+412830,1080292515939565568,Elaine G. Luria,Democrat,F,VA,rep,0.3440163597021636,0.5227696535159815,Luria,Democrat,centrist Democrat,25,416,204,280
+412832,1072158357237174272,Ben Cline,Republican,M,VA,rep,0.698598695323736,0.2279156084961519,Cline,Republican,moderate Republican follower,8,287,82,115
+412833,1078771401497161728,Abigail Davis Spanberger,Democrat,F,VA,rep,0.4137015419095682,0.585656590321951,Spanberger,Democrat,centrist Democrat,37,465,231,517
+412834,1017819745880543238,Jennifer Wexton,Democrat,F,VA,rep,0.2523721901009892,0.5284057571273084,Wexton,Democrat,rank-and-file Democrat,16,249,214,381
+412835,1080462532815532032,Kim Schrier,Democrat,F,WA,rep,0.2902547313599788,0.4126263725247071,Schrier,Democrat,centrist Democratic follower,23,308,120,210
+412836,1075205691621720064,Bryan Steil,Republican,M,WI,rep,0.5723459845280741,0.3425629397313219,Steil,Republican,rank-and-file Republican,15,187,123,167
+412837,1081318716573470720,Carol D. Miller,Republican,F,WV,rep,0.5728246423812411,0.4321243065530682,Miller [WV3],Republican,rank-and-file Republican,18,175,197,303
+412838,131546062,Rick Scott,Republican,M,FL,sen,0.9650292752081522,0.3381169389324245,Scott [FL],Republican,conservative Republican,106,419,62,361
+412839,1080870981877534720,Mike Braun,Republican,M,IN,sen,0.9689121370297938,0.4631478514954523,Braun,Republican,conservative Republican,104,552,85,469
+412840,1080960924687704064,Josh Hawley,Republican,M,MO,sen,0.8602297747530182,0.2005385025276858,Hawley,Republican,moderate Republican follower,49,232,25,55
+412841,1078693601356509184,Mitt Romney,Republican,M,UT,sen,0.6868737634387749,0.1001882151631604,Romney,Republican,centrist Republican follower ,14,130,29,35
+412842,1080891667308298240,Jared F. Golden,Democrat,M,ME,rep,0.3997405257829335,0.425551662334652,Golden,Democrat,centrist Democrat,19,167,74,92
+412843,1136060761422405633,Fred Keller,Republican,M,PA,rep,0.6867726071158232,0.4967251992662019,Keller,Republican,rank-and-file Republican,20,334,226,454
+412844,1176522535531360257,Dan Bishop,Republican,M,NC,rep,0.6725309108142199,0.4902043188216751,Bishop [NC9],Republican,rank-and-file Republican,19,258,187,592
+412845,1173978070535024642,Gregory F. Murphy,Republican,M,NC,rep,0.6466419418982646,0.4100609288724243,Murphy [NC3],Republican,rank-and-file Republican,33,251,158,323
+407672,1276209702322438148,Kweisi Mfume,Democrat,M,MD,rep,0.2175684897848572,0.1741004459561425,Mfume,Democrat,moderate Democratic follower,11,298,72,107
+456791,1267841066335682562,Thomas P. Tiffany,Republican,M,WI,rep,0.695622460141901,0.1699975183061593,Tiffany,Republican,moderate Republican follower,15,363,61,101
+456792,1262531473057423361,Mike Garcia,Republican,M,CA,rep,0.5001210408215415,0.1819738361728271,Garcia [CA25],Republican,centrist Republican follower ,11,165,72,90
+456793,1276232539510919168,Chris Jacobs,Republican,M,NY,rep,0.5725947391076575,0.2394120689860192,Jacobs [NY27],Republican,rank-and-file Republican,23,259,103,161
+456794,1324926274888888320,Mark Kelly,Democrat,M,AZ,sen,0.4879883439554849,0.1168326988646479,Kelly,Democrat,centrist Democratic follower,37,316,47,92
+412294,22831059,Cynthia M. Lummis,Republican,F,WY,sen,0.8058304964253528,0.092002636660655,Lummis,Republican,moderate Republican follower,17,319,38,68
+400196,63650107,Darrell Issa,Republican,M,CA,rep,0.5404092003680546,0.4700049006776118,Issa,Republican,centrist Republican,26,225,112,193
+400367,24735461,Pete Sessions,Republican,M,TX,rep,0.682272034926622,0.2086050805724267,Sessions,Republican,moderate Republican follower,7,245,1,1
+412515,1128514404,David G. Valadao,Republican,M,CA,rep,0.5883325537433741,0.4515054062238266,Valadao,Republican,rank-and-file Republican,6,341,15,41
+456796,1345739193721487362,Tommy Tuberville,Republican,M,AL,sen,0.7406313071760615,0.0603406271253904,Tuberville,Republican,moderate Republican follower,15,168,26,49
+456797,1318728336923787264,John W. Hickenlooper,Democrat,M,CO,sen,0.4259430813643803,0.0672093393079211,Hickenlooper,Democrat,centrist Democratic follower,25,236,35,54
+456798,1346873610875654147,Bill Hagerty,Republican,M,TN,sen,0.7836021432823572,0.2852620665503217,Hagerty,Republican,moderate Republican follower,28,297,80,263
+456799,1341091420439015424,Jerry L. Carl,Republican,M,AL,rep,0.5676110229280428,0.1113091402694598,Carl,Republican,moderate Republican follower,10,214,43,53
+456800,1339006078688825344,Barry Moore,Republican,M,AL,rep,0.6120268595902754,0.0499598006957568,Moore [AL2],Republican,moderate Republican follower,10,291,24,27
+456801,272482466,Jay Obernolte,Republican,M,CA,rep,0.5200835050666663,0.1123153775854865,Obernolte,Republican,centrist Republican follower ,16,241,49,56
+456802,1344677401465397249,Young Kim,Republican,F,CA,rep,0.4716397445592538,0.4938276122792107,Kim [CA39],Republican,centrist Republican,19,387,234,463
+456803,1343740146630451200,Michelle Steel,Republican,F,CA,rep,0.4724753967817918,0.3602859419596358,Steel,Republican,centrist Republican,22,211,159,265
+456804,1345103905869455361,Sara Jacobs,Democrat,F,CA,rep,0.1962970533551182,0.3352468989942239,Jacobs [CA53],Democrat,moderate Democratic follower,19,540,153,235
+456805,1342989756611907584,Lauren Boebert,Republican,F,CO,rep,0.6382462897108265,0.3846382713780648,Boebert,Republican,rank-and-file Republican,40,325,129,549
+456806,1344325638983987201,Kat Cammack,Republican,F,FL,rep,0.6251027751714289,0.3892621228559638,Cammack,Republican,rank-and-file Republican,12,291,178,318
+456807,1343664721384398849,C. Scott Franklin,Republican,M,FL,rep,0.6358779882011861,0.2545805006242715,Franklin,Republican,rank-and-file Republican,9,317,115,174
+456808,1343968646050283522,Byron Donalds,Republican,M,FL,rep,0.6660308251027725,0.2458016971414352,Donalds,Republican,rank-and-file Republican,25,413,106,184
+456809,1343679195034103808,Carlos A. Gimenez,Republican,M,FL,rep,0.5278287931667759,0.2697546865809168,Gimenez,Republican,centrist Republican,24,309,117,186
+456810,1325928411689349120,Maria Elvira Salazar,Republican,F,FL,rep,0.5493966001335441,0.5791161579135371,Salazar,Republican,moderate Republican leader,22,501,294,727
+456811,1345461797361504259,Nikema Williams,Democrat,F,GA,rep,0.1789946377155469,0.747864297265937,Williams [GA5],Democrat,rank-and-file Democrat,43,748,368,1481
+456812,1343620645452595200,Carolyn Bourdeaux,Democrat,F,GA,rep,0.2806270364581092,0.3029010875817591,Bourdeaux,Democrat,moderate Democratic follower,16,289,141,188
+456813,1357017361568694274,Andrew S. Clyde,Republican,M,GA,rep,0.5523354259593269,0.339743668529986,Clyde,Republican,rank-and-file Republican,10,187,141,294
+456814,1344356576786866176,Marjorie Taylor Greene,Republican,F,GA,rep,0.4958307543741099,0.1998015807584444,Greene,Republican,centrist Republican follower ,26,158,69,171
+456815,1351966874377056257,Kaiali’i Kahele,Democrat,M,HI,rep,0.251286861296522,0.1740751654351782,Kahele,Democrat,moderate Democratic follower,16,478,79,118
+456816,1340783304304410625,Ashley Hinson,Republican,F,IA,rep,0.6017500227613698,0.5719620574149882,Hinson,Republican,moderate Republican leader,28,344,317,643
+456817,1345807954604412929,Mariannette Miller-Meeks,Republican,F,IA,rep,0.6753771256032505,0.4774976729278491,Miller-Meeks,Republican,rank-and-file Republican,29,555,240,422
+456818,1345135363761852416,Randy Feenstra,Republican,M,IA,rep,0.5719004600308071,0.2484547707229121,Feenstra,Republican,rank-and-file Republican,17,267,117,162
+456819,1343578440977494018,Marie Newman,Democrat,F,IL,rep,0.1784363095634958,0.2591598031001029,Newman,Democrat,moderate Democratic follower,20,645,114,169
+456820,1343656635907125250,Mary E. Miller,Republican,F,IL,rep,0.6956597311855355,0.1710827867357308,Miller [IL15],Republican,moderate Republican follower,9,421,61,99
+456821,1346205046036377601,Frank J. Mrvan,Democrat,M,IN,rep,0.2912012234085918,0.1267629643554562,Mrvan,Democrat,centrist Democratic follower,9,244,53,62
+456822,1344845201479663621,Victoria Spartz,Republican,F,IN,rep,0.4597833862137388,0.3478284809077849,Spartz,Republican,centrist Republican,14,146,172,232
+456823,1345825008887721986,Tracey Mann,Republican,M,KS,rep,0.6747810871296883,0.4035293128925259,Mann,Republican,rank-and-file Republican,23,425,177,395
+456824,1345850704800468993,Jake LaTurner,Republican,M,KS,rep,0.5915570116745612,0.1321465714912086,LaTurner,Republican,moderate Republican follower,6,287,54,60
+456825,1330278736554582016,Jake Auchincloss,Democrat,M,MA,rep,0.2131364852928509,0.1002694547984592,Auchincloss,Democrat,moderate Democratic follower,5,494,42,43
+456826,1334164871420796928,Peter Meijer,Republican,M,MI,rep,0.4934544816055114,0.2225443627159873,Meijer,Republican,centrist Republican follower ,11,326,92,138
+456827,1344032292432437248,Lisa C. McClain,Republican,F,MI,rep,0.5852575302628138,0.63774617356931,McClain,Republican,moderate Republican leader,19,246,359,796
+456828,1344375287484723205,Michelle Fischbach,Republican,F,MN,rep,0.5427320346945783,0.220515706398213,Fischbach,Republican,centrist Republican follower ,18,194,90,149
+456829,1002630999052865536,Cori Bush,Democrat,F,MO,rep,0.1769459444159003,0.3558170463348352,Bush,Democrat,moderate Democratic follower,19,337,112,416
+456830,1344751420139040783,"Matthew M. Rosendale, Sr.",Republican,M,MT,rep,0.567158797330507,0.3345841196396364,Rosendale,Republican,rank-and-file Republican,26,230,145,299
+456831,1348683154815655940,Deborah K. Ross,Democrat,F,NC,rep,0.2538457825159195,0.2506228303029163,Ross,Democrat,moderate Democratic follower,23,624,118,155
+456832,1337115670161608712,Kathy E. Manning,Democrat,F,NC,rep,0.2683081958154415,0.4121426771541337,Manning,Democrat,moderate Democratic follower,12,426,185,358
+456833,1344007696555663360,Madison Cawthorn,Republican,M,NC,rep,0.6766707778582691,0.1964256735457328,Cawthorn,Republican,moderate Republican follower,48,380,68,127
+456834,1344416719260016641,Yvette Herrell,Republican,F,NM,rep,0.6752787523439037,0.3949860478784311,Herrell,Republican,rank-and-file Republican,25,364,164,377
+456835,1345147845926670337,Teresa Leger Fernandez,Democrat,F,NM,rep,0.2303758902596382,0.3782737787010672,Leger Fernandez,Democrat,moderate Democratic follower,22,305,177,326
+456836,1344349650447433729,Andrew R. Garbarino,Republican,M,NY,rep,0.5460976653317792,0.2385394588192536,Garbarino,Republican,centrist Republican,20,469,97,156
+456837,1344750588026900481,Nicole Malliotakis,Republican,F,NY,rep,0.5266894213273949,0.4043823861597927,Malliotakis,Republican,centrist Republican,38,316,173,370
+456838,1276403757224546304,Ritchie Torres,Democrat,M,NY,rep,0.1849410425332067,0.4282748772694784,Torres [NY15],Democrat,rank-and-file Democrat,48,487,174,456
+456839,1344389506963808264,Jamaal Bowman,Democrat,M,NY,rep,0.150582824094505,0.433862467554569,Bowman,Democrat,progressive Democrat,18,568,166,488
+456840,1345883634046279681,Mondaire Jones,Democrat,M,NY,rep,0.1184792666883278,0.3257735111428022,Jones,Democrat,lonely progressive Democratic ,12,783,134,250
+456841,1344260196227555334,Stephanie I. Bice,Republican,F,OK,rep,0.5462867789851189,0.246989014192072,Bice,Republican,rank-and-file Republican,19,262,111,163
+456842,1345788865911656454,Cliff Bentz,Republican,M,OR,rep,0.4949997959161767,0.0668594432899035,Bentz,Republican,centrist Republican follower ,6,134,26,38
+456843,1343597700542038017,Nancy Mace,Republican,F,SC,rep,0.5271162691559607,0.1478371917171171,Mace,Republican,centrist Republican follower ,21,325,55,79
+456844,1345787285179162624,Diana Harshbarger,Republican,F,TN,rep,0.624189062090677,0.2845343631191793,Harshbarger,Republican,rank-and-file Republican,15,274,122,218
+456845,1343258042704527362,Pat Fallon,Republican,M,TX,rep,0.5839446400525263,0.0816202809874875,Fallon,Republican,moderate Republican follower,16,257,33,47
+456846,1341120751399809026,August Pfluger,Republican,M,TX,rep,0.5820196223960205,0.4616941190035388,Pfluger,Republican,rank-and-file Republican,30,245,200,510
+456847,1341903465610686464,Ronny Jackson,Republican,M,TX,rep,0.7168338198034124,0.2873879628540651,Jackson,Republican,conservative Republican,28,434,116,241
+456848,1347318288850825217,Troy E. Nehls,Republican,M,TX,rep,0.4842821004965047,0.3074100341767152,Nehls,Republican,centrist Republican,20,145,144,246
+456849,1343627416120532992,Tony Gonzales,Republican,M,TX,rep,0.4507133390330233,0.3296471254692469,Gonzales,Republican,centrist Republican,21,155,137,254
+456850,1339633259349745670,Beth Van Duyne,Republican,F,TX,rep,0.560894298433139,0.5806696941202818,Van Duyne,Republican,moderate Republican leader,28,244,374,508
+456851,1337452596093587462,Blake D. Moore,Republican,M,UT,rep,0.5168903173564667,0.1776689622453159,Moore [UT1],Republican,centrist Republican follower ,17,200,71,110
+456852,1344481217685692416,Burgess Owens,Republican,M,UT,rep,0.5755594460234869,0.3360427557227404,Owens,Republican,rank-and-file Republican,17,317,137,264
+456853,1345536897838436353,Bob Good,Republican,M,VA,rep,0.6853278707588548,0.4019268597597908,Good,Republican,rank-and-file Republican,37,388,135,605
+456854,1343646545955213312,Marilyn Strickland,Democrat,F,WA,rep,0.2319832177200204,0.2671932784601504,Strickland,Democrat,moderate Democratic follower,12,561,118,190
+456855,1004891731,Scott Fitzgerald,Republican,M,WI,rep,0.5097429919076338,0.2825052499911117,Fitzgerald,Republican,centrist Republican,15,151,117,197
+456856,1351236267707654145,Alex Padilla,Democrat,M,CA,sen,0.1922740500056459,0.2882671262885718,Padilla,Democrat,moderate Democratic follower,57,607,81,339
+456857,1356714265894408196,Jon Ossoff,Democrat,M,GA,sen,0.3981883921580715,0.2045237363606595,Ossoff,Democrat,centrist Democratic follower,50,244,74,158
+456858,1352287997853622273,Raphael G. Warnock,Democrat,M,GA,sen,0.5020157101945322,0.502433109982156,Warnock,Democrat,centrist Democrat,56,363,99,676
+412720,797201048490430465,Claudia Tenney,Republican,F,NY,rep,0.6978103971437754,0.4837016783344168,Tenney,Republican,rank-and-file Republican,35,399,216,412
+456859,1382395679700439041,Julia Letlow,Republican,F,LA,rep,0.5080805610412326,0.27728934701648,Letlow,Republican,centrist Republican,5,155,129,147
+456860,1352760304271241218,Troy A. Carter,Democrat,M,LA,rep,0.2513507823907894,0.072113940521779,Carter [LA2],Democrat,moderate Democratic follower,17,253,29,35
+456861,1404519992582942724,Melanie A. Stansbury,Democrat,F,NM,rep,0.2232024195781312,0.096362852016087,Stansbury,Democrat,moderate Democratic follower,9,426,37,60
+456862,1366523868253458437,Jake Ellzey,Republican,M,TX,rep,0.5542762492531765,0.0856995950468929,Ellzey,Republican,moderate Republican follower,4,223,26,28
+456863,1456381091598700556,Shontel M. Brown,Democrat,F,OH,rep,0.2511342739555433,0.0767269373938906,Brown [OH11],Democrat,moderate Democratic follower,7,240,37,45
