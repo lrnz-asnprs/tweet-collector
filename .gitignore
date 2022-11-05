@@ -1,6 +1,8 @@
 data/fakenews_tw_output
 data/users/*
 data/tweets/*
+data/claims
+data/emotion_dictionary
 tokens.json
 *.pyc
 .DS_Store
