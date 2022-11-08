@@ -1,18 +1,28 @@
 from drivers.configs.directories import Directories
-import pickle, os, re, json
+import pickle, os, re, json, time
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+from datetime import datetime
 
 class NewsScorer250():
     
-    def __init__(self, fake=True):
+    def __init__(self, fake=True, limit=False):
     
         self.dir = Directories()
         
-        if fake:
+        self.fake = fake
+        
+        #Depending on whether one wants to run it on the fake users of the true users.
+        if self.fake:
             self.directory = self.dir.FAKE_USERS_RECENT_TWEETS_PATH
         else:
             self.directory = self.dir.TRUE_USERS_RECENT_TWEETS_PATH
+        
+        self.limit = limit
+        self.today = str(datetime.today())[:10]
+        
+        if self.limit:
+            #Set the limit files to make test runs on subsets of the full dataset of batches. The number of files is equal to the number of batches.
+            self.limit_of_files = 5
         
         
         self.numeric_ideology = {'strong democratic':0.0,
@@ -63,8 +73,15 @@ class NewsScorer250():
         Returns:
             lst: Returns a list of converted pickle files. 
         """
+        
         recent_tweets_batches = []
         files = [file for file in  os.listdir(self.directory)]
+        
+        
+        #This part is only for testing
+        if self.limit:
+            files =files[:self.limit_of_files]
+        
         for file in files:
             recent_tweet_batch = self.__read_user_recent_tweets(self.directory, file)
             recent_tweets_batches.append(recent_tweet_batch)
@@ -118,7 +135,7 @@ class NewsScorer250():
             
             user_ideology_avg_score = score/len(vals)
             
-            self.user_ideology[user_id] = user_ideology_avg_score
+            self.user_ideology[user_id] = [user_ideology_avg_score, vals]
         
     
     def get_user_ideology(self):
@@ -136,6 +153,28 @@ class NewsScorer250():
         Returns:
             dict: dictionary of user_ids and their ideology scores according to the news outlets that they share in their recent tweets.
         """
-        self.find_news_per_user_batches()
-        return self.get_user_ideology()
+        #For getting the time
+        start = time.time()    
         
+        self.find_news_per_user_batches()
+        
+        #time end and total time of the run.
+        end = time.time()
+        total_time = end - start
+        print(str(total_time))
+        
+        return self.get_user_ideology()
+    
+
+    def write_to_json(self):
+        """Writes the results into a json file.
+        """
+        path = self.dir.DATA_PATH / "driver_scores"
+        
+        if self.fake:
+            filename = "news_ideology_score_fake_users_" + self.today + ".json" 
+        else:
+            filename = "news_ideology_score_true_users_" + self.today + ".json"
+        
+        with open(path / filename, "w") as fp:
+            json.dump(self.user_ideology, fp)
