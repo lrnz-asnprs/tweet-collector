@@ -49,11 +49,11 @@ users_df = load_true_or_fake_df(users=true_or_fake)
 users_loaded = load_true_or_fake_dict(users=true_or_fake)
 
 ############################# ADJUST HERE #########################
-start_from_index = 2500
+start_from_index = 16000
 users_df = users_df.iloc[start_from_index:]
 
 # Split into batches 
-max_users = 3000 #2000
+max_users = 4000 #2000
 batch_size = 500 #500
 
 # Method to split into batche
