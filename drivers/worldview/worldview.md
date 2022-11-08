@@ -14,12 +14,29 @@ File: dem_rep_news.json
 Script: Newsscorer250.py
 Content: 250 news sources labelled from on a scale from: strong democratic - lean democratic - centrist - lean republican - strong republican
 Source: Aarhus paper on what drives spreading of Fake News.
-
-
 ### Dem/Rep Leaning Fake News
+
+Currently we dont use this one
 File: dem_rep_fakenews_sources.json
 Content: ~40 dem/rep pro fakenews sources.
 Source: Aarhus paper. 
+
+
+### Run with NewsScorer250 on all our users and their recent tweets 08-11-2022
+
+True Users
+NaN vals 2482
+Actual values for data points 2718
+Total dataset 5200
+True users coverage 0.5226923076923077
+mean true users ideology score 0.2885464332384139
+
+Fake users
+NaN vals 958
+Actual values for data points 18505
+Total dataset 5200
+Fake users coverage 0.9507784000411036
+mean fake users ideology score 0.5241563714283359
 
 
 
@@ -61,7 +78,7 @@ if save_results:
 
 ```
 
-### Results from the 08-11-2022 run:
+### Results from the 08-11-2022 run on politicians followed:
 
 Fake users:
 
@@ -81,3 +98,7 @@ True Users:
 - 486 follow bernie only, and only 2 follow Ted Cruz
 - mean score 0.13216067268600176
 
+
+## Correlation between politicians followed govtrack ideology score and the newscorer ideology scores (The RUN 08-11-2022)
+
+pearson 0.9004959101165257, p-value =  0.0

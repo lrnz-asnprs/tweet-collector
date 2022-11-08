@@ -1,6 +1,0 @@
-User: gugy
-Ran on desktop18:
-/var/spool/slurm/d/job85538/slurm_script: line 28: date+%d-%m: command not found
-start_time: Fri Oct 21 18:37:54 CEST 2022
-stdin: is not a tty
-end_time: Fri Oct 21 18:37:56 CEST 2022
