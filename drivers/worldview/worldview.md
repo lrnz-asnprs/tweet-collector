@@ -33,12 +33,51 @@ note: Fortunately, the govtrack_ids where included legislators-current-twIDS.csv
 
 script: PolFollowScorer.py
 
-``` python
+```python
+#Assuming one runs it from the main.py (the parent layer of directory)
+from drivers.worldview.PolFollowScorer import PolFollowScorer
 
 pfs = PolFollowScorer()
 
 pfs.politicians
 ```
+
 Output: key=twitter_id values=(name, ideology_score, leadership_score, description, party, gender, state, type):
 '43910797': ['Sherrod Brown',0.1349708912284275,0.7782556635536014,'progressive Democratic leader', 'Democrat','M','OH','sen']
+
+
+To run:
+```python
+
+from drivers.worldview.PolFollowScorer import PolFollowScorer
+
+pfs = PolFollowScorer()
+
+pfs.score_users()
+
+
+if save_results:
+    pfs.write_to_json()
+
+```
+
+### Results from the 08-11-2022 run:
+
+Fake users:
+
+- Users that follow at least one politicians in congress 17851
+- total amount of users 19463
+- coverage 0.917176180444946
+- mean score 0.45578289247487164 for all users with a least one politician followed
+
+Lower than expected surely. 81 users get the score 0.0 (This is resulting from following only Bernie Sanders), 54 get the score 1.0 (as a result of only following Ted Cruz)
+
+
+True Users:
+
+- Users that follow at least one politicians in congress 1648
+- total amount of users 5000
+- coverage 0.3296
+- 486 follow bernie only, and only 2 follow Ted Cruz
+- mean score 0.13216067268600176
 
