@@ -143,7 +143,46 @@ def load_all_true_users_df():
     users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
     users_df.sort_values(by='rank', ascending=False, inplace=True)
 
+    # Only return TOP 5000 users
+    users_df = users_df[:5000]
+    
     return users_df
+    
+def load_all_true_users_dict():
+    """
+    Loads all true users as a dictionary
+    """
+    # Directories add path name!
+    path = directory.USERS_PATH / "true_users"
+
+    # Load the user profiles
+    filename = "true_users.pickle"
+    with open(path / filename, "rb") as f:
+        users_loaded = pickle.load(f)
+
+    # Just transform for saving as df
+    users_dict = {id : users_loaded.get(id).get_user_as_dict() for id in users_loaded.keys()}
+
+    # Load users as df
+    users_df = pd.DataFrame.from_dict(users_dict.values())
+    users_df.head()
+
+    # Add the labeled tweet count to the user df
+    users_df['labeled_tweet_count'] = users_df.apply(lambda x: len(users_loaded.get(x['user_id']).get_all_true_tweets_retweets()) + len(users_loaded.get(x['user_id']).get_all_false_tweets_retweets()), axis=1)
+    # Rank users
+    users_df['rank'] = users_df['labeled_tweet_count'].rank(method='dense')
+    users_df.sort_values(by='rank', ascending=False, inplace=True)
+
+    # Only look at TOP 5000 users
+    users_df = users_df[:5000]
+
+    # Grab the top 5000 user ids and return as dict
+    return_dict = {}
+    user_ids = list(users_df['user_id'])
+    for user_id in user_ids:
+        return_dict[user_id] = {'user_object':users_loaded.get(user_id)}
+
+    return return_dict
 
 
 if __name__ == "__main__":
