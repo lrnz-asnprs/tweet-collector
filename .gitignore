@@ -1,7 +1,7 @@
 data/fakenews_tw_output
 data/users/*
 data/tweets/*
-data/claims
+data/claims_fluency_emotions
 data/emotion_dictionary
 tokens.json
 *.pyc
