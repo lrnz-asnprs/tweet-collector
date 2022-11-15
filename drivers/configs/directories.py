@@ -20,6 +20,12 @@ class Directories:
     NEWS_OUTLETS_PATH = DATA_PATH / "news_outlets"
     
     
+    #PLOTS
+    VISUALIZATIONS_PATH = REPO_PATH / "visualizations"
+    PLOTS_PATH = REPO_PATH / VISUALIZATIONS_PATH / "plots"
+    POLITIFACT_PLOTS_PATH = PLOTS_PATH / "politifact"
+    
+    
     #USERS
     USERS_PATH = DATA_PATH / "users"
     #FAKE USERS

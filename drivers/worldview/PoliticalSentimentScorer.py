@@ -1,3 +1,0 @@
-
-class PoliticalSentimentScorer():
-    pass
