@@ -23,6 +23,7 @@ class Directories:
     #PLOTS
     VISUALIZATIONS_PATH = REPO_PATH / "visualizations"
     PLOTS_PATH = REPO_PATH / VISUALIZATIONS_PATH / "plots"
+    LATEX_VARIABLES_PATH = REPO_PATH / VISUALIZATIONS_PATH / "variables"
     POLITIFACT_PLOTS_PATH = PLOTS_PATH / "politifact"
     
     

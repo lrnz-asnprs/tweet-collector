@@ -4,16 +4,13 @@ import pandas as pd
 
 
 """
-Following script enables a coherent creation of subplots to visualize the data characteristic of the politifact fact-checked claims data set.
+Following script enables a coherent creation of subplots to visualize the 
+data characteristic of the politifact fact-checked claims data set.
 
 """
 
 dir = Directories()
 destination = str(dir.POLITIFACT_PLOTS_PATH) + "/" 
-
-
-
-
 
 PARAMS = {
     "fss":12, #small font-size

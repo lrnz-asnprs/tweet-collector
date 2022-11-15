@@ -1,0 +1,62 @@
+{
+    "pltfctBORN": {
+        "value": 46749,
+        "description": "Before preprocessing / Removing duplicates"
+    },
+    "pltfctMETA": {
+        "value": 4531,
+        "description": "META + Viral videos CLAIMS"
+    },
+    "pltfctDUPS": {
+        "value": 21785,
+        "description": "pltfctDUPS is all the duplicate claims from our first scrape"
+    },
+    "pltfctNODUP": {
+        "value": 20433,
+        "description": "Data entries after duplicates and meta/video claims are removed"
+    },
+    "pltfctFLIPFLOP": {
+        "value": 259,
+        "description": "Total of integrity date entries (flip-flop)"
+    },
+    "pltfctTOTAL": {
+        "value": 20174,
+        "description": "POLITIFACT AFTER PREPROCESSING STEPS"
+    },
+    "pltfctTOPICS": {
+        "value": 145,
+        "description": "pltfct topics"
+    },
+    "pltfctORIGINS": {
+        "value": 703,
+        "description": "pltfct origins"
+    },
+    "pltfctFROMDATE": {
+        "value": "October 1, 2000",
+        "description": ""
+    },
+    "pltfctTODATE": {
+        "value": "October 4, 2022",
+        "description": ""
+    },
+    "pltfctMOSTDATE": {
+        "value": "March 27, 2012",
+        "description": ""
+    },
+    "pltfctDEMREPS": {
+        "value": 13788,
+        "description": ""
+    },
+    "pltfctDEMREPSPCT": {
+        "value": "68.3%",
+        "description": ""
+    },
+    "pltfctFALSECLAIMSPCT": {
+        "value": "25.8%",
+        "description": ""
+    },
+    "pltfctMEANCLAIMLENCHARACTERS": {
+        "value": 109,
+        "description": ""
+    }
+}
