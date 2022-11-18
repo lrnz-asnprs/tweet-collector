@@ -8,3 +8,4 @@ tokens.json
 .DS_Store
 *environment.yml
 *ipynb
+data/all_tweets.pickle
