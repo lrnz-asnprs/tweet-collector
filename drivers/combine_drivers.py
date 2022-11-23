@@ -62,5 +62,5 @@ joined = elite_exposure_scores_df \
 
 print("Saving")
 # Save it 
-joined.to_pickle(dirs.USERS_PATH / f'{fake_or_true}_users/{fake_or_true}_users_driver_features.pickle')
+joined.to_pickle(dirs.USERS_PATH / f'{fake_or_true}_users/{fake_or_true}_users_ALL_driver_features.pickle')
 

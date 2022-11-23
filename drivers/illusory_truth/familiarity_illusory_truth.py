@@ -25,13 +25,6 @@ def get_familiarity_effect_scores(fake_or_true: str):
             users_loaded = pickle.load(f)
             users_all.update(users_loaded)
 
-    # Get following users
-    users_all = {}
-    for file in os.listdir(path):
-        with open(path / file, "rb") as f:
-            users_loaded = pickle.load(f)
-            users_all.update(users_loaded)
-
     # Load users as df
     users_dict = {user_id : users_all.get(user_id).get_user_as_dict() for user_id in users_all}
 
@@ -188,18 +181,30 @@ def get_familiarity_effect_scores(fake_or_true: str):
             # For each claim, calculate the log of the amount of tweets prior, then aggregate
             log_sum_prior_claims = 0
             for claim in claims_by_user:
-                log_sum_prior_claims += (1 + math.log(len(claim['prior_following_claims'])))
+                log_sum_prior_claims += math.log(len(claim['prior_following_claims']))
                 
             # Normalize by claim count that have prior tweets of this user
             norm_log_sum = log_sum_prior_claims / claims_amount
+            users_dict.get(user_id)['familiarity_effect_normalized_claim_amount'] = norm_log_sum
 
-            users_dict.get(user_id)['familiarity_effect_claim'] = norm_log_sum
+             # Try to normalize by friends count
+            norm_log_sum_friends = log_sum_prior_claims / len(users_dict.get(user_id)['following_ids'])
+            users_dict.get(user_id)['familiarity_effect_normalized_all_friends_amount'] = norm_log_sum_friends
+
+            # Normalize by amount of fake friends
+            norm_log_sum_fake_friends = log_sum_prior_claims / len(users_dict.get(user_id)['following_fake_users'])
+            users_dict.get(user_id)['familiarity_effect_normalized_fake_friends_amount'] = norm_log_sum_fake_friends
+
 
         except:
             # No effect
-            users_dict.get(user_id)['familiarity_effect_claim'] = 0
+            users_dict.get(user_id)['familiarity_effect_normalized_claim_amount'] = 0
+            users_dict.get(user_id)['familiarity_effect_normalized_all_friends_amount'] = 0
+            users_dict.get(user_id)['familiarity_effect_normalized_fake_friends_amount'] = 0
 
 
-    return_dict = {k:{'familiarity_effect_claim': v['familiarity_effect_claim']} for k,v in users_dict.items()}
+    return_dict = {k : {'familiarity_effect_normalized_claim_amount' : v['familiarity_effect_normalized_claim_amount'], 
+                        'familiarity_effect_normalized_all_friends_amount' : v['familiarity_effect_normalized_all_friends_amount'], 
+                        'familiarity_effect_normalized_fake_friends_amount' : v['familiarity_effect_normalized_fake_friends_amount']} for k,v in users_dict.items()}
 
     return return_dict

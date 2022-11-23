@@ -80,30 +80,36 @@ def get_in_group_scores(fake_or_true: str):
         
             mutual_friends = users_dict.get(user_id)['mutual_friends']
 
-            falsity_scores = [users_dict.get(mutual_friend)['aggregate_falsity_score'] for mutual_friend in mutual_friends]
+            agg_falsity_scores = [users_dict.get(mutual_friend)['aggregate_falsity_score'] for mutual_friend in mutual_friends]
+            avg_falsity_scores = [users_dict.get(mutual_friend)['average_falsity_score'] for mutual_friend in mutual_friends]
 
             weights = [users_dict.get(mutual_friend)['tweets_per_day']*60 for mutual_friend in mutual_friends] # Tweets in a two months period
 
-            weighted_avg = np.average(falsity_scores)
+            agg_weighted_avg = np.average(agg_falsity_scores)
+            avg_weighted_avg = np.average(avg_falsity_scores)
 
-            users_dict[user_id]['weighted_avg_falsity_mutual_friends'] = weighted_avg
+            users_dict[user_id]['weighted_aggregate_falsity_mutual_friends'] = agg_weighted_avg
+            users_dict[user_id]['weighted_average_falsity_mutual_friends'] = avg_weighted_avg
 
         except:
 
-            users_dict[user_id]['weighted_avg_falsity_mutual_friends'] = 0
+            users_dict[user_id]['weighted_aggregate_falsity_mutual_friends'] = 0
+            users_dict[user_id]['weighted_average_falsity_mutual_friends'] = 0
 
 
     # For sanity checking, add scores to df
-    users_df['weighted_avg_falsity_mutual_friends'] = users_df['user_id'].apply(lambda x: users_dict.get(x)['weighted_avg_falsity_mutual_friends'])
+    users_df['weighted_aggregate_falsity_mutual_friends'] = users_df['user_id'].apply(lambda x: users_dict.get(x)['weighted_aggregate_falsity_mutual_friends'])
+    users_df['weighted_average_falsity_mutual_friends'] = users_df['user_id'].apply(lambda x: users_dict.get(x)['weighted_average_falsity_mutual_friends'])
 
-    users_df['aggregate_falsity_score'].corr(users_df['weighted_avg_falsity_mutual_friends'])
+    users_df['aggregate_falsity_score'].corr(users_df['weighted_average_falsity_mutual_friends'])
 
     # Return dict with the necessary columns
     return_dict = {}
 
     for user_id in users_dict:
         if user_id not in return_dict:
-            return_dict[user_id] = { 'weighted_avg_falsity_mutual_friends':users_dict.get(user_id)['weighted_avg_falsity_mutual_friends'],
+            return_dict[user_id] = { 'weighted_aggregate_falsity_mutual_friends':users_dict.get(user_id)['weighted_aggregate_falsity_mutual_friends'],
+                                    'weighted_average_falsity_mutual_friends':users_dict.get(user_id)['weighted_average_falsity_mutual_friends'],
                                     'tweets_per_day':users_dict.get(user_id)['tweets_per_day'],
                                     'mutual_friends':users_dict.get(user_id)['mutual_friends']
                                     }

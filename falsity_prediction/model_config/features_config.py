@@ -2,7 +2,13 @@
 File to specify necessary model configurations
 """
 
+DRIVER_BINARY_USER_FEATURES = [
+    'party',
+]
+
 DRIVER_CONTINUOUS_USER_FEATURES = [
+    # 'ideology_score',
+    'worldview_alignment',
     'elite_exposure_score',
     'weighted_avg_falsity_mutual_friends',
     'Analytic',                               
@@ -26,10 +32,12 @@ DRIVER_CONTINUOUS_USER_FEATURES = [
     'flesch_score'
 ]
 
+
 GENERAL_CONTINUOUS_USER_FEATURES = [
     'followers_count',
     'friends_count',
     'tweet_count',
     'tweets_per_day'
 ]
+
 
