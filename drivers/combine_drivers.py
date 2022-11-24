@@ -16,7 +16,7 @@ from drivers.emotions.emotional_content import get_emotional_content_fluency_sco
 """
 Specify if done for fake or true users
 """
-fake_or_true = 'fake'
+fake_or_true = 'true'
 
 dirs = Directories()
 emotion_state_folder = dirs.DATA_PATH / 'emotion_dictionary/'

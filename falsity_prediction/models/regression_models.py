@@ -19,6 +19,22 @@ class LinearRegressionModel:
     def predict(self, X):
         return self.model.predict(X)
 
+    def predict_eval(self, X, y):
+        print("Mean squared error")
+        print(mean_squared_error(y, self.model.predict(X)))
+        print()
+        print('Mean absolute error')
+        print(mean_absolute_error(y, self.model.predict(X)))
+        print()
+        print('R2 Score')
+        print(r2_score(y, self.model.predict(X)))
+        print('Adjusted R2 Score')
+        r2 = r2_score(y, self.model.predict(X))
+        no_observations = len(X)
+        no_variables = len(X.columns)
+        adjusted_r2 = 1 - ((1-r2)*(no_observations-1)/(no_observations-no_variables-1))
+        print(adjusted_r2)
+
 
 class RandomForestRegressionModel:
     def __init__(self, type: str):
@@ -43,7 +59,6 @@ class RandomForestRegressionModel:
         print("Training RF regressor.")
         self.model.fit(X, y)
         # Evaluate predictions
-        self.predict_eval(X, y)
         self.feature_importance()
 
     def grid_search(self, X, y):
@@ -68,6 +83,9 @@ class RandomForestRegressionModel:
         return self.model.predict_proba(X)
 
     def predict_eval(self, X, y):
+        """
+        Plug in X_test, y_test here
+        """
         print("Mean squared error")
         print(mean_squared_error(y, self.model.predict(X)))
         print()
@@ -76,6 +94,12 @@ class RandomForestRegressionModel:
         print()
         print('R2 Score')
         print(r2_score(y, self.model.predict(X)))
+        print('Adjusted R2 Score')
+        r2 = r2_score(y, self.model.predict(X))
+        no_observations = len(X)
+        no_variables = len(X.columns)
+        adjusted_r2 = 1 - ((1-r2)*(no_observations-1)/(no_observations-no_variables-1))
+        print(adjusted_r2)
 
     def feature_importance(self):
 

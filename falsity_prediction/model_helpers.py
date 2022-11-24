@@ -59,17 +59,30 @@ def load_user_driver_data():
 
 # Function that splits dataframe in 3 or 5 equal chunks (quintiles) based on column
 
-def split_in_chunks(df: pd.DataFrame, column: str, no_splits: int):
+def split_in_quantile_chunks(df: pd.DataFrame, column: str, quantiles: int):
 
     df = df.copy()
 
-    if no_splits == 5:
-        labels = ["very_low", "low", 'medium', "high", 'very_high']
-    elif no_splits == 3:
-        labels = ["low", 'medium', "high"]
-    elif no_splits == 2:
-        labels = ["low", "high"]
+    if quantiles == 5:
+        labels = ["0_very_low", "1_low", '2_medium', "3_high", '4_very_high']
+    elif quantiles == 3:
+        labels = ["0_low", '1_medium', "2_high"]
+    elif quantiles == 2:
+        labels = ["0_low", "1_high"]
 
-    df["group_"+column] = pd.qcut(df[column], q=no_splits, labels=labels)
+    df["quantile_"+column] = pd.qcut(df[column], q=quantiles, labels=labels)
     
+    return df
+
+def split_in_ranges(df: pd.DataFrame, column: str, below: int, above: int):
+
+    df = df.copy()
+
+    def _apply_split(x):
+        if x < below: return '0_low'
+        elif x >= below and x <= above: return '1_medium'
+        else: return '2_high'
+
+    df['range_'+column] = df[column].apply(_apply_split)
+
     return df

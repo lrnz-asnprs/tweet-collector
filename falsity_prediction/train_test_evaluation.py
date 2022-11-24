@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append('/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector')
-
+import pickle
 from models.regression_models import RandomForestRegressionModel, LinearRegressionModel
 from models.classification_models import RandomForestClassificationModel
 import pickle
@@ -77,8 +77,12 @@ def run_regression_random_forest_model(model_type: str, continuous_features: lis
         save_feature_importance_plot_forest(model=model, model_type=model_type)
         fig.savefig(dir.REPO_PATH / f'falsity_prediction/plots/random_forest_{model_type}.png', format='png')
 
+        # save
+        with open(f'trained_models/{model_type}_random_forest.pkl','wb') as f:
+            pickle.dump(model,f)
+
 # Run regression
-# run_regression_random_forest_model(model_type='simple', continuous_features=DRIVER_CONTINUOUS_USER_FEATURES, target='aggregate_falsity_score', save=False)
+run_regression_random_forest_model(model_type='grid_search', continuous_features=DRIVER_CONTINUOUS_USER_FEATURES, target='aggregate_falsity_score', save=True)
 
 
 
@@ -128,15 +132,15 @@ def run_classification_random_forest_model(model_type: str, continuous_features:
     #     fig.savefig(dir.REPO_PATH / f'falsity_prediction/plots/random_forest_{model_type}.png', format='png')
 
 
-dir = Directories()
+# dir = Directories()
 
-# Load user features
-user_df = load_user_driver_data()
+# # Load user features
+# user_df = load_user_driver_data()
 
-# Split in 3 different groups
-user_df = split_in_chunks(user_df, 'aggregate_falsity_score', 2)
-user_df.columns
-user_df[user_df['worldview_alignment'] == 0]
+# # Split in 3 different groups
+# user_df = split_in_chunks(user_df, 'aggregate_falsity_score', 2)
+# user_df.columns
+# user_df[user_df['worldview_alignment'] == 0]
 
 
 run_classification_random_forest_model(model_type='simple', continuous_features = DRIVER_CONTINUOUS_USER_FEATURES + GENERAL_CONTINUOUS_USER_FEATURES, target = 'group_aggregate_falsity_score', save = False)

@@ -31,8 +31,8 @@ class RandomForestClassificationModel:
     def fit(self, X, y):
         print("Training RF classifier.")
         self.model.fit(X, y)
-        target_names = y.unique()
-        self.predict_eval(X, y, target_names)
+        # target_names = y.unique()
+        # self.predict_eval(X, y, target_names)
 
     def grid_search(self, X, y):
         parameters = {
@@ -56,12 +56,12 @@ class RandomForestClassificationModel:
         return self.model.predict_proba(X)
 
     def predict_eval(self, X, y, target_names):
-
+        target_names = y.unique()
         predictions = self.model.predict(X)
         print(classification_report(y,predictions))
          # Plot confusion matrix
         fig, ax = plt.subplots(figsize=(12, 8))
-        cm = confusion_matrix(y, predictions)#, labels= target_names)
+        cm = confusion_matrix(y, predictions, labels=target_names)
         sns.heatmap(cm, annot = True, cbar = False, fmt = "d", linewidths = .5, cmap = "Blues", ax = ax)
         ax.set_title("Confusion Matrix")
         ax.set_xlabel("Predicted class")
