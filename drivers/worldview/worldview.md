@@ -78,7 +78,6 @@ pfs = PolFollowScorer()
 pfs.score_users()
 
 
-
 if save_results:
     pfs.write_to_json()
 

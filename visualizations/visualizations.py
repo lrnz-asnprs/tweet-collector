@@ -2,15 +2,12 @@ from matplotlib import pyplot as plt
 from drivers.configs.directories import Directories
 import pandas as pd
 
-
-"""
-Following script enables a coherent creation of subplots to visualize the 
-data characteristic of the politifact fact-checked claims data set.
-
+""" Following script includes methods to recreate plots used in the report for this repository
 """
 
 dir = Directories()
 destination = str(dir.POLITIFACT_PLOTS_PATH) + "/" 
+destinatio_plots_drivers = str(dir.PLOTS_PATH) + "/drivers/"
 
 PARAMS = {
     "fss":12, #small font-size
@@ -19,6 +16,12 @@ PARAMS = {
 }
 
 
+
+""" 1. Politifact - Claim data
+Following section of the script enables a coherent creation of subplots to visualize the 
+data characteristic of the politifact fact-checked claims data set.
+
+"""
 
 def get_truth_values_distr(df):
     politifact_claims = df
@@ -67,8 +70,8 @@ def plot_truth_o_meter(df, save_results=True, include_title=False):
         ax.set_title('Truth-O-Meter Distribution', fontsize=PARAMS['fsl'])
 
     if save_results:
-        plt.savefig(destination + "truth-o-meter_distr.pdf")
-        plt.savefig(destination + "truth-o-meter_distr.png", dpi=600)
+        plt.savefig(destination + "truth-o-meter_distr.pdf", bbox_inches='tight')
+        #plt.savefig(destination + "truth-o-meter_distr.png", dpi=600)
     else:
         plt.show()
         
@@ -96,8 +99,8 @@ def plot_top_topics(df, save_results=True, include_title=False, tail=10):
     
     
     if save_results:
-        plt.savefig(destination + "topics_pltfct.pdf")
-        plt.savefig(destination + "topics_pltfct.png", dpi=600)
+        plt.savefig(destination + "topics_pltfct.pdf", bbox_inches='tight')
+        #plt.savefig(destination + "topics_pltfct.png", dpi=600)
     else:
         plt.show()
         
@@ -120,8 +123,8 @@ def plot_top_origins(df, save_results=True, include_title=False, tail=10):
         plt.title("Top 10 Origins of Claims", fontsize=PARAMS['fsl'])
         
     if save_results:
-        plt.savefig( destination + "origin_pltfct.pdf")
-        plt.savefig( destination + "origin_pltfct.png", dpi=600)
+        plt.savefig( destination + "origin_pltfct.pdf", bbox_inches='tight')
+        #plt.savefig( destination + "origin_pltfct.png", dpi=600)
     else:
         plt.show()
 
@@ -148,6 +151,79 @@ def plot_timeframe_cumsum(df, save_results=True, include_title=False):
     plt.plot(date_cumsum)
 
     if save_results:
-        plt.savefig(destination + "time_pltfct.pdf")
-        plt.savefig(destination + "time_pltfct.png", dpi=600)
+        plt.savefig(destination + "time_pltfct.pdf", bbox_inches='tight')
+        #plt.savefig(destination + "time_pltfct.png", dpi=600)
         
+
+
+    """ 2. Drivers and Methodology
+    
+    """
+    
+    
+def create_politicians_subsample(pols, sample_size):
+    
+    #creating the barscores
+    pols = pols[['full_name', 'ideology', 'party']]
+    pols['bar_score'] = pols['ideology'].apply(lambda x: x-0.5)
+    
+    pols_sample_rep = pols[pols['bar_score']>0.0].sample(sample_size, random_state=42).sort_values(by='bar_score')
+    pols_sample_dem = pols[pols['bar_score']<0.0].sample(sample_size, random_state=42).sort_values(by='bar_score')
+    pols_sample = pd.concat([pols_sample_dem, pols_sample_rep])
+    
+    return pols_sample    
+
+def format_politicians_barscores(pols_sample):
+    #creating the negative and positive data sample (neg:democrats, pos:republicans)
+    negative_data = pols_sample[pols_sample['bar_score']<0]['bar_score'].to_list() 
+    positive_data = pols_sample[pols_sample['bar_score']>=0]['bar_score'].to_list()
+
+    gap_neg = [0]*len(positive_data)
+    gap_pos = [0]*len(negative_data)
+
+    for x in gap_neg:
+        negative_data.append(x)
+
+    for x in positive_data:
+        gap_pos.append(x)
+        positive_data = gap_pos
+        
+    return negative_data, positive_data
+
+def plot_politicians_ideologyscores(df, sample_size, savefig=False):
+    
+    """Mothership to plot the ideology_scores
+    """
+    
+    pols_sample = create_politicians_subsample(df, sample_size)
+        
+    x = range(len(pols_sample))
+    fig = plt.figure(figsize=(14,4))
+
+    #get the negative, positive data samples / what goes above below the 0.0 (0.5 line)
+    negative_data, positive_data = format_politicians_barscores(pols_sample)
+
+    ax = plt.subplot(111)
+    ax.bar(x, negative_data, width=0.8, color='b')
+    ax.bar(x, positive_data, width=0.8, color='r')
+
+    ax.set_xticks(range(0,len(pols_sample)))
+
+    ax.set_xticklabels(pols_sample['full_name'].to_list(), rotation=80, ha='right', fontsize=PARAMS["fss"])
+
+    ax.set_ylabel("Ideology Score", fontsize=PARAMS["fsm"])
+    ax.set_xlabel("U.S. Politicians", fontsize=PARAMS["fsm"])
+    
+    y_ticklabels = []
+
+    for val in ax.get_yticks():
+        y_ticklabels.append(round(val+0.50,1))
+
+    
+
+    ax.set_yticklabels(y_ticklabels, fontsize=PARAMS["fss"])
+    
+    title = "politicians_ideology_score.pdf"
+    
+    if savefig:
+        fig.savefig(destinatio_plots_drivers + title, bbox_inches='tight')
