@@ -7,7 +7,7 @@ import pandas as pd
 
 dir = Directories()
 destination = str(dir.POLITIFACT_PLOTS_PATH) + "/" 
-destinatio_plots_drivers = str(dir.PLOTS_PATH) + "/drivers/"
+destination_plots_drivers = str(dir.PLOTS_PATH) + "/drivers/"
 
 PARAMS = {
     "fss":12, #small font-size
@@ -226,4 +226,117 @@ def plot_politicians_ideologyscores(df, sample_size, savefig=False):
     title = "politicians_ideology_score.pdf"
     
     if savefig:
-        fig.savefig(destinatio_plots_drivers + title, bbox_inches='tight')
+        fig.savefig(destination_plots_drivers + title, bbox_inches='tight')
+
+
+def plot_top_news(x, y, labels, include_title=False, save_results=False):
+    """
+    Preprocess before input: convert your df to sort values ascendingly and specify the subset to plot with .tail(n)
+    This takes in the top news from our 250 news sources derived through the Osmundsen et al. paper (2021).
+    
+    Args:
+        x (lst): Number of occurances
+        y (lst): Names of news medias
+        include_title (bool, optional): if title should be included
+        save_results (bool, optional): save results as pdf in the driver path.
+    """
+
+    colors = []
+    color_dict = {'strong republican':'red',
+                  'lean republican':'red',
+                  'centrist':'grey',
+                  'lean democratic': 'blue',
+                  'strong democratic': 'blue'}
+    
+    
+    
+    for label in labels:
+        colors.append(color_dict[label])
+
+
+    plt.barh(y=y, width=x, color=colors, label=labels, alpha=0.9)
+
+    plt.legend(['Democratic', 'Republican'])
+
+    plt.yticks(fontsize=PARAMS['fss'])
+    plt.xticks(fontsize=PARAMS['fss'], rotation=40, ha='right')
+    plt.xlabel("Number of shares", fontsize=PARAMS['fsm'])
+    #plt.ylabel("News outlet", fontsize=PARAMS['fsm'])
+    
+    
+    if include_title:
+        plt.title("Top shared" + len(x) + " news outlets", fontsize=PARAMS['fsl'])
+        
+    if save_results:
+        plt.savefig(destination_plots_drivers + "top_news_shared.pdf", bbox_inches='tight')
+    else:
+        plt.show()
+
+
+
+def plot_top_politicians_flw(x, y, labels, include_title=False, save_results=False):
+    """
+    Preprocess before input: convert your df to sort values ascendingly and specify the subset to plot with .tail(n)
+    
+    Args:
+        x (lst): Number of occurances
+        y (lst): Names of politicians
+        labels (lst): the Party the politician is affiliated with.
+        include_title (bool, optional): if title should be included
+        save_results (bool, optional): save results as pdf in the driver path.
+    """
+    
+    colors = []
+    color_dict = {'Republican':'red',
+                  'Democrat': 'blue'}
+
+    for label in labels:
+        colors.append(color_dict[label])
+
+    plt.barh(y=y, width=x, color=colors, label=labels, alpha=0.9)
+
+    plt.legend(['Democrat', 'Republican'])
+    
+    plt.yticks(fontsize=PARAMS['fss'])
+    plt.xticks(fontsize=PARAMS['fss'], rotation=40, ha='right')
+    plt.xlabel("Number of follows", fontsize=PARAMS['fsm'])
+    #plt.ylabel("U.S. Politicians", fontsize=PARAMS['fsm'])
+    
+    
+    if include_title:
+        plt.title("Top shared" + len(x) + " politicians followed", fontsize=PARAMS['fsl'])
+        
+    if save_results:
+        plt.savefig( destination_plots_drivers + "top_politicians_followed.pdf", bbox_inches='tight')
+    else:
+        plt.show()
+        
+        
+
+def plot_politicians_vs_news_iscores(users_worldview_clean, savefig=False): 
+
+    plt.figure(figsize=(8,6))
+
+    cm = plt.cm.get_cmap('inferno')
+
+    x = users_worldview_clean.ideology_score
+    y = users_worldview_clean.ideology_score_flw
+    c = users_worldview_clean.average_falsity_score
+
+
+    sc = plt.scatter(x=x,y=y,c=c, vmin=0, vmax=1,cmap=cm, alpha=0.8)
+
+    plt.xlabel("News ideology score", fontsize=13)
+    plt.ylabel("Politicians followed ideology score", fontsize=13)
+
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+
+    cbar = plt.colorbar(sc)
+
+    cbar.set_label("Average falsity score", rotation=270, labelpad=20, fontsize=13)
+
+    if savefig:
+        plt.savefig(str(dir.PLOTS_PATH) + "/drivers/" + "politician_vs_news_iscores.pdf", bbox_inches='tight')
+    else:
+        plt.show()
