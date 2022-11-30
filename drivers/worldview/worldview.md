@@ -10,6 +10,11 @@ Source: from source of the Elites paper
 
 ### Dem/Rep News Sources Ideology Scores
 
+www.allsides.com/media-bias/ (Maybe note why there is a difference in the length --> Osmund et al. say 260 news, however there are only 250 available on the website.) 
+
+While AllSides combines different methods for estimating ideological bias (e.g., editorial reviews, third-party judgments), SM Section 7 shows that their ratings correlate highly – Pearson’s r = .90 – with network-based measures of ideological alignment of media sites (Bakshy, Messing and Adamic 2015). See SM Section 7 and Figure SM 2b for the 20 most shared real news domains.
+
+
 File: dem_rep_news.json
 Script: Newsscorer250.py
 Content: 250 news sources labelled from on a scale from: strong democratic - lean democratic - centrist - lean republican - strong republican
@@ -34,7 +39,7 @@ mean true users ideology score 0.2885464332384139
 Fake users
 NaN vals 958
 Actual values for data points 18505
-Total dataset 5200
+Total dataset ~19500
 Fake users coverage 0.9507784000411036
 mean fake users ideology score 0.5241563714283359
 
