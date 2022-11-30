@@ -197,10 +197,10 @@ def get_familiarity_effect_scores(fake_or_true: str):
 
 
         except:
-            # No effect
-            users_dict.get(user_id)['familiarity_effect_normalized_claim_amount'] = 0
-            users_dict.get(user_id)['familiarity_effect_normalized_all_friends_amount'] = 0
-            users_dict.get(user_id)['familiarity_effect_normalized_fake_friends_amount'] = 0
+            # No familiarity effect for those users
+            users_dict.get(user_id)['familiarity_effect_normalized_claim_amount'] = -1
+            users_dict.get(user_id)['familiarity_effect_normalized_all_friends_amount'] = -1
+            users_dict.get(user_id)['familiarity_effect_normalized_fake_friends_amount'] = -1
 
 
     return_dict = {k : {'familiarity_effect_normalized_claim_amount' : v['familiarity_effect_normalized_claim_amount'], 

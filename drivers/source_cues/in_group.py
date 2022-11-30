@@ -92,9 +92,9 @@ def get_in_group_scores(fake_or_true: str):
             users_dict[user_id]['weighted_average_falsity_mutual_friends'] = avg_weighted_avg
 
         except:
-
-            users_dict[user_id]['weighted_aggregate_falsity_mutual_friends'] = 0
-            users_dict[user_id]['weighted_average_falsity_mutual_friends'] = 0
+            # If no mutual friends, set weight to -1
+            users_dict[user_id]['weighted_aggregate_falsity_mutual_friends'] = -1
+            users_dict[user_id]['weighted_average_falsity_mutual_friends'] = -1
 
 
     # For sanity checking, add scores to df

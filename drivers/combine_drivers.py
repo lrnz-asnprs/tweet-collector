@@ -16,7 +16,7 @@ from drivers.emotions.emotional_content import get_emotional_content_fluency_sco
 """
 Specify if done for fake or true users
 """
-fake_or_true = 'true'
+fake_or_true = 'fake'
 
 dirs = Directories()
 emotion_state_folder = dirs.DATA_PATH / 'emotion_dictionary/'
@@ -52,6 +52,7 @@ print('Getting emotional content & fluency scores')
 # Get emotional content & familiarity fluency average scores per user
 emotion_content_fluency_scores = get_emotional_content_fluency_scores(fake_or_true=fake_or_true)
 emotion_content_fluency_df = pd.DataFrame.from_dict(emotion_content_fluency_scores, orient='index')
+# emotion_content_fluency_df['negative_sentiment'] = emotion_content_fluency_df['negative_sentiment'].fillna(0)
 
 # Put user features together
 joined = elite_exposure_scores_df \

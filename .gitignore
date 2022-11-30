@@ -3,8 +3,6 @@ data/users/*
 data/tweets/*
 data/claims_fluency_emotions
 data/emotion_dictionary
-data
-falsity_prediction/plots
 tokens.json
 *.pyc
 .DS_Store

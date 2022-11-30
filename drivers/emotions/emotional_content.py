@@ -16,8 +16,8 @@ def get_emotional_content_fluency_scores(fake_or_true: str):
     dir = Directories()
 
     # Load claims
-    claim_dir = dir.DATA_PATH / 'fakenews_sources'
-    claims = pd.read_csv(claim_dir / 'politifact_claims_all_features_0911.csv')
+    claim_dir = dir.DATA_PATH / 'claims_fluency_emotions'
+    claims = pd.read_csv(claim_dir / 'politifact_claims_emotions_fluency.csv')
 
     # All tweets we have 
     tweet_dir = dir.DATA_PATH / 'tweets'
@@ -41,20 +41,32 @@ def get_emotional_content_fluency_scores(fake_or_true: str):
         users_tweets = users.get(user_id)['user_object'].get_all_false_tweets_retweets() + users.get(user_id)['user_object'].get_all_true_tweets_retweets()
 
         # Features to extract
-        emotional_features = ['TOXICITY', 'SEVERE_TOXICITY', 'IDENTITY_ATTACK', 'INSULT', 'PROFANITY', 'THREAT', 'flesch_score']
+        emotional_features = ['TOXICITY', 'SEVERE_TOXICITY', 'IDENTITY_ATTACK', 'INSULT', 'PROFANITY', 'THREAT', 'flesch_score', 'sentiment_polarity']
         for tweet in users_tweets:
 
             # user emotional features temporary store
-            user_emotion_stats = {'TOXICITY':[], 'SEVERE_TOXICITY':[], 'IDENTITY_ATTACK':[], 'INSULT':[], 'PROFANITY':[], 'THREAT':[], 'flesch_score':[]}
+            user_emotion_stats = {'TOXICITY':[], 'SEVERE_TOXICITY':[], 'IDENTITY_ATTACK':[], 'INSULT':[], 'PROFANITY':[], 'THREAT':[], 'flesch_score':[], 'average_sentiment':[], 'positive_sentiment':[], 'negative_sentiment':[], 'neutral_sentiment': []}
 
             # Grab emotional features from claim
             claim_index = tweets_loaded.get(tweet)['claim_index']
             claims_features = claims.loc[claims['claim_index'] == int(claim_index)]
             for emotion in emotional_features:
-                user_emotion_stats[emotion].append(claims_features[emotion].values[0])
+                if emotion != 'sentiment_polarity':
+                    user_emotion_stats[emotion].append(claims_features[emotion].values[0])
+                else: 
+                    # First get avg sentiment
+                    user_emotion_stats['average_sentiment'].append(claims_features[emotion].values[0])
+                    # if it's negative sentiment, append to to negative sentiment, otherwise to positive
+                    if claims_features[emotion].values[0] < 0:
+                        user_emotion_stats['negative_sentiment'].append(claims_features[emotion].values[0])
+                    elif claims_features[emotion].values[0] > 0: 
+                        user_emotion_stats['positive_sentiment'].append(claims_features[emotion].values[0])
+                    else: # if 0 then it's neutral
+                        user_emotion_stats['neutral_sentiment'].append(claims_features[emotion].values[0])
+
 
         # When done, calc average and return that per user
-        for emotion in emotional_features:
+        for emotion in user_emotion_stats.keys():
             emotion_avg = np.average(user_emotion_stats.get(emotion))
             user_emotion_stats[emotion] = emotion_avg
         

@@ -47,8 +47,8 @@ def get_elite_exposure_scores(fake_or_true: str):
         # Add elite ids to user object
             users_all.get(user_id).elite_ids = following_elites
         else:
-        # If not following any elites, set score to 0
-            users_all.get(user_id).elite_exposure_score = 0 
+        # If not following any elites, set score to -1
+            users_all.get(user_id).elite_exposure_score = -1 
         # No elites followed, add empty list
             users_all.get(user_id).elite_ids = []
 
