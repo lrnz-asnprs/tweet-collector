@@ -1,6 +1,6 @@
 # The Fugazi Project
 
-The fugazi project aims to translate psychological drivers of misinformation into tangible.
+The fugazi project aims to translate psychological drivers of misinformation into quantifiable measures appplicable on observational data from Twitter.
 
 
 The repository comprise two major components 1) Data collection, which primarily refers to the fake_collector directory, and 2) Analytics and operationalization implementations, which is in the drivers and falsity_prediction directory.
