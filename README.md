@@ -14,14 +14,13 @@ fakenews_tweet_collector.py comprise the FakeNewsTweetCollector class which can 
 
 ```python
 
-sample = pd.read_csv("fake_news.csv")
+sample = pd.read_csv("the_politifact_fake_news_file.csv")
 
 fn = FakeNewsTweetCollector(sample)
 
 fn.get_fakenews_tweets()
 
 ```
-
 
 ## Drivers
 
@@ -30,5 +29,39 @@ fn.get_fakenews_tweets()
 
 ### Emotions
 
-### Partisanship
+### Worldview
+
+We measure Worldview based on the news sources that our twitter users share. In particular, we use the ALlsides.com ratings for the political bias of news sources to access the political ideology of users. We then validate our approach by assessing with polticians that the users follow. Here we apply the Govtrack ratings of politicians the get a score an ideology score from 0-1 of all the members congress (i.e., 117th congress).
+
+Below are examples provided for how one can run each class.
+
+To run the NewsScorer250
+```python
+
+from drivers.worldview.NewsScorer250 import NewsScorer250
+
+ns = NewsScorer250()
+
+ns.full_run()
+
+ns.write_to_json()
+
+```
+
+
+
+To run the PolFollowScorer
+```python
+
+from drivers.worldview.PolFollowScorer import PolFollowScorer
+
+pfs = PolFollowScorer()
+
+pfs.score_users()
+
+
+pfs.write_to_json()
+
+```
+
 
