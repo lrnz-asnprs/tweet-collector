@@ -1,5 +1,7 @@
 from matplotlib import pyplot as plt
 from drivers.configs.directories import Directories
+import numpy as np
+from matplotlib import cm
 import pandas as pd
 
 """ Following script includes methods to recreate plots used in the report for this repository
@@ -26,15 +28,16 @@ data characteristic of the politifact fact-checked claims data set.
 def get_truth_values_distr(df):
     politifact_claims = df
     distr_of_truth_values = politifact_claims.groupby("truth_value")[['truth_value']].count()
+    distr_of_truth_values.drop(["full-flop", "no-flip", "half-flip"], inplace=True)
     
     #for ordering
     labels = {
-        "barely-true": 2,	
-        "false": 1,
-        "half-true": 3,
-        "mostly-true": 4,
-        "pants-fire": 0,	
-        "true": 5,
+        "barely-true": 3,	
+        "false": 4,
+        "half-true": 2,
+        "mostly-true": 1,
+        "pants-fire": 5,	
+        "true": 0,
         }
     
     distr_of_truth_values.rename({'truth_value':'count'}, axis=1, inplace=True)
@@ -55,6 +58,12 @@ def plot_truth_o_meter(df, save_results=True, include_title=False):
     
     truth_values = get_truth_values_distr(df)
     
+    cmap = cm.get_cmap('inferno')
+    color_groups = np.arange(0,1,1/6)
+    colors = [cmap(color_groups[0]), cmap(color_groups[1]), cmap(color_groups[2]), cmap(color_groups[3]), cmap(color_groups[4]), cmap(color_groups[5])]
+    alternative_colors = ['#ff0000','#ffa700', '#fff400', '#a3ff00','#2cba00']
+    
+    
     fig, ax = plt.subplots()
 
     truth_value = truth_values.index.to_list()
@@ -62,9 +71,10 @@ def plot_truth_o_meter(df, save_results=True, include_title=False):
     bar_labels = truth_values.index
 
     # Hex colors derived from HEX COLORS CALC --> https://color-hex.org/color-palettes/187
-    ax.bar(truth_value, counts, label=bar_labels, color=['#ff0000','#ffa700', '#fff400', '#a3ff00','#2cba00'])
-
+    ax.bar(truth_value, counts, label=bar_labels, color=colors, alpha=0.7)
+    
     ax.set_ylabel('Claims', fontsize=PARAMS['fsm'])
+    
     
     if include_title:
         ax.set_title('Truth-O-Meter Distribution', fontsize=PARAMS['fsl'])
@@ -74,7 +84,7 @@ def plot_truth_o_meter(df, save_results=True, include_title=False):
         #plt.savefig(destination + "truth-o-meter_distr.png", dpi=600)
     else:
         plt.show()
-        
+
 
 def plot_top_topics(df, save_results=True, include_title=False, tail=10):
     
