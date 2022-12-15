@@ -77,7 +77,7 @@ def plot_truth_o_meter(df, save_results=True, include_title=False):
     
     
     if include_title:
-        ax.set_title('Truth-O-Meter Distribution', fontsize=PARAMS['fsl'])
+        ax.set_title('Truth-O-Meter Rating Distribution', fontsize=PARAMS['fsl'])
 
     if save_results:
         plt.savefig(destination + "truth-o-meter_distr.pdf", bbox_inches='tight')
@@ -86,8 +86,9 @@ def plot_truth_o_meter(df, save_results=True, include_title=False):
         plt.show()
 
 
-def plot_top_topics(df, save_results=True, include_title=False, tail=10):
-    
+def plot_top_topics(df, save_results=True, include_title=False, tail=10, figsize=(8,5)):
+    plt.figure(figsize=figsize)
+    df.topic = df.topic.apply(lambda x: " ".join([str.capitalize(w) for w in x.split("-")]))
     politifact_claims = df 
     
     by_topic = politifact_claims.groupby('topic')[['claim']].count()
@@ -105,7 +106,7 @@ def plot_top_topics(df, save_results=True, include_title=False, tail=10):
 
     #plt.ylabel("Topics", fontsize='16')
     if include_title:
-        plt.title("Top 10 Topics in the Politifact Data Set", fontsize=PARAMS['fsl'])
+        plt.title("Top 10 Topics Covered on PolitiFact", fontsize=PARAMS['fsl'])
     
     
     if save_results:
@@ -115,13 +116,19 @@ def plot_top_topics(df, save_results=True, include_title=False, tail=10):
         plt.show()
         
 
-def plot_top_origins(df, save_results=True, include_title=False, tail=10):
+def plot_top_origins(df, save_results=True, include_title=False, tail=10, figsize=(8,5)):
     
-    #Altering the data to get the groupby view of it.
-    politifact_claims = df
-    by_origin = politifact_claims.groupby("origin")[['claim']].count()
+    plt.figure(figsize=figsize)
+    # Capitalize the names
+    df.raw_origin = df.raw_origin.apply(lambda x: " ".join([str.capitalize(w) for w in x.split(" ")]))
+    #Altering the data to get the groupby view of it and only people (rep/dems)
+    politifact_claims = df[df.party.isin(['Democrat','Republican'])]
+    
+    by_origin = politifact_claims.groupby("raw_origin")[['claim']].count()
     
     by_origin_view = by_origin.sort_values(by='claim').tail(tail)
+
+    by_origin_view
 
     plt.barh(y=by_origin_view.index, width=by_origin_view.claim)
 
@@ -130,10 +137,10 @@ def plot_top_origins(df, save_results=True, include_title=False, tail=10):
     plt.xlabel("Claims", fontsize=PARAMS['fsm'])
 
     if include_title:
-        plt.title("Top 10 Origins of Claims", fontsize=PARAMS['fsl'])
+        plt.title("Top 10 Fact-checked politicians", fontsize=PARAMS['fsl'])
         
     if save_results:
-        plt.savefig( destination + "origin_pltfct.pdf", bbox_inches='tight')
+        plt.savefig(destination + "origin_pltfct.pdf", bbox_inches='tight')
         #plt.savefig( destination + "origin_pltfct.png", dpi=600)
     else:
         plt.show()
