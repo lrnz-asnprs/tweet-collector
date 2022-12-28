@@ -9,3 +9,4 @@ tokens.json
 *environment.yml
 *ipynb
 data/all_tweets.pickle
+visualizations/

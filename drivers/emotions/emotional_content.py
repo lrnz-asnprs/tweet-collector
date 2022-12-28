@@ -42,10 +42,10 @@ def get_emotional_content_fluency_scores(fake_or_true: str):
 
         # Features to extract
         emotional_features = ['TOXICITY', 'SEVERE_TOXICITY', 'IDENTITY_ATTACK', 'INSULT', 'PROFANITY', 'THREAT', 'flesch_score', 'sentiment_polarity']
-        for tweet in users_tweets:
+        # user emotional features temporary store
+        user_emotion_stats = {'TOXICITY':[], 'SEVERE_TOXICITY':[], 'IDENTITY_ATTACK':[], 'INSULT':[], 'PROFANITY':[], 'THREAT':[], 'flesch_score':[], 'average_sentiment':[], 'positive_sentiment':[], 'negative_sentiment':[], 'neutral_sentiment': []}
 
-            # user emotional features temporary store
-            user_emotion_stats = {'TOXICITY':[], 'SEVERE_TOXICITY':[], 'IDENTITY_ATTACK':[], 'INSULT':[], 'PROFANITY':[], 'THREAT':[], 'flesch_score':[], 'average_sentiment':[], 'positive_sentiment':[], 'negative_sentiment':[], 'neutral_sentiment': []}
+        for tweet in users_tweets:
 
             # Grab emotional features from claim
             claim_index = tweets_loaded.get(tweet)['claim_index']
@@ -73,3 +73,8 @@ def get_emotional_content_fluency_scores(fake_or_true: str):
         return_dict[user_id] = user_emotion_stats
 
     return return_dict
+
+
+
+if __name__ == "__main__":
+    get_emotional_content_fluency_scores('fake')

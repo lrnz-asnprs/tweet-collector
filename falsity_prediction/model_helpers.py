@@ -7,6 +7,17 @@ sys.path.append('/Users/laurenzaisenpreis/Uni/Thesis/tweet-collector')
 from fake_collector.configs.directory_config import Directories
 from fake_collector.utils.load_fake_true_users import load_all_fake_users_df
 
+dir = Directories()
+
+# Load user features
+user_features_dir = dir.USERS_PATH / 'fake_users'
+with open(user_features_dir / 'fake_users_ALL_driver_features_v2.pickle', 'rb') as f:
+    user_features = pickle.load(f)
+
+user_features = user_features.reset_index().rename(columns={'index':'user_id'})
+user_features['user_id'] = user_features['user_id'].astype(str)
+
+user_features.to_csv('../data/falsebelief_users.csv')
 
 # Save feature importances of RF
 def save_feature_importance_plot_forest(model, model_type: str):
@@ -32,20 +43,23 @@ def load_user_driver_data():
 
     # Load user features
     user_features_dir = dir.USERS_PATH / 'fake_users'
-    with open(user_features_dir / 'fake_users_driver_features.pickle', 'rb') as f:
+    with open(user_features_dir / 'fake_users_ALL_driver_features_v2.pickle', 'rb') as f:
         user_features = pickle.load(f)
 
     user_features = user_features.reset_index().rename(columns={'index':'user_id'})
     user_features['user_id'] = user_features['user_id'].astype(str)
 
+    user_features.columns
+
     # Load ideology features of users
-    ideology_features = pd.read_csv(dir.DATA_PATH / 'driver_scores/worldview_driver.csv')
+    ideology_features = pd.read_csv(dir.DATA_PATH / 'driver_scores/worldview_driver_v2.csv')
     ideology_features.rename(columns={'index':'user_id'}, inplace=True)
     ideology_features['user_id'] = ideology_features['user_id'].astype(str)
+
     # Remove the ones without any political stance
     ideology_features.dropna(inplace=True)
     # Select relevant features
-    ideology_features = ideology_features[['user_id', 'ideology_score', 'worldview_alignment']]
+    ideology_features = ideology_features[['user_id', 'ideology_score', 'worldview_alignment', 'news_count']]
 
     # Load initial user df
     fake_users = load_all_fake_users_df()
