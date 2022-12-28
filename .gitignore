@@ -10,8 +10,4 @@ tokens.json
 *environment.yml
 *ipynb
 data/all_tweets.pickle
-<<<<<<< HEAD
 visualizations/
-=======
-readme_extras.md
->>>>>>> 7b03ba10041b04abc04935d19506a27917118077
