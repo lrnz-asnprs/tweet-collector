@@ -1,9 +1,17 @@
 # The Fugazi Project
 
-The fugazi project aims to translate psychological drivers of misinformation into quantifiable measures appplicable on observational data from Twitter.
+The fugazi project aims to translate psychological drivers of misinformation into quantifiable measures derived from observational data from Twitter.
 
 
 The repository comprise two major components 1) Data collection, which primarily refers to the fake_collector directory, and 2) Analytics and operationalization implementations, which is in the drivers and falsity_prediction directory.
+
+
+## Data sets
+
+The two main data sets for our research are available within the tweet-collector repository under the data directory:
+
++ politifact\_claims.csv contains the 20,174 fact-checked claims and details that follow with it. 
++ falsebelief\_users.csv contains the sample of 19,463 users who have shared the highest quantity of misinformation on Twitter. The respective calculated features for driver and false beliefs scores are included. 
 
 
 ## Fake Collector
@@ -19,48 +27,6 @@ sample = pd.read_csv("the_politifact_fake_news_file.csv")
 fn = FakeNewsTweetCollector(sample)
 
 fn.get_fakenews_tweets()
-
-```
-
-## Drivers
-
-### Illusory Truth
-### Source Cues
-
-### Emotions
-
-### Worldview
-
-We measure Worldview based on the news sources that our twitter users share. In particular, we use the ALlsides.com ratings for the political bias of news sources to access the political ideology of users. We then validate our approach by assessing with polticians that the users follow. Here we apply the Govtrack ratings of politicians the get a score an ideology score from 0-1 of all the members congress (i.e., 117th congress).
-
-Below are examples provided for how one can run each class.
-
-To run the NewsScorer250
-```python
-
-from drivers.worldview.NewsScorer250 import NewsScorer250
-
-ns = NewsScorer250()
-
-ns.full_run()
-
-ns.write_to_json()
-
-```
-
-
-
-To run the PolFollowScorer
-```python
-
-from drivers.worldview.PolFollowScorer import PolFollowScorer
-
-pfs = PolFollowScorer()
-
-pfs.score_users()
-
-
-pfs.write_to_json()
 
 ```
 
