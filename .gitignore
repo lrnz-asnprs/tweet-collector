@@ -1,3 +1,4 @@
+data/*/
 data/fakenews_tw_output
 data/users/*
 data/tweets/*
@@ -9,3 +10,4 @@ tokens.json
 *environment.yml
 *ipynb
 data/all_tweets.pickle
+readme_extras.md
