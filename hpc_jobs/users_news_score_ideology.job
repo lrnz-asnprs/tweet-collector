@@ -36,6 +36,6 @@ conda activate fugazi
 
 # -----------------------------------------------------------------------------------------------------------------
 
-# SCRIPT TO RUN
+# SCRIPT TO RUN --> MAKE SURE TO MOVE TO THE TOP LEVEL DIRECTORY TO RUN AS IT IS.
 python -u main.py
 

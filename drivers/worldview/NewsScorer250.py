@@ -5,8 +5,10 @@ from datetime import datetime
 
 class NewsScorer250():
     
-    def __init__(self, fake=True, limit=False):
+    def __init__(self, fake=True, limit=False, grinberg=False):
     
+        self.grinberg = grinberg
+        
         self.dir = Directories()
         
         self.fake = fake
@@ -35,9 +37,21 @@ class NewsScorer250():
         self.news = self.__read_news(self.dir.NEWS_OUTLETS_PATH, "dem_rep_news.json")
         self.__format_ideology_score()
         
+        if grinberg:
+            self.news = self.__read_grinberg(path=self.dir.NEWS_OUTLETS_PATH, file="grinberg.csv")
+        
+        
         #User Exposure to News
         self.users_news_exposure = {}
         
+    
+    def __read_grinberg(self, path, file):
+        grinberg = pd.read_csv(str(path) + "/" + file)
+        dict = {}
+        for index, val in grinberg.iterrows():
+            dict[val.website] = val['num_label']
+        return dict
+
   
     def __read_news(self, path, filename):
         """Helper method to retrieve the news outlet domains and their respective ideological position.
@@ -171,10 +185,18 @@ class NewsScorer250():
         """
         path = self.dir.DATA_PATH / "driver_scores"
         
-        if self.fake:
-            filename = "news_ideology_score_fake_users_" + self.today + ".json" 
+        if self.grinberg:
+            if self.fake:
+                filename = "news_ideology_score_fake_users_grinberg" + self.today + ".json" 
+            else:
+                filename = "news_ideology_score_true_users__grinberg" + self.today + ".json"
+            
         else:
-            filename = "news_ideology_score_true_users_" + self.today + ".json"
-        
+            if self.fake:
+                filename = "news_ideology_score_fake_users_2" + self.today + ".json" 
+            else:
+                filename = "news_ideology_score_true_users_2" + self.today + ".json"
+                
+                
         with open(path / filename, "w") as fp:
             json.dump(self.user_ideology, fp)
